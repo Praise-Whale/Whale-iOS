@@ -48,7 +48,7 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setDefaultStyle()
     }
     
 
@@ -57,8 +57,61 @@ class MainVC: UIViewController {
 
 extension MainVC {
     
+    /// 변하지 않는 것 스타일 설정
     func setDefaultStyle() {
+        /// 배경 색
         backgroundView.backgroundColor = .yellow_2
+        
+        nicknameLabel.font = .NotoSansRegular(size: 16)
+        nicknameLabel.textColor = .brown_2
+        nicknameLabel.letterSpacing = -0.8
+        
+        titleLabel.font = .NotoSansBold(size: 22)
+        titleLabel.textColor = .brown_2
+        titleLabel.letterSpacing = -1.1
+        titleLabel.text = "오늘의 칭찬 한 마디"
+        
+        titleLineView.backgroundColor = .sand_yellow
+        titleLineView.makeRounded(cornerRadius: 1)
+        
+        dateView.makeRounded(cornerRadius: dateView.frame.height/2)
+        dateView.backgroundColor = .white
+        
+        dateLabel.font = .NotoSansRegular(size: 13)
+        dateLabel.textColor = .brown_1
+        
+        contentBoxView.backgroundColor = .white
+        contentBoxView.makeRounded(cornerRadius: 15)
+        contentBoxView.layer.borderWidth = 2
+        contentBoxView.layer.borderColor = UIColor.yellow_3.cgColor
+        contentBoxView.dropShadow(color: .yellow_3, offSet: CGSize(width: 1, height: 1), opacity: 0.1, radius: 15)
+        
+        contentInnerBoxView.backgroundColor = .white
+        contentInnerBoxView.makeRounded(cornerRadius: 12)
+        contentInnerBoxView.layer.borderWidth = 3
+        contentInnerBoxView.layer.borderColor = UIColor.pale_three.cgColor
+        
+        for view in boxClipViewCollection {
+            view.backgroundColor = .dark_cream
+            view.makeRounded(cornerRadius: 3.5)
+        }
+        
+        contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
+        contentLabel.textColor = .brown_1
+        
+        didntBtn.backgroundColor = .grey_1
+        didntBtn.setTitleColor(.black, for: .normal)
+        didntBtn.titleLabel?.font = .NotoSansRegular(size: 15)
+        didntBtn.titleLabel?.letterSpacing = -0.75
+        didntBtn.makeRounded(cornerRadius: didntBtn.frame.height/2)
+        didntBtn.setTitle("못했어요..", for: .normal)
+        
+        didBtn.backgroundColor = .sand_yellow
+        didBtn.setTitleColor(.black, for: .normal)
+        didBtn.titleLabel?.font = .NotoSansRegular(size: 15)
+        didBtn.titleLabel?.letterSpacing = -0.75
+        didBtn.makeRounded(cornerRadius: didBtn.frame.height/2)
+        didBtn.setTitle("했어요!", for: .normal)
         
     }
     
