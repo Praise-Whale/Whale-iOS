@@ -49,6 +49,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         setDefaultStyle()
+        setText()
     }
     
 
@@ -98,6 +99,7 @@ extension MainVC {
         
         contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
+        contentLabel.textAlignment = .center
         
         didntBtn.backgroundColor = .grey_1
         didntBtn.setTitleColor(.black, for: .normal)
@@ -113,6 +115,17 @@ extension MainVC {
         didBtn.makeRounded(cornerRadius: didBtn.frame.height/2)
         didBtn.setTitle("했어요!", for: .normal)
         
+        messageLabel.font = .NotoSansRegular(size: 13)
+        messageLabel.textColor = .grey_2
+        messageLabel.letterSpacing = -0.65
+        messageLabel.lineSpacing(lineHeightMultiple: 1)
+    }
+    
+    func setText() {
+        nicknameLabel.text = "다나고래님을 위한"
+        dateLabel.text = "12월 22일"
+        contentLabel.text = "고래 아요가 다은이라서\n참 좋아"
+        messageLabel.text = "항상 내 편인 친구에게 ㅇㅇㅇ 고마움을 표현해보세요 :)ㅇㅇ 한 줄 더 되겠군요 히히히히히"
     }
     
 }
