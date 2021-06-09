@@ -14,6 +14,7 @@ class MainVC: UIViewController {
     
     //MARK: - IBOutlets
 
+    @IBOutlet var backgroundView: UIView!
     
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
@@ -28,8 +29,8 @@ class MainVC: UIViewController {
 
 extension MainVC {
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func setDefaultStyle() {
+        backgroundView.backgroundColor = .yellow_2
         
     }
     
