@@ -11,6 +11,7 @@ class MainVC: UIViewController {
     
     //MARK: - Custom Variables
     
+    var nickname: String = "다나고래"
     
     //MARK: - IBOutlets
 
@@ -49,6 +50,8 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         setDefaultStyle()
+        setNicknameLabel()
+        setNicknameLabel()
         setDateBox()
         setText()
     }
@@ -122,14 +125,23 @@ extension MainVC {
         messageLabel.lineSpacing(lineHeightMultiple: 1)
     }
     
+    /// 바뀌는 텍스트들을 설정하는 함수
     func setText() {
-        nicknameLabel.text = "다나고래님을 위한"
         contentLabel.text = "고래 아요가 다은이라서\n참 좋아"
         messageLabel.text = "항상 내 편인 친구에게 ㅇㅇㅇ 고마움을 표현해보세요 :)ㅇㅇ 한 줄 더 되겠군요 히히히히히"
     }
     
-}
-
+    /// 유저디폴트에서 닉네임을 받아와 설정하는 함수
+    func setNicknameLabel() {
+        
+        /// 유저디폴트에 저장된 닉네임이 있으면 닉네임 업데이트
+        if let savedNickname = UserDefaults.standard.string(forKey: "nickname") {
+            nickname = savedNickname
+        }
+        
+        nicknameLabel.text = "\(nickname)님을 위한"
+    }
+    
     /// 현재 날짜를 받아와 설정하는 함수
     func setDateBox() {
         let formatter = DateFormatter()
