@@ -200,6 +200,24 @@
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="5mN-V7-aeL"/>
+                        <outlet property="contentBoxView" destination="dor-xp-n4B" id="NUK-hm-rvt"/>
+                        <outlet property="contentInnerBoxView" destination="05q-g1-rXZ" id="pg6-Uw-jML"/>
+                        <outlet property="contentLabel" destination="n0B-L5-pCZ" id="MM9-XB-7ZS"/>
+                        <outlet property="dateLabel" destination="yIX-JD-BoC" id="8oe-Df-Uem"/>
+                        <outlet property="dateView" destination="8Rn-SD-JYp" id="yUB-i7-fpx"/>
+                        <outlet property="didBtn" destination="bLD-Qo-W1d" id="FKI-aR-XEc"/>
+                        <outlet property="didntBtn" destination="tAg-Gv-jWW" id="OXm-Eg-G6q"/>
+                        <outlet property="messageImageView" destination="vg0-8X-Ic2" id="UZz-ZM-qqJ"/>
+                        <outlet property="messageLabel" destination="Gee-Yo-lZw" id="RiF-V9-kqt"/>
+                        <outlet property="nicknameLabel" destination="2Dh-IZ-Dpy" id="9nt-Z7-RoE"/>
+                        <outlet property="settingBtn" destination="aKT-W9-rec" id="iC0-tR-q70"/>
+                        <outlet property="titleLabel" destination="fpn-Pk-PH0" id="2uJ-ha-E7s"/>
+                        <outlet property="titleLineView" destination="iRn-zX-xAZ" id="t8h-r8-hJU"/>
+                        <outlet property="whaleImageView" destination="MP2-14-Nsz" id="Mae-Bp-DHo"/>
+                        <outletCollection property="boxClipViewCollection" destination="EHT-Hh-XsU" collectionClass="NSMutableArray" id="etN-Kk-vSZ"/>
+                        <outletCollection property="boxClipViewCollection" destination="NM6-3l-1lD" collectionClass="NSMutableArray" id="Ghd-tD-bKU"/>
+                        <outletCollection property="boxClipViewCollection" destination="WHz-8c-cuF" collectionClass="NSMutableArray" id="Umc-lj-d9C"/>
+                        <outletCollection property="boxClipViewCollection" destination="4Yt-dP-LzG" collectionClass="NSMutableArray" id="33G-WR-rGs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
