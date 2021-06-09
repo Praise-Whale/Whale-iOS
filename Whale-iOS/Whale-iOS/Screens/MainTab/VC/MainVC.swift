@@ -49,6 +49,7 @@ class MainVC: UIViewController {
         super.viewDidLoad()
 
         setDefaultStyle()
+        setDateBox()
         setText()
     }
     
@@ -123,9 +124,21 @@ extension MainVC {
     
     func setText() {
         nicknameLabel.text = "다나고래님을 위한"
-        dateLabel.text = "12월 22일"
         contentLabel.text = "고래 아요가 다은이라서\n참 좋아"
         messageLabel.text = "항상 내 편인 친구에게 ㅇㅇㅇ 고마움을 표현해보세요 :)ㅇㅇ 한 줄 더 되겠군요 히히히히히"
+    }
+    
+}
+
+    /// 현재 날짜를 받아와 설정하는 함수
+    func setDateBox() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        let monthToday = formatter.string(from: Date())
+        formatter.dateFormat = "dd"
+        let dateToday = formatter.string(from: Date())
+        
+        dateLabel.text = "\(monthToday)월 \(dateToday)일"
     }
     
 }
