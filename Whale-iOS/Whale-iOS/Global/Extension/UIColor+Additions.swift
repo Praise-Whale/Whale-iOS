@@ -13,11 +13,11 @@ extension UIColor {
     }
     
     @nonobjc class var yellow_2: UIColor {
-        return UIColor(red: 255/255, green: 236/255, blue: 186/255, alpha: 1.0)
+        return UIColor(red: 255/255, green: 245/255, blue: 218/255, alpha: 1.0)
     }
     
     @nonobjc class var yellow_3: UIColor {
-        return UIColor(red: 255/255, green: 245/255, blue: 218/255, alpha: 1.0)
+        return UIColor(red: 255/255, green: 236/255, blue: 186/255, alpha: 1.0)
     }
     
     @nonobjc class var yellow_4: UIColor {
@@ -54,6 +54,14 @@ extension UIColor {
     
     @nonobjc class var dark_peach: UIColor {
         return UIColor(red: 221/255, green: 115/255, blue: 115/255, alpha: 1.0)
+    }
+    
+    @nonobjc class var pale_three: UIColor {
+        return UIColor(red: 255/255, green: 244/255, blue: 215/255, alpha: 1.0)
+    }
+    
+    @nonobjc class var dark_cream: UIColor {
+        return UIColor(red: 255/255, green: 227/255, blue: 155/255, alpha: 1.0)
     }
 }
 
