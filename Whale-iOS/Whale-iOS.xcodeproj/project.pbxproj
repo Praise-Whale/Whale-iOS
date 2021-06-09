@@ -62,6 +62,7 @@
 		33AAD382266F88E000907BCF /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD381266F88E000907BCF /* p.swift */; };
 		33AAD387266F892300907BCF /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD386266F892300907BCF /* TabBar.storyboard */; };
 		33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD388266F895300907BCF /* WhaleTBC.swift */; };
+		37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC72670CCA900039277 /* UIFont+Extension.swift */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		33AAD381266F88E000907BCF /* p.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
 		33AAD386266F892300907BCF /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		33AAD388266F895300907BCF /* WhaleTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleTBC.swift; sourceTree = "<group>"; };
+		37B77CC72670CCA900039277 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0971945F9B7655482D500 /* Pods-Whale-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.release.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				33AAD30B266F7AFE00907BCF /* UIButton+Extension.swift */,
 				33AAD30D266F7B3800907BCF /* UIWindow+Extension.swift */,
 				33AAD305266F7A9A00907BCF /* Notification.Name.swift */,
+				37B77CC72670CCA900039277 /* UIFont+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -825,6 +828,7 @@
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
 				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,
+				37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */,
 				33AAD33C266F878F00907BCF /* d.swift in Sources */,
 				33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */,
 				33AAD304266F787400907BCF /* UIColor+Additions.swift in Sources */,
