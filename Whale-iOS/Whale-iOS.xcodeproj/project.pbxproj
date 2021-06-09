@@ -64,6 +64,8 @@
 		33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD388266F895300907BCF /* WhaleTBC.swift */; };
 		37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC72670CCA900039277 /* UIFont+Extension.swift */; };
 		37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC92670DAF300039277 /* UILabel+Extension.swift */; };
+		37B77CCC2670EBF200039277 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCB2670EBF200039277 /* MainService.swift */; };
+		37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +129,8 @@
 		33AAD388266F895300907BCF /* WhaleTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleTBC.swift; sourceTree = "<group>"; };
 		37B77CC72670CCA900039277 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		37B77CC92670DAF300039277 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		37B77CCB2670EBF200039277 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
+		37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPraiseSentence.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0971945F9B7655482D500 /* Pods-Whale-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.release.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -349,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD2F9266F76A200907BCF /* GenericResponse.swift */,
+				37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -358,6 +363,7 @@
 			children = (
 				33AAD2FB266F76BC00907BCF /* APIConstants.swift */,
 				33AAD2FD266F76CA00907BCF /* NetworkResult.swift */,
+				37B77CCB2670EBF200039277 /* MainService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -819,6 +825,7 @@
 				33AAD374266F889700907BCF /* m.swift in Sources */,
 				33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */,
 				33AAD35A266F881900907BCF /*  i.swift in Sources */,
+				37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */,
 				33AAD32E266F873000907BCF /* a.swift in Sources */,
 				33AAD2FA266F76A200907BCF /* GenericResponse.swift in Sources */,
 				33AAD30A266F7AE400907BCF /* UITextField+Extension.swift in Sources */,
@@ -828,6 +835,7 @@
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
 				33AAD352266F87F800907BCF /* h.swift in Sources */,
 				33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */,
+				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
 				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,

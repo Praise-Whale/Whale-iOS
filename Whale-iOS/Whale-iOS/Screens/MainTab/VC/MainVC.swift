@@ -51,9 +51,8 @@ class MainVC: UIViewController {
 
         setDefaultStyle()
         setNicknameLabel()
-        setNicknameLabel()
+        callMainService()
         setDateBox()
-        setText()
     }
     
 
@@ -104,6 +103,7 @@ extension MainVC {
         contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
+        contentLabel.text = "고래 아요가 다은이라서\n참 좋아\n(네트워크 연결을 확인하세요!)"
         
         didntBtn.backgroundColor = .grey_1
         didntBtn.setTitleColor(.black, for: .normal)
@@ -123,12 +123,7 @@ extension MainVC {
         messageLabel.textColor = .grey_2
         messageLabel.letterSpacing = -0.65
         messageLabel.lineSpacing(lineHeightMultiple: 1)
-    }
-    
-    /// 바뀌는 텍스트들을 설정하는 함수
-    func setText() {
-        contentLabel.text = "고래 아요가 다은이라서\n참 좋아"
-        messageLabel.text = "항상 내 편인 친구에게 ㅇㅇㅇ 고마움을 표현해보세요 :)ㅇㅇ 한 줄 더 되겠군요 히히히히히"
+        messageLabel.text = "와이파이나 모바일 데이터를 확인하세요!\n칭찬할고래 iOS 버전은 지은이와 다은이가 만들었습니다!"
     }
     
     /// 유저디폴트에서 닉네임을 받아와 설정하는 함수
@@ -151,6 +146,29 @@ extension MainVC {
         let dateToday = formatter.string(from: Date())
         
         dateLabel.text = "\(monthToday)월 \(dateToday)일"
+    }
+    
+    func callMainService() {
+        MainService.shared.searchUser(id: 1) { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let praiseData = data as? MainPraiseSentence {
+                    self.contentLabel.text = praiseData.homePraise.todayPraise
+                    self.messageLabel.text = praiseData.homePraise.praiseDescription
+                }
+            case .requestErr(let msg):
+                print("[main] request error")
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("[main] path error")
+            case .serverErr:
+                print("[main] server error")
+            case .networkFail:
+                print("[main] network fail")
+            }
+        }
     }
     
 }
