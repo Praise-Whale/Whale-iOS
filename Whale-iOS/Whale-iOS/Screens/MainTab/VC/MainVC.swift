@@ -12,6 +12,7 @@ class MainVC: UIViewController {
     //MARK: - Custom Variables
     
     var nickname: String = "다나고래"
+    var praiseId: Int = 0
     
     //MARK: - IBOutlets
 
@@ -51,8 +52,13 @@ class MainVC: UIViewController {
 
         setDefaultStyle()
         setNicknameLabel()
-        callMainService()
         setDateBox()
+        updatePraiseId()
+        callMainService()
+        
+        print(UserDefaults.standard.integer(forKey: "PraiseId"))
+        print(UserDefaults.standard.string(forKey: "DateLastVisited"))
+        
     }
     
 
@@ -103,7 +109,7 @@ extension MainVC {
         contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
-        contentLabel.text = "고래 아요가 다은이라서\n참 좋아\n(네트워크 연결을 확인하세요!)"
+        contentLabel.text = "(네트워크 연결을 확인하세요!)"
         
         didntBtn.backgroundColor = .grey_1
         didntBtn.setTitleColor(.black, for: .normal)
@@ -123,7 +129,7 @@ extension MainVC {
         messageLabel.textColor = .grey_2
         messageLabel.letterSpacing = -0.65
         messageLabel.lineSpacing(lineHeightMultiple: 1)
-        messageLabel.text = "와이파이나 모바일 데이터를 확인하세요!\n칭찬할고래 iOS 버전은 지은이와 다은이가 만들었습니다!"
+        messageLabel.text = "와이파이나 모바일 데이터가 연결되어 있는지 확인하세요!\n칭찬할고래 iOS 버전은 지은이와 다은이가 만들었습니다!"
     }
     
     /// 유저디폴트에서 닉네임을 받아와 설정하는 함수
@@ -149,7 +155,7 @@ extension MainVC {
     }
     
     func callMainService() {
-        MainService.shared.searchUser(id: 1) { (networkResult) -> (Void) in
+        MainService.shared.searchUser(id: praiseId) { (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let praiseData = data as? MainPraiseSentence {
@@ -168,6 +174,33 @@ extension MainVC {
             case .networkFail:
                 print("[main] network fail")
             }
+        }
+    }
+    
+    func updatePraiseId() {
+        /// 오늘 날짜 받아오기
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd"
+        let date = formatter.string(from: Date())
+        
+        if let lastDate = UserDefaults.standard.string(forKey: "DateLastVisited") { /// 유저디폴트에 저장된 마지막 방문 날짜가 있으면
+            if lastDate != date { /// 마지막으로 방문한 게 오늘이 아니라면
+                /// 아이디를 하나 올려서 다시 저장
+                praiseId = UserDefaults.standard.integer(forKey: "PraiseId") + 1
+                UserDefaults.standard.setValue(praiseId, forKey: "PraiseId")
+                
+                /// 최근 방문 날짜를 오늘 날짜로 업데이트
+                UserDefaults.standard.setValue(date, forKey: "DateLastVisited")
+            } else { /// 마지막으로 방문한 게 오늘이라면
+                praiseId = UserDefaults.standard.integer(forKey: "PraiseId")
+            }
+        } else { /// 없으면
+            /// praiseId 새로 부여
+            praiseId = 1
+            UserDefaults.standard.setValue(praiseId, forKey: "PraiseId")
+            
+            /// 최근 방문 날짜를 오늘 날짜로 업데이트
+            UserDefaults.standard.setValue(date, forKey: "DateLastVisited")
         }
     }
     
