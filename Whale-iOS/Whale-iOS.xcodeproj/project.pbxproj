@@ -66,6 +66,11 @@
 		37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC92670DAF300039277 /* UILabel+Extension.swift */; };
 		37B77CCC2670EBF200039277 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCB2670EBF200039277 /* MainService.swift */; };
 		37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */; };
+		37B77CD02671CCE100039277 /* MainYesPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */; };
+		37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD12671CCF700039277 /* MainYesPopupVC.swift */; };
+		37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* MainNoPopup.storyboard */; };
+		37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* MainNoPopup.swift */; };
+		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +136,11 @@
 		37B77CC92670DAF300039277 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		37B77CCB2670EBF200039277 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
 		37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPraiseSentence.swift; sourceTree = "<group>"; };
+		37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainYesPopup.storyboard; sourceTree = "<group>"; };
+		37B77CD12671CCF700039277 /* MainYesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesPopupVC.swift; sourceTree = "<group>"; };
+		37B77CD32671CD1600039277 /* MainNoPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainNoPopup.storyboard; sourceTree = "<group>"; };
+		37B77CD52671CD2C00039277 /* MainNoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoPopup.swift; sourceTree = "<group>"; };
+		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0971945F9B7655482D500 /* Pods-Whale-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.release.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -492,6 +502,9 @@
 			isa = PBXGroup;
 			children = (
 				33AAD34D266F87E900907BCF /* MainVC.swift */,
+				37B77CD12671CCF700039277 /* MainYesPopupVC.swift */,
+				37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */,
+				37B77CD52671CD2C00039277 /* MainNoPopup.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -500,6 +513,8 @@
 			isa = PBXGroup;
 			children = (
 				33AAD2D7266F74AF00907BCF /* Main.storyboard */,
+				37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */,
+				37B77CD32671CD1600039277 /* MainNoPopup.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -738,9 +753,11 @@
 				33AAD336266F876C00907BCF /* SignUp.storyboard in Resources */,
 				33AAD31D266F83F000907BCF /* GmarketSansTTFMedium.ttf in Resources */,
 				33AAD319266F7C7500907BCF /* NotoSansCJKkr-Bold.otf in Resources */,
+				37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */,
 				33AAD2DB266F74B000907BCF /* Assets.xcassets in Resources */,
 				33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */,
 				33AAD37C266F88C900907BCF /* LevelsInfo.storyboard in Resources */,
+				37B77CD02671CCE100039277 /* MainYesPopup.storyboard in Resources */,
 				33AAD364266F884A00907BCF /* Level.storyboard in Resources */,
 				33AAD31A266F7C7700907BCF /* NotoSansCJKkr-Medium.otf in Resources */,
 				33AAD387266F892300907BCF /* TabBar.storyboard in Resources */,
@@ -802,6 +819,7 @@
 			files = (
 				33AAD344266F87B600907BCF /* LoginVC.swift in Sources */,
 				33AAD306266F7A9A00907BCF /* Notification.Name.swift in Sources */,
+				37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */,
 				33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */,
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
@@ -811,6 +829,7 @@
 				33AAD36A266F886600907BCF /* l.swift in Sources */,
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
+				37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */,
 				33AAD33A266F878700907BCF /* c.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
@@ -823,6 +842,7 @@
 				33AAD338266F877B00907BCF /* SignUpVC.swift in Sources */,
 				33AAD372266F888F00907BCF /* SettingsVC.swift in Sources */,
 				33AAD374266F889700907BCF /* m.swift in Sources */,
+				37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */,
 				33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */,
 				33AAD35A266F881900907BCF /*  i.swift in Sources */,
 				37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */,
