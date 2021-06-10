@@ -16,9 +16,6 @@ class OnboardingCVCell: UICollectionViewCell {
     @IBOutlet var descLabel: CustomLabel!
     @IBOutlet var whaleImageView: UIImageView!
     
-    override func awakeFromNib() {
-    }
-    
     
     //MARK: - 라벨 AttributeFont 설정
     func customLabels(_ firstPraiseText: String, _ secondPraiseText: String, _ firstRegularRange1: String, _ secondRegularRange1: String, _ subExplainText: String, descriptionText: String) {
@@ -52,5 +49,13 @@ class OnboardingCVCell: UICollectionViewCell {
         subExplanationLabel.sizeToFit()
         descLabel.text = descriptionText
         descLabel.sizeToFit()
+    }
+    
+    func makeAnimation() {
+        
+        whaleImageView.frame = CGRect(x: 0, y: 253, width: self.whaleImageView.frame.width, height: self.whaleImageView.frame.height)
+        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse] , animations: {
+            self.whaleImageView.frame = CGRect(x: 10, y: 253, width: self.whaleImageView.frame.width, height: self.whaleImageView.frame.height)
+        })
     }
 }

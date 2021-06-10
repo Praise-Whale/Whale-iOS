@@ -95,12 +95,13 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
             
             firstOnboardingCell.customLabels(onboardingArray[indexPath.row].firstPraiseText, onboardingArray[indexPath.row].secondPraiseText, onboardingArray[indexPath.row].firstRange1Text, onboardingArray[indexPath.row].secondRange1Text, onboardingArray[indexPath.row].subExpText, descriptionText: onboardingArray[indexPath.row].descriptionText)
             firstOnboardingCell.whaleImageView.image = UIImage(named: onboardingArray[indexPath.row].subImgName)
+            firstOnboardingCell.makeAnimation()
             
             return firstOnboardingCell
         }
         else if indexPath.row == 3 {
             let lastOnboardingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LastOnboardingCVC", for: indexPath) as! LastOnboardingCVC
-            
+            lastOnboardingCell.makeAnimation()
             return lastOnboardingCell
         }
         else {

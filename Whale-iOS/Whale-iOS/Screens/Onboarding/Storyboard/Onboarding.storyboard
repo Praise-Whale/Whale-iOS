@@ -58,7 +58,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="하루에 한 번씩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dq2-Gt-wMJ" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="42" y="114" width="149.5" height="30.5"/>
+                                                    <rect key="frame" x="42" y="114" width="158.5" height="38.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="26"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
@@ -69,7 +69,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="칭찬해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsD-I9-VHa">
-                                                    <rect key="frame" x="42" y="136.5" width="90" height="69"/>
+                                                    <rect key="frame" x="42" y="144.5" width="96" height="61"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="26"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
@@ -89,7 +89,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="원하는 시간에 리마인드 알림도 받을 수 있어요:)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9Y-BX-t3Z" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="42" y="224.5" width="242.5" height="19.5"/>
+                                                    <rect key="frame" x="42" y="224.5" width="257.5" height="19.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19.5" id="8aI-2s-fCh"/>
                                                     </constraints>
@@ -153,19 +153,19 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="칭찬할 고래와 함께" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YJ-gh-II4">
-                                                    <rect key="frame" x="115.5" y="428" width="183" height="27"/>
+                                                    <rect key="frame" x="115.5" y="428" width="183" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매일 칭찬 한마디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDc-9Z-hYD">
-                                                    <rect key="frame" x="131" y="455" width="152.5" height="27"/>
+                                                    <rect key="frame" x="126.5" y="462.5" width="161" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실천해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH0-9T-Wvq" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="141" y="482" width="132.5" height="27"/>
+                                                    <rect key="frame" x="138" y="497" width="138" height="34.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
@@ -202,6 +202,7 @@
                                         <connections>
                                             <outlet property="firstLabel" destination="7YJ-gh-II4" id="F57-gO-0ZI"/>
                                             <outlet property="secondLabel" destination="ZDc-9Z-hYD" id="DUW-Mp-kfR"/>
+                                            <outlet property="whaleImageView" destination="LlR-pV-PFY" id="F1K-JN-5lY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
