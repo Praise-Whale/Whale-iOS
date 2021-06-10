@@ -11,6 +11,9 @@
 		330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A48FF2672432C002DB3B4 /* OnboardingVC.swift */; };
 		330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A49012672474F002DB3B4 /* OnboardingCVCell.swift */; };
 		330A4904267249B7002DB3B4 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A4903267249B7002DB3B4 /* Onboarding.swift */; };
+		330A4906267268C2002DB3B4 /* LastOnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A4905267268C2002DB3B4 /* LastOnboardingCVC.swift */; };
+		330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330A490D267275F6002DB3B4 /* SignUp.storyboard */; };
+		330A491026727603002DB3B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A490F26727603002DB3B4 /* SignUpVC.swift */; };
 		33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D1266F74AF00907BCF /* AppDelegate.swift */; };
 		33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */; };
 		33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD2D7266F74AF00907BCF /* Main.storyboard */; };
@@ -65,6 +68,9 @@
 		330A48FF2672432C002DB3B4 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		330A49012672474F002DB3B4 /* OnboardingCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCVCell.swift; sourceTree = "<group>"; };
 		330A4903267249B7002DB3B4 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		330A4905267268C2002DB3B4 /* LastOnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardingCVC.swift; sourceTree = "<group>"; };
+		330A490D267275F6002DB3B4 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
+		330A490F26727603002DB3B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		33AAD2CE266F74AF00907BCF /* Whale-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whale-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAD2D1266F74AF00907BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +138,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330A4908267275C8002DB3B4 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				330A4909267275D6002DB3B4 /* Storyboard */,
+				330A490A267275DB002DB3B4 /* VC */,
+				330A490C267275E4002DB3B4 /* Cell */,
+				330A490B267275E0002DB3B4 /* Model */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		330A4909267275D6002DB3B4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				330A490D267275F6002DB3B4 /* SignUp.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		330A490A267275DB002DB3B4 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				330A490F26727603002DB3B4 /* SignUpVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		330A490B267275E0002DB3B4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		330A490C267275E4002DB3B4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		33AAD2C5266F74AF00907BCF = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD2EE266F759D00907BCF /* Onboarding */,
+				330A4908267275C8002DB3B4 /* SignUp */,
 				33AAD383266F890300907BCF /* TabBar */,
 				33AAD2EF266F75A400907BCF /* Login */,
 				33AAD2ED266F758D00907BCF /* MainTab */,
@@ -340,6 +388,7 @@
 			isa = PBXGroup;
 			children = (
 				330A49012672474F002DB3B4 /* OnboardingCVCell.swift */,
+				330A4905267268C2002DB3B4 /* LastOnboardingCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -675,6 +724,7 @@
 				33AAD342266F87AB00907BCF /* Login.storyboard in Resources */,
 				33AAD370266F888400907BCF /* Settings.storyboard in Resources */,
 				33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */,
+				330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -737,6 +787,7 @@
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
 				33AAD2FC266F76BC00907BCF /* APIConstants.swift in Sources */,
 				33AAD36A266F886600907BCF /* l.swift in Sources */,
+				330A491026727603002DB3B4 /* SignUpVC.swift in Sources */,
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
@@ -744,6 +795,7 @@
 				33AAD350266F87F200907BCF /* g.swift in Sources */,
 				330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */,
 				33AAD2FE266F76CA00907BCF /* NetworkResult.swift in Sources */,
+				330A4906267268C2002DB3B4 /* LastOnboardingCVC.swift in Sources */,
 				33AAD358266F881300907BCF /* j.swift in Sources */,
 				33AAD30C266F7AFE00907BCF /* UIButton+Extension.swift in Sources */,
 				33AAD308266F7AC000907BCF /* UIView+Extension.swift in Sources */,

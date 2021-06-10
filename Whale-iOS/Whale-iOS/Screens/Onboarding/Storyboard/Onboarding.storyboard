@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="83G-be-2Fu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZaM-Wp-yTM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -27,9 +27,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_bg" translatesAutoresizingMaskIntoConstraints="NO" id="TAk-Cz-PD7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UJ7-Yl-suG">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UJ7-Yl-suG">
                                 <rect key="frame" x="0.0" y="44" width="414" height="637"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -58,7 +58,7 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="하루에 한 번씩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dq2-Gt-wMJ" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="42" y="114" width="158.5" height="38.5"/>
+                                                    <rect key="frame" x="42" y="114" width="149.5" height="30.5"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="26"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
@@ -69,13 +69,16 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="칭찬해요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WsD-I9-VHa">
-                                                    <rect key="frame" x="42" y="144.5" width="96" height="38.5"/>
+                                                    <rect key="frame" x="42" y="136.5" width="90" height="69"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Bold" family="Noto Sans CJK KR" pointSize="26"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvB-u3-0kv">
-                                                    <rect key="frame" x="42" y="198" width="0.0" height="0.0"/>
+                                                    <rect key="frame" x="42" y="220.5" width="0.0" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" id="foU-Ux-A3a"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <color key="textColor" name="brown_2"/>
                                                     <nil key="highlightedColor"/>
@@ -86,7 +89,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="원하는 시간에 리마인드 알림도 받을 수 있어요:)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9Y-BX-t3Z" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
-                                                    <rect key="frame" x="42" y="202" width="257.5" height="19.5"/>
+                                                    <rect key="frame" x="42" y="224.5" width="242.5" height="19.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19.5" id="8aI-2s-fCh"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                                     <color key="textColor" name="grey_2"/>
                                                     <nil key="highlightedColor"/>
@@ -97,7 +103,11 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fId-pP-FPh">
-                                                    <rect key="frame" x="1" y="246" width="413" height="405"/>
+                                                    <rect key="frame" x="0.0" y="253" width="414" height="406"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fId-pP-FPh" secondAttribute="height" multiplier="413:405" id="4gf-jC-6Ls"/>
+                                                        <constraint firstAttribute="height" constant="405" id="IRc-WC-QDp"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -129,6 +139,71 @@
                                             <outlet property="whaleImageView" destination="fId-pP-FPh" id="DgK-cf-QJd"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="LastOnboardingCVC" id="3lO-Yo-GU4" customClass="LastOnboardingCVC" customModule="Whale_iOS" customModuleProvider="target">
+                                        <rect key="frame" x="424" y="-11" width="414" height="659"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ew2-mr-Maq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="659"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding_4_img_whale" translatesAutoresizingMaskIntoConstraints="NO" id="LlR-pV-PFY">
+                                                    <rect key="frame" x="0.0" y="83" width="414" height="334"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="334" id="EDe-YO-T2X"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="칭찬할 고래와 함께" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YJ-gh-II4">
+                                                    <rect key="frame" x="115.5" y="428" width="183" height="27"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
+                                                    <color key="textColor" name="brown_2"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="매일 칭찬 한마디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDc-9Z-hYD">
+                                                    <rect key="frame" x="131" y="455" width="152.5" height="27"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
+                                                    <color key="textColor" name="brown_2"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="실천해볼까요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zH0-9T-Wvq" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
+                                                    <rect key="frame" x="141" y="482" width="132.5" height="27"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="23"/>
+                                                    <color key="textColor" name="brown_2"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                            <real key="value" value="-1.1499999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DqP-1j-dot">
+                                                    <rect key="frame" x="115.5" y="459" width="101" height="2"/>
+                                                    <color key="backgroundColor" name="sand_yellow"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="2" id="Sbl-ot-5x5"/>
+                                                        <constraint firstAttribute="width" constant="101" id="g7q-rW-FdC"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zH0-9T-Wvq" firstAttribute="top" secondItem="ZDc-9Z-hYD" secondAttribute="bottom" id="AtG-Ep-cfP"/>
+                                                <constraint firstItem="DqP-1j-dot" firstAttribute="top" secondItem="LlR-pV-PFY" secondAttribute="bottom" constant="42" id="IpW-To-qmH"/>
+                                                <constraint firstItem="zH0-9T-Wvq" firstAttribute="centerX" secondItem="Ew2-mr-Maq" secondAttribute="centerX" id="Jb3-pZ-9Ht"/>
+                                                <constraint firstItem="LlR-pV-PFY" firstAttribute="top" secondItem="Ew2-mr-Maq" secondAttribute="top" constant="83" id="K4G-Pa-lPZ"/>
+                                                <constraint firstItem="LlR-pV-PFY" firstAttribute="width" secondItem="Ew2-mr-Maq" secondAttribute="width" id="NvL-3c-Mbv"/>
+                                                <constraint firstItem="7YJ-gh-II4" firstAttribute="centerX" secondItem="Ew2-mr-Maq" secondAttribute="centerX" id="W8u-0F-i7f"/>
+                                                <constraint firstItem="ZDc-9Z-hYD" firstAttribute="top" secondItem="7YJ-gh-II4" secondAttribute="bottom" id="lFb-mc-0gK"/>
+                                                <constraint firstItem="ZDc-9Z-hYD" firstAttribute="centerX" secondItem="Ew2-mr-Maq" secondAttribute="centerX" id="qmy-kD-bqn"/>
+                                                <constraint firstItem="LlR-pV-PFY" firstAttribute="centerX" secondItem="Ew2-mr-Maq" secondAttribute="centerX" id="rC7-lX-A6X"/>
+                                                <constraint firstItem="7YJ-gh-II4" firstAttribute="top" secondItem="LlR-pV-PFY" secondAttribute="bottom" constant="11" id="umE-uo-paM"/>
+                                                <constraint firstItem="DqP-1j-dot" firstAttribute="leading" secondItem="7YJ-gh-II4" secondAttribute="leading" id="wws-fZ-Neg"/>
+                                                <constraint firstAttribute="trailing" secondItem="DqP-1j-dot" secondAttribute="trailing" constant="197.5" id="yoj-3y-dzO"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="firstLabel" destination="7YJ-gh-II4" id="F57-gO-0ZI"/>
+                                            <outlet property="secondLabel" destination="ZDc-9Z-hYD" id="DUW-Mp-kfR"/>
+                                        </connections>
+                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q1r-v3-KFR">
@@ -140,13 +215,14 @@
                                 <color key="currentPageIndicatorTintColor" name="sand_yellow"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8B-bA-Njy">
-                                <rect key="frame" x="51" y="741" width="312" height="49"/>
+                                <rect key="frame" x="51" y="753" width="312" height="49"/>
                                 <color key="backgroundColor" name="sand_yellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="JsU-Vk-HCd"/>
+                                    <constraint firstAttribute="width" secondItem="G8B-bA-Njy" secondAttribute="height" multiplier="312:49" id="vTo-U4-Fb3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
-                                <state key="normal" title="다음">
+                                <state key="normal">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -154,6 +230,9 @@
                                         <real key="value" value="-0.75"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="touchUpToNextPageBtn:" destination="83G-be-2Fu" eventType="touchUpInside" id="dbC-L3-k2m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="O3c-ay-iGn"/>
@@ -162,12 +241,11 @@
                             <constraint firstItem="O3c-ay-iGn" firstAttribute="trailing" secondItem="UJ7-Yl-suG" secondAttribute="trailing" id="4G0-eK-vSu"/>
                             <constraint firstItem="q1r-v3-KFR" firstAttribute="centerX" secondItem="TAk-Cz-PD7" secondAttribute="centerX" id="AyD-U7-DWn"/>
                             <constraint firstItem="UJ7-Yl-suG" firstAttribute="leading" secondItem="O3c-ay-iGn" secondAttribute="leading" id="CUS-yc-0dX"/>
-                            <constraint firstItem="O3c-ay-iGn" firstAttribute="bottom" secondItem="G8B-bA-Njy" secondAttribute="bottom" constant="72" id="Czz-jh-yix"/>
-                            <constraint firstItem="G8B-bA-Njy" firstAttribute="top" secondItem="q1r-v3-KFR" secondAttribute="bottom" constant="33" id="Dur-zr-wXm"/>
+                            <constraint firstItem="O3c-ay-iGn" firstAttribute="bottom" secondItem="G8B-bA-Njy" secondAttribute="bottom" constant="60" id="Czz-jh-yix"/>
                             <constraint firstItem="O3c-ay-iGn" firstAttribute="trailing" secondItem="G8B-bA-Njy" secondAttribute="trailing" constant="51" id="GWq-a9-Fw5"/>
                             <constraint firstItem="q1r-v3-KFR" firstAttribute="top" secondItem="UJ7-Yl-suG" secondAttribute="bottom" constant="20" id="LTb-sC-zcf"/>
-                            <constraint firstItem="O3c-ay-iGn" firstAttribute="bottom" secondItem="TAk-Cz-PD7" secondAttribute="bottom" id="YWM-b6-Fej"/>
-                            <constraint firstItem="TAk-Cz-PD7" firstAttribute="top" secondItem="O3c-ay-iGn" secondAttribute="top" id="a8J-E9-LhS"/>
+                            <constraint firstAttribute="bottom" secondItem="TAk-Cz-PD7" secondAttribute="bottom" id="YWM-b6-Fej"/>
+                            <constraint firstItem="TAk-Cz-PD7" firstAttribute="top" secondItem="hlE-1Q-vdk" secondAttribute="top" id="a8J-E9-LhS"/>
                             <constraint firstItem="G8B-bA-Njy" firstAttribute="leading" secondItem="O3c-ay-iGn" secondAttribute="leading" constant="51" id="aJX-c4-2sz"/>
                             <constraint firstItem="O3c-ay-iGn" firstAttribute="trailing" secondItem="TAk-Cz-PD7" secondAttribute="trailing" id="ajs-wB-tNy"/>
                             <constraint firstItem="UJ7-Yl-suG" firstAttribute="width" secondItem="hlE-1Q-vdk" secondAttribute="width" id="gil-wJ-a81"/>
@@ -175,17 +253,37 @@
                             <constraint firstItem="TAk-Cz-PD7" firstAttribute="leading" secondItem="O3c-ay-iGn" secondAttribute="leading" id="ubx-zh-eZf"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Cja-rX-Kgl"/>
                     <connections>
+                        <outlet property="nextBtn" destination="G8B-bA-Njy" id="HlK-36-gsO"/>
                         <outlet property="onboardingCV" destination="UJ7-Yl-suG" id="ajy-iw-9IY"/>
                         <outlet property="onboardingPageControl" destination="q1r-v3-KFR" id="jRU-ft-LWr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uat-D9-l2B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1710.144927536232" y="130.58035714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rvk-Mo-GRi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZaM-Wp-yTM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Drd-XW-VSS">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="83G-be-2Fu" kind="relationship" relationship="rootViewController" id="F4C-GX-jWA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrM-vP-m7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="800.00000000000011" y="130.58035714285714"/>
         </scene>
     </scenes>
     <resources>
+        <image name="onboarding_4_img_whale" width="1080" height="1002"/>
         <image name="onboarding_bg" width="360" height="800"/>
         <namedColor name="brown_2">
             <color red="0.23899999260902405" green="0.20800000429153442" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
