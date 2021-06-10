@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SignUpNicknameVC: UIViewController {
 
@@ -16,22 +17,48 @@ class SignUpNicknameVC: UIViewController {
         setTextFieldBackgroud()
         makeTextFieldLeftPadding()
         setNextBtnLayout(25)
-        // Do any additional setup after loading the view.
     }
     
-    // set textField background Image
+    //MARK: - set textField background Image
     func setTextFieldBackgroud() {
         nicknameTextField.background = UIImage(named: "nickname_box_nickname")
         nicknameTextField.layer.borderWidth = 0
     }
 
+    //MARK: - add NicknameTextField placeHolder (Left padding)
     func makeTextFieldLeftPadding() {
         nicknameTextField.addLeftPadding(13)
     }
 
+    //MARK: - nextBtn 레이아웃 설정
     func setNextBtnLayout(_ cornerRadius: CGFloat) {
-        nextBtn.isEnabled = false
+        nextBtn.isEnabled = true
         nextBtn.layer.cornerRadius = cornerRadius
+    }
+    
+    //MARK: - 닉네임 중복체크 Service
+    func nicknameCheckService() {
+        NicknameCheckService.shared.checkNickname(nickname: nicknameTextField.text!){
+            (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let msg):
+                print(msg)
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    @IBAction func touchUpNextBtn(_ sender: UIButton) {
+        nicknameCheckService()
     }
     
     @IBAction func touchUpBackSwipe(_ sender: Any) {

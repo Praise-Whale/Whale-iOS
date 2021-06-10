@@ -16,6 +16,8 @@
 		330A491026727603002DB3B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A490F26727603002DB3B4 /* SignUpVC.swift */; };
 		3387DD9126728F6800CF26F1 /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */; };
 		3387DD932672901200CF26F1 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD922672901200CF26F1 /* SignUpData.swift */; };
+		3387DD97267297AA00CF26F1 /* NicknameCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */; };
+		3387DD9926729AD200CF26F1 /* BasicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD9826729AD200CF26F1 /* BasicData.swift */; };
 		33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D1266F74AF00907BCF /* AppDelegate.swift */; };
 		33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */; };
 		33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD2D7266F74AF00907BCF /* Main.storyboard */; };
@@ -75,6 +77,8 @@
 		330A490F26727603002DB3B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
 		3387DD922672901200CF26F1 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpData.swift; path = "Whale-iOS/Screens/SignUp/Model/SignUpData.swift"; sourceTree = SOURCE_ROOT; };
+		3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameCheckService.swift; sourceTree = "<group>"; };
+		3387DD9826729AD200CF26F1 /* BasicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicData.swift; sourceTree = "<group>"; };
 		33AAD2CE266F74AF00907BCF /* Whale-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whale-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAD2D1266F74AF00907BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +152,7 @@
 				330A4909267275D6002DB3B4 /* Storyboard */,
 				330A490A267275DB002DB3B4 /* VC */,
 				3387DD94267290ED00CF26F1 /* Model */,
+				3387DD952672978900CF26F1 /* Service */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -175,6 +180,14 @@
 				3387DD922672901200CF26F1 /* SignUpData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3387DD952672978900CF26F1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		33AAD2C5266F74AF00907BCF = {
@@ -369,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD2F9266F76A200907BCF /* GenericResponse.swift */,
+				3387DD9826729AD200CF26F1 /* BasicData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -781,6 +795,8 @@
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
 				33AAD368266F885E00907BCF /* k.swift in Sources */,
+				3387DD9926729AD200CF26F1 /* BasicData.swift in Sources */,
+				3387DD97267297AA00CF26F1 /* NicknameCheckService.swift in Sources */,
 				33AAD348266F87C200907BCF /* f.swift in Sources */,
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
 				33AAD2FC266F76BC00907BCF /* APIConstants.swift in Sources */,

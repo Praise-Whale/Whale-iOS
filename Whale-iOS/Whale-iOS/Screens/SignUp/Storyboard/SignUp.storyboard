@@ -462,7 +462,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A6E-g9-qH7">
                                 <rect key="frame" x="51" y="414" width="312" height="49"/>
-                                <color key="backgroundColor" name="grey_1"/>
+                                <color key="backgroundColor" name="sand_yellow"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="J0N-u6-jM4"/>
                                 </constraints>
@@ -477,6 +477,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="touchUpNextBtn:" destination="Bjy-Fp-Zpl" eventType="touchUpInside" id="0kZ-Yt-vSM"/>
                                     <action selector="touchUpNextPageBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WM9-Cl-m5v"/>
                                 </connections>
                             </button>
