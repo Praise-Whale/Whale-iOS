@@ -6,6 +6,7 @@
 //
 
 import Foundation
-struct SignUpData {
-    <#fields#>
+struct SignUpData: Codable {
+    let nickName, whaleName, deviceToken: String
 }
+
