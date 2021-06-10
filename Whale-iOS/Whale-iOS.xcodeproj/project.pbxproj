@@ -123,7 +123,7 @@
 		3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3386D1B926BB00470023579F /* RoundSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentView.swift; sourceTree = "<group>"; };
 		3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
-		3387DD922672901200CF26F1 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpData.swift; path = "Whale-iOS/Screens/SignUp/VC/SignUpData.swift"; sourceTree = SOURCE_ROOT; };
+		3387DD922672901200CF26F1 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpData.swift; path = "Whale-iOS/Screens/SignUp/Model/SignUpData.swift"; sourceTree = SOURCE_ROOT; };
 		33AAD2CE266F74AF00907BCF /* Whale-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whale-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAD2D1266F74AF00907BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,8 +213,7 @@
 			children = (
 				330A4909267275D6002DB3B4 /* Storyboard */,
 				330A490A267275DB002DB3B4 /* VC */,
-				330A490C267275E4002DB3B4 /* Cell */,
-				330A490B267275E0002DB3B4 /* Model */,
+				3387DD94267290ED00CF26F1 /* Model */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -236,19 +235,12 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		330A490B267275E0002DB3B4 /* Model */ = {
+		3387DD94267290ED00CF26F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				3387DD922672901200CF26F1 /* SignUpData.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		330A490C267275E4002DB3B4 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		33AAD2C5266F74AF00907BCF = {

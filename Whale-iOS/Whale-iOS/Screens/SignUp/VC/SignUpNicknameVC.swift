@@ -9,21 +9,32 @@ import UIKit
 
 class SignUpNicknameVC: UIViewController {
 
+    @IBOutlet var nicknameTextField: UITextField!
+    @IBOutlet var nextBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setTextFieldBackgroud()
+        makeTextFieldLeftPadding()
+        setNextBtnLayout(25)
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // set textField background Image
+    func setTextFieldBackgroud() {
+        nicknameTextField.background = UIImage(named: "nickname_box_nickname")
+        nicknameTextField.layer.borderWidth = 0
     }
-    */
 
+    func makeTextFieldLeftPadding() {
+        nicknameTextField.addLeftPadding(13)
+    }
+
+    func setNextBtnLayout(_ cornerRadius: CGFloat) {
+        nextBtn.isEnabled = false
+        nextBtn.layer.cornerRadius = cornerRadius
+    }
+    
+    @IBAction func touchUpBackSwipe(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
 }
