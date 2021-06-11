@@ -481,6 +481,40 @@
                                     <action selector="touchUpNextPageBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WM9-Cl-m5v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqL-E4-SJk">
+                                <rect key="frame" x="334" y="342" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jqL-E4-SJk" secondAttribute="height" multiplier="1:1" id="Zaq-HR-dDY"/>
+                                    <constraint firstAttribute="height" constant="16" id="fC5-hj-MHt"/>
+                                </constraints>
+                                <state key="normal" image="btn_delete"/>
+                                <connections>
+                                    <action selector="touchUpToNicknameTextFieldClear:" destination="Bjy-Fp-Zpl" eventType="touchUpInside" id="GPU-jl-AJa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용중인 닉네임이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-f7-Mnp" customClass="CustomLabel" customModule="Whale_iOS" customModuleProvider="target">
+                                <rect key="frame" x="129.5" y="376" width="155" height="20"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" name="dark_peach"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="-0.65000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-GX-9fD">
+                                <rect key="frame" x="342" y="376" width="8" height="20"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" name="brown_2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frk-Uq-ETZ">
+                                <rect key="frame" x="350" y="376" width="13" height="20"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <color key="textColor" name="grey_2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="d9B-Ny-F2X"/>
                         <color key="backgroundColor" name="yellow_2"/>
@@ -488,18 +522,25 @@
                             <constraint firstItem="f4o-eo-pwk" firstAttribute="centerY" secondItem="yQm-pa-GcY" secondAttribute="centerY" id="2CZ-Ja-EgW"/>
                             <constraint firstItem="m5m-oL-qAa" firstAttribute="leading" secondItem="94o-8r-4I0" secondAttribute="leading" id="2tP-rs-qbi"/>
                             <constraint firstItem="A6E-g9-qH7" firstAttribute="leading" secondItem="cN4-qv-f8K" secondAttribute="leading" id="2uY-zH-zVV"/>
+                            <constraint firstItem="cxb-f7-Mnp" firstAttribute="centerX" secondItem="cN4-qv-f8K" secondAttribute="centerX" id="3Ql-hn-Vtf"/>
+                            <constraint firstItem="Frk-Uq-ETZ" firstAttribute="trailing" secondItem="cN4-qv-f8K" secondAttribute="trailing" id="41U-GB-UM6"/>
+                            <constraint firstItem="cxb-f7-Mnp" firstAttribute="top" secondItem="cN4-qv-f8K" secondAttribute="bottom" constant="4" id="4X5-Zv-9Gc"/>
+                            <constraint firstItem="jqL-E4-SJk" firstAttribute="centerY" secondItem="cN4-qv-f8K" secondAttribute="centerY" id="5w8-Oc-MZc"/>
                             <constraint firstItem="LpC-uS-iFK" firstAttribute="top" secondItem="94o-8r-4I0" secondAttribute="bottom" constant="27" id="9bY-WT-s9W"/>
                             <constraint firstItem="cN4-qv-f8K" firstAttribute="leading" secondItem="d9B-Ny-F2X" secondAttribute="leading" constant="51" id="AJv-wP-jdN"/>
                             <constraint firstItem="xT0-T9-Rsj" firstAttribute="leading" secondItem="EVI-QK-klS" secondAttribute="trailing" constant="5" id="AkR-h7-QDF"/>
                             <constraint firstItem="d9B-Ny-F2X" firstAttribute="trailing" secondItem="cN4-qv-f8K" secondAttribute="trailing" constant="51" id="D4j-S6-mjd"/>
                             <constraint firstItem="xT0-T9-Rsj" firstAttribute="centerY" secondItem="EVI-QK-klS" secondAttribute="centerY" id="DEz-bZ-f5J"/>
                             <constraint firstItem="d9B-Ny-F2X" firstAttribute="trailing" secondItem="yQm-pa-GcY" secondAttribute="trailing" constant="42" id="DT3-ak-wa5"/>
+                            <constraint firstItem="CjC-GX-9fD" firstAttribute="centerY" secondItem="cxb-f7-Mnp" secondAttribute="centerY" id="Eqy-HB-c4x"/>
+                            <constraint firstItem="Frk-Uq-ETZ" firstAttribute="leading" secondItem="CjC-GX-9fD" secondAttribute="trailing" id="Ioa-XM-1q1"/>
                             <constraint firstItem="f4o-eo-pwk" firstAttribute="centerY" secondItem="94o-8r-4I0" secondAttribute="centerY" id="KC7-ak-wTr"/>
                             <constraint firstItem="yQm-pa-GcY" firstAttribute="leading" secondItem="Llp-XU-tia" secondAttribute="trailing" id="KxM-5s-S69"/>
                             <constraint firstItem="f4o-eo-pwk" firstAttribute="width" secondItem="f4o-eo-pwk" secondAttribute="height" multiplier="1:1" id="Pgj-Ep-zPr"/>
                             <constraint firstItem="94o-8r-4I0" firstAttribute="leading" secondItem="d9B-Ny-F2X" secondAttribute="leading" constant="42" id="Qpu-6q-S12"/>
                             <constraint firstItem="cN4-qv-f8K" firstAttribute="top" secondItem="m5m-oL-qAa" secondAttribute="bottom" constant="135" id="R2F-5A-Mkx"/>
                             <constraint firstItem="Llp-XU-tia" firstAttribute="width" secondItem="Llp-XU-tia" secondAttribute="height" multiplier="1:1" id="RYe-Wt-ddM"/>
+                            <constraint firstItem="jqL-E4-SJk" firstAttribute="trailing" secondItem="cN4-qv-f8K" secondAttribute="trailing" constant="-13" id="S6h-rr-X3E"/>
                             <constraint firstItem="m5m-oL-qAa" firstAttribute="top" secondItem="xT0-T9-Rsj" secondAttribute="bottom" id="YJN-vB-P4I"/>
                             <constraint firstItem="EVI-QK-klS" firstAttribute="top" secondItem="94o-8r-4I0" secondAttribute="bottom" id="ZSx-Yx-iBu"/>
                             <constraint firstItem="s4b-gH-yZv" firstAttribute="leading" secondItem="xT0-T9-Rsj" secondAttribute="trailing" id="b3s-x9-hYk"/>
@@ -510,6 +551,7 @@
                             <constraint firstItem="MAV-FW-ZxN" firstAttribute="top" secondItem="d9B-Ny-F2X" secondAttribute="top" constant="32" id="l5N-hn-4Gp"/>
                             <constraint firstItem="s4b-gH-yZv" firstAttribute="centerY" secondItem="EVI-QK-klS" secondAttribute="centerY" id="m34-F9-wA1"/>
                             <constraint firstItem="Llp-XU-tia" firstAttribute="leading" secondItem="f4o-eo-pwk" secondAttribute="trailing" id="mGd-nP-iN3"/>
+                            <constraint firstItem="Frk-Uq-ETZ" firstAttribute="centerY" secondItem="cxb-f7-Mnp" secondAttribute="centerY" id="o9q-pW-fUp"/>
                             <constraint firstItem="LpC-uS-iFK" firstAttribute="width" secondItem="xT0-T9-Rsj" secondAttribute="width" id="rMg-rf-ll4"/>
                             <constraint firstItem="LpC-uS-iFK" firstAttribute="leading" secondItem="xT0-T9-Rsj" secondAttribute="leading" id="vCv-dF-OQU"/>
                             <constraint firstItem="A6E-g9-qH7" firstAttribute="centerX" secondItem="cN4-qv-f8K" secondAttribute="centerX" id="vMG-qK-1Ie"/>
@@ -519,13 +561,17 @@
                     </view>
                     <navigationItem key="navigationItem" id="iuF-vB-agA"/>
                     <connections>
+                        <outlet property="cancelNicknameTextingBtn" destination="jqL-E4-SJk" id="Iqy-Fl-Ua6"/>
+                        <outlet property="editLimitAlertLabel" destination="Frk-Uq-ETZ" id="Qrd-sU-glx"/>
+                        <outlet property="editingCountLabel" destination="CjC-GX-9fD" id="9y3-fw-hLs"/>
+                        <outlet property="existingNicknameAlertLabel" destination="cxb-f7-Mnp" id="1XL-BH-Nre"/>
                         <outlet property="nextBtn" destination="A6E-g9-qH7" id="60V-hD-fpG"/>
                         <outlet property="nicknameTextField" destination="cN4-qv-f8K" id="NHI-Dg-AxR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fdw-k8-PKe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="84"/>
+            <point key="canvasLocation" x="1589.8550724637682" y="83.705357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zLr-ml-EWI">
@@ -555,6 +601,7 @@
         <image name="agree_ic_progress" width="57" height="57"/>
         <image name="agree_ic_progress1" width="159" height="159"/>
         <image name="btn_back" width="33" height="60"/>
+        <image name="btn_delete" width="48" height="48"/>
         <image name="main_img_dolphin" width="365" height="555"/>
         <image name="nickname_box_nickname" width="774" height="132"/>
         <image name="nickname_ic_progress2" width="159" height="159"/>
@@ -562,8 +609,11 @@
         <namedColor name="brown_2">
             <color red="0.23899999260902405" green="0.20800000429153442" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="dark_peach">
+            <color red="0.8666666666666667" green="0.45098039215686275" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="grey_1">
-            <color red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="grey_2">
             <color red="0.6119999885559082" green="0.6119999885559082" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -572,10 +622,10 @@
             <color red="1" green="0.83099997043609619" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="yellow_2">
-            <color red="1" green="0.96078431372549022" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.96100002527236938" blue="0.85500001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="yellow_4">
-            <color red="0.98431372549019602" green="0.88627450980392153" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.98400002717971802" green="0.88599997758865356" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
