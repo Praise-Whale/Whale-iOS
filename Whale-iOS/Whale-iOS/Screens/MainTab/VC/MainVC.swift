@@ -61,7 +61,18 @@ class MainVC: UIViewController {
         
     }
     
-
+    @IBAction func didBtnDidTap(_ sender: Any) {
+        let nextStoryboard = UIStoryboard(name: "MainYesPopup", bundle: nil)
+        
+        guard let dvc = nextStoryboard.instantiateViewController(identifier: "MainYesPopupVC") as? MainYesPopupVC else {
+            return
+        }
+        
+        dvc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(dvc, animated: false, completion: nil)
+    }
+    
 
 }
 
