@@ -15,6 +15,7 @@ class MainYesPopupVC: UIViewController {
     //MARK: - IBOutlets
     
     @IBOutlet var backgroundView: UIView!
+    @IBOutlet var popupView: UIView!
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleUnderView: UIView!
@@ -34,6 +35,8 @@ class MainYesPopupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDefaultStyle()
 
     }
     
@@ -43,6 +46,41 @@ class MainYesPopupVC: UIViewController {
 
 extension MainYesPopupVC {
     func setDefaultStyle() {
+        popupView.backgroundColor = .white
+        popupView.layer.borderWidth = 3
+        popupView.layer.borderColor = UIColor.yellow_3.cgColor
+        popupView.makeRounded(cornerRadius: 15)
+        
+        titleLabel.text = "누구에게 칭찬했나요?"
+        titleLabel.textColor = .brown_2
+        titleLabel.font = .NotoSansRegular(size: 18)
+        titleLabel.letterSpacing = -0.9
+        
+        titleUnderView.backgroundColor = .sand_yellow
+        titleUnderView.makeRounded(cornerRadius: 1)
+        
+        nameTextField.addLeftPadding(width: 13)
+        nameTextField.addRightPadding(width: 13)
+        nameTextField.font = .NotoSansRegular(size: 13)
+        nameTextField.layer.borderColor = UIColor.yellow_3.cgColor
+        nameTextField.layer.borderWidth = 1
+        nameTextField.placeholder = "이름을 실명으로 입력해주세요."
+        
+        recentTitleLabel.textColor = .grey_2
+        recentTitleLabel.font = .NotoSansRegular(size: 14)
+        recentTitleLabel.text = "최근 칭찬한 사람"
+        recentTitleLabel.letterSpacing = -0.7
+        
+        submitBtn.makeRounded(cornerRadius: submitBtn.frame.height/2)
+        submitBtn.setTitle("확인", for: .normal)
+        submitBtn.setTitleColor(.black, for: .normal)
+    }
+    
+    func setNameTextExists() {
+        
+    }
+    
+    func setNameTextNotExists() {
         
     }
 }

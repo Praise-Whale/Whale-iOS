@@ -41,7 +41,7 @@
                                         </constraints>
                                         <state key="normal" title="닫기"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
                                         <rect key="frame" x="27" y="76" width="298" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="amm-Ab-oUe"/>
@@ -152,6 +152,7 @@
                         <outlet property="countLabel" destination="fBo-Gv-yvF" id="dWd-bU-032"/>
                         <outlet property="leftBlurImageView" destination="eBw-Kw-ixL" id="UWz-be-cVN"/>
                         <outlet property="nameTextField" destination="bqI-yP-clM" id="kAt-bH-XaJ"/>
+                        <outlet property="popupView" destination="gKy-uF-vUP" id="Mgv-aS-FTE"/>
                         <outlet property="recentCollectionView" destination="KbA-TT-JYb" id="LDn-15-nmU"/>
                         <outlet property="recentTitleLabel" destination="T3G-Sg-LUw" id="VwH-al-yMN"/>
                         <outlet property="rightBlurImageView" destination="d9X-5h-lCS" id="1Gb-Ac-FpU"/>
