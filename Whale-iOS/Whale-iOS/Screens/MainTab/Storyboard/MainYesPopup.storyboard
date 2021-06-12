@@ -41,7 +41,7 @@
                                         </constraints>
                                         <state key="normal" title="닫기"/>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
                                         <rect key="frame" x="27" y="76" width="298" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="amm-Ab-oUe"/>
