@@ -8,22 +8,41 @@
 import UIKit
 
 class MainYesPopupVC: UIViewController {
+    
+    //MARK: - Custom Variables
+    
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet var backgroundView: UIView!
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleUnderView: UIView!
+    @IBOutlet var closeBtn: UIButton!
+    
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var countLabel: UILabel!
+    
+    @IBOutlet var recentTitleLabel: UILabel!
+    @IBOutlet var recentCollectionView: UICollectionView!
+    @IBOutlet var leftBlurImageView: UIImageView!
+    @IBOutlet var rightBlurImageView: UIImageView!
+    
+    @IBOutlet var submitBtn: UIButton!
+    
+    //MARK: - Lifecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: - IBActions
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension MainYesPopupVC {
+    func setDefaultStyle() {
+        
     }
-    */
-
 }
