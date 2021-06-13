@@ -4,7 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GmarketSansTTFMedium</string>
+		<string>GmarketSansTTFMedium.ttf</string>
 		<string>NotoSansCJKkr-Bold.otf</string>
 		<string>NotoSansCJKkr-Regular.otf</string>
 		<string>NotoSansCJKkr-Medium.otf</string>
@@ -41,7 +41,7 @@
 					<key>UISceneDelegateClassName</key>
 					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
 					<key>UISceneStoryboardFile</key>
-					<string>TabBar</string>
+					<string>Onboarding</string>
 				</dict>
 			</array>
 		</dict>
