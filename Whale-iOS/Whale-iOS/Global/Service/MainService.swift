@@ -11,8 +11,9 @@ import Alamofire
 struct MainService {
     static let shared = MainService()
     
-    // MARK: - 특정 유저 검색
-    func searchUser(id:Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
+    // MARK: - 메인 칭찬 메시지 받아오기
+    
+    func mainService(id:Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
         
         var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MjM4NTkxMTMsImV4cCI6MTYyNjQ1MTExMywiaXNzIjoicHJhaXNlIn0.cVgVs044cfL3_8iT9HTn_lWSVSTxPbzV85FSmBRyrgY"
         if let savedToken = UserDefaults.standard.string(forKey: "token") {

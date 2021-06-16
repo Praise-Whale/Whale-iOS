@@ -166,7 +166,7 @@ extension MainVC {
     }
     
     func callMainService() {
-        MainService.shared.searchUser(id: praiseId) { (networkResult) -> (Void) in
+        MainService.shared.mainService(id: praiseId) { (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let praiseData = data as? MainPraiseSentence {
