@@ -43,6 +43,11 @@ class MainYesPopupVC: UIViewController {
     
     //MARK: - IBActions
 
+    @IBAction func closeBtnDidTap(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
+    
 }
 
 extension MainYesPopupVC {

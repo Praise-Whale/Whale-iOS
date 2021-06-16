@@ -40,6 +40,9 @@
                                             <constraint firstAttribute="width" constant="48" id="S1a-Vf-3Mj"/>
                                         </constraints>
                                         <state key="normal" title="닫기"/>
+                                        <connections>
+                                            <action selector="closeBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sxr-xZ-tRC"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
                                         <rect key="frame" x="27" y="76" width="298" height="44"/>
