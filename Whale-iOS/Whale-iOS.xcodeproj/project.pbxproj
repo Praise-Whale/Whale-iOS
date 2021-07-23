@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330A48FE26724007002DB3B4 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD317266F7C6E00907BCF /* NotoSansCJKkr-Regular.otf */; };
 		330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A48FF2672432C002DB3B4 /* OnboardingVC.swift */; };
 		330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A49012672474F002DB3B4 /* OnboardingCVCell.swift */; };
 		330A4904267249B7002DB3B4 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A4903267249B7002DB3B4 /* Onboarding.swift */; };
@@ -32,9 +31,6 @@
 		33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD30F266F7B7700907BCF /* CircularProgressView.swift */; };
 		33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD311266F7BA500907BCF /* CircularProgressBar.swift */; };
 		33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD313266F7BC700907BCF /* CustomLabel.swift */; };
-		33AAD319266F7C7500907BCF /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD316266F7C6600907BCF /* NotoSansCJKkr-Bold.otf */; };
-		33AAD31A266F7C7700907BCF /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD318266F7C7300907BCF /* NotoSansCJKkr-Medium.otf */; };
-		33AAD31D266F83F000907BCF /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD31C266F83EE00907BCF /* GmarketSansTTFMedium.ttf */; };
 		33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD329266F871600907BCF /* Onboarding.storyboard */; };
 		33AAD342266F87AB00907BCF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD341266F87AB00907BCF /* Login.storyboard */; };
 		33AAD344266F87B600907BCF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD343266F87B600907BCF /* LoginVC.swift */; };
@@ -61,6 +57,12 @@
 		33AAD382266F88E000907BCF /* p.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD381266F88E000907BCF /* p.swift */; };
 		33AAD387266F892300907BCF /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD386266F892300907BCF /* TabBar.storyboard */; };
 		33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD388266F895300907BCF /* WhaleTBC.swift */; };
+		33CA10AC26AB34F60017EDC9 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10A626AB34E50017EDC9 /* Roboto-Bold.ttf */; };
+		33CA10AD26AB34F80017EDC9 /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10AA26AB34E60017EDC9 /* GmarketSansTTFBold.ttf */; };
+		33CA10AE26AB34FA0017EDC9 /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10AB26AB34E60017EDC9 /* AppleSDGothicNeoSB.ttf */; };
+		33CA10AF26AB34FB0017EDC9 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10A926AB34E60017EDC9 /* AppleSDGothicNeoR.ttf */; };
+		33CA10B026AB34FE0017EDC9 /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10A826AB34E50017EDC9 /* AppleSDGothicNeoM.ttf */; };
+		33CA10B126AB35000017EDC9 /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10A726AB34E50017EDC9 /* AppleSDGothicNeoB.ttf */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,10 +93,6 @@
 		33AAD30F266F7B7700907BCF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		33AAD311266F7BA500907BCF /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		33AAD313266F7BC700907BCF /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
-		33AAD316266F7C6600907BCF /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
-		33AAD317266F7C6E00907BCF /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
-		33AAD318266F7C7300907BCF /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
-		33AAD31C266F83EE00907BCF /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		33AAD329266F871600907BCF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		33AAD341266F87AB00907BCF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		33AAD343266F87B600907BCF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -121,6 +119,12 @@
 		33AAD381266F88E000907BCF /* p.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p.swift; sourceTree = "<group>"; };
 		33AAD386266F892300907BCF /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		33AAD388266F895300907BCF /* WhaleTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleTBC.swift; sourceTree = "<group>"; };
+		33CA10A626AB34E50017EDC9 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		33CA10A726AB34E50017EDC9 /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
+		33CA10A826AB34E50017EDC9 /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
+		33CA10A926AB34E60017EDC9 /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoR.ttf; sourceTree = "<group>"; };
+		33CA10AA26AB34E60017EDC9 /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
+		33CA10AB26AB34E60017EDC9 /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0971945F9B7655482D500 /* Pods-Whale-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.release.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -318,10 +322,12 @@
 		33AAD315266F7C2100907BCF /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				33AAD31C266F83EE00907BCF /* GmarketSansTTFMedium.ttf */,
-				33AAD316266F7C6600907BCF /* NotoSansCJKkr-Bold.otf */,
-				33AAD318266F7C7300907BCF /* NotoSansCJKkr-Medium.otf */,
-				33AAD317266F7C6E00907BCF /* NotoSansCJKkr-Regular.otf */,
+				33CA10A726AB34E50017EDC9 /* AppleSDGothicNeoB.ttf */,
+				33CA10A826AB34E50017EDC9 /* AppleSDGothicNeoM.ttf */,
+				33CA10A926AB34E60017EDC9 /* AppleSDGothicNeoR.ttf */,
+				33CA10AB26AB34E60017EDC9 /* AppleSDGothicNeoSB.ttf */,
+				33CA10AA26AB34E60017EDC9 /* GmarketSansTTFBold.ttf */,
+				33CA10A626AB34E50017EDC9 /* Roboto-Bold.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -710,21 +716,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CA10AE26AB34FA0017EDC9 /* AppleSDGothicNeoSB.ttf in Resources */,
 				33AAD2DE266F74B000907BCF /* LaunchScreen.storyboard in Resources */,
-				330A48FE26724007002DB3B4 /* NotoSansCJKkr-Regular.otf in Resources */,
-				33AAD31D266F83F000907BCF /* GmarketSansTTFMedium.ttf in Resources */,
-				33AAD319266F7C7500907BCF /* NotoSansCJKkr-Bold.otf in Resources */,
 				33AAD2DB266F74B000907BCF /* Assets.xcassets in Resources */,
+				33CA10AC26AB34F60017EDC9 /* Roboto-Bold.ttf in Resources */,
 				33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */,
 				33AAD37C266F88C900907BCF /* LevelsInfo.storyboard in Resources */,
 				33AAD364266F884A00907BCF /* Level.storyboard in Resources */,
-				33AAD31A266F7C7700907BCF /* NotoSansCJKkr-Medium.otf in Resources */,
+				33CA10B026AB34FE0017EDC9 /* AppleSDGothicNeoM.ttf in Resources */,
 				33AAD387266F892300907BCF /* TabBar.storyboard in Resources */,
+				33CA10AD26AB34F80017EDC9 /* GmarketSansTTFBold.ttf in Resources */,
+				33CA10B126AB35000017EDC9 /* AppleSDGothicNeoB.ttf in Resources */,
 				33AAD35E266F882C00907BCF /* PraiseCard.storyboard in Resources */,
 				33AAD342266F87AB00907BCF /* Login.storyboard in Resources */,
 				33AAD370266F888400907BCF /* Settings.storyboard in Resources */,
 				33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */,
 				330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */,
+				33CA10AF26AB34FB0017EDC9 /* AppleSDGothicNeoR.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
