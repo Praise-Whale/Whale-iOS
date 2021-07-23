@@ -12,6 +12,7 @@ struct Onboarding {
     var secondPraiseText: String
     var secondRange1Text: String
     var subExpText: String
+    var sub2ExpText: String
     var descriptionText: String
     var subImgName: String
 }
