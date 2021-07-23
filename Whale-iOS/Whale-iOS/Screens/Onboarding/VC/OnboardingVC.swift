@@ -31,9 +31,9 @@ class OnboardingVC: UIViewController {
     // Onboarding Data 구성
     func setOnboardingData() {
         onboardingArray.append(contentsOf:
-                                [Onboarding(firstPraiseText: "하루에 한 번씩", firstRange1Text: "", secondPraiseText: "칭찬해요", secondRange1Text: "해요", subExpText: "매일 매일 다른 칭찬 미션을 \n하나씩 보내드릴게요!", descriptionText: "원하는 시간에 리마인드 알림도 받을 수 있어요:)", subImgName: "onboarding_1_img_whale"),
-                                 Onboarding(firstPraiseText: "나만의 고래를", firstRange1Text: "를", secondPraiseText: "춤 추게 해요", secondRange1Text: "해요", subExpText: "칭찬을 할 때 마다 \n나의 고래가 춤을 춰요!", descriptionText: "칭찬 횟수에 따라 고래의 레벨이 높아져요:)", subImgName: "onboarding_2_img_whale"),
-                                 Onboarding(firstPraiseText: "칭찬을 모아보고", firstRange1Text: "칭찬을", secondPraiseText: "칭찬 랭킹을 확인해요", secondRange1Text: "칭찬 랭킹", subExpText: "내가 한 칭찬을 모아보고 \n칭찬 대상에 대한 랭킹도 확인해요!", descriptionText: "누구에게 언제 어떤 칭찬을 했는지 한 번에 확인해요:)", subImgName: "onboarding_3_img_whale")
+                                [Onboarding(firstPraiseText: "하루에 한 번씩", firstRange1Text: "", secondPraiseText: "칭찬해요", secondRange1Text: "해요", subExpText: "매일 매일 다른 칭찬 미션을", sub2ExpText: "하나씩 보내드릴게요!", descriptionText: "원하는 시간에 리마인드 알림도 받을 수 있어요:)", subImgName: "onboarding1ImgWhale"),
+                                 Onboarding(firstPraiseText: "나만의 고래를", firstRange1Text: "를", secondPraiseText: "춤 추게 해요", secondRange1Text: "해요", subExpText: "칭찬을 할 때 마다", sub2ExpText: "나의 고래가 춤을 춰요!", descriptionText: "칭찬 횟수에 따라 고래의 레벨이 높아져요:)", subImgName: "onboarding2ImgWhale"),
+                                 Onboarding(firstPraiseText: "칭찬을 모아보고", firstRange1Text: "칭찬을", secondPraiseText: "칭찬 랭킹을 확인해요", secondRange1Text: "칭찬 랭킹", subExpText: "내가 한 칭찬을 모아보고", sub2ExpText: "칭찬 대상에 대한 랭킹도 확인해요!", descriptionText: "누구에게 언제 어떤 칭찬을 했는지 한 번에 확인해요:)", subImgName: "onboarding3ImgWhale")
                                 ])
         onboardingPageControl.numberOfPages = onboardingArray.count + 1
     }
@@ -93,8 +93,9 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
         if indexPath.row < 3 {
             let firstOnboardingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCVCell", for: indexPath) as! OnboardingCVCell
             
-            firstOnboardingCell.customLabels(onboardingArray[indexPath.row].firstPraiseText, onboardingArray[indexPath.row].secondPraiseText, onboardingArray[indexPath.row].firstRange1Text, onboardingArray[indexPath.row].secondRange1Text, onboardingArray[indexPath.row].subExpText, descriptionText: onboardingArray[indexPath.row].descriptionText)
+            firstOnboardingCell.customLabels(onboardingArray[indexPath.row].firstPraiseText, onboardingArray[indexPath.row].secondPraiseText, onboardingArray[indexPath.row].firstRange1Text, onboardingArray[indexPath.row].secondRange1Text, onboardingArray[indexPath.row].subExpText, onboardingArray[indexPath.row].sub2ExpText, descriptionText: onboardingArray[indexPath.row].descriptionText)
             firstOnboardingCell.whaleImageView.image = UIImage(named: onboardingArray[indexPath.row].subImgName)
+            firstOnboardingCell.subExplanationLabel.sizeToFit()
             firstOnboardingCell.makeAnimation()
             
             return firstOnboardingCell
