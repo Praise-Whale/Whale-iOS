@@ -12,9 +12,10 @@ struct NicknameCheckService {
     static let shared = NicknameCheckService()
     
     func checkNickname(nickname:String, completion: @escaping (NetworkResult<Any>) -> (Void)){
-        let encoding = String.Encoding(rawValue: CFStringConvertEncodingToNSStringEncoding(0x0422))
-        let encodedNickname = String(cString: nickname, encoding: encoding)
-        let url = APIConstants.nicknameCheckURL + "\(String(describing: encodedNickname))"
+      
+        let urlString = APIConstants.nicknameCheckURL + nickname
+        let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: encodedString)!
         let header: HTTPHeaders = [ "Content-Type":"application/json"]
         let dataRequest = AF.request(url,
                                      method: .get,
@@ -35,7 +36,6 @@ struct NicknameCheckService {
                 completion(.networkFail) }
         }
     }
-    
     
     
     private func judgeData(status: Int, data: Data) -> NetworkResult<Any> {
