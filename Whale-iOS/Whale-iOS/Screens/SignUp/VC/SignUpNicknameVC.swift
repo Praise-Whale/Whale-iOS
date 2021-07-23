@@ -69,8 +69,7 @@ class SignUpNicknameVC: UIViewController {
         NicknameCheckService.shared.checkNickname(nickname: nicknameTextField.text!){ [self]
             (networkResult) -> (Void) in
             switch networkResult {
-            case .success(let msg):
-                print(msg)
+            case .success:
                 setStateOfBtnNicknameTF(true)
             case .requestErr(let msg):
                 if let message = msg as? String {
