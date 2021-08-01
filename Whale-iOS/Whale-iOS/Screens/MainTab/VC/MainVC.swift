@@ -120,7 +120,7 @@ extension MainVC {
         contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
-        contentLabel.text = "(네트워크 연결을 확인하세요!)"
+        contentLabel.text = "(네트워크 연결을 확인하세요)"
         
         didntBtn.backgroundColor = .grey_1
         didntBtn.setTitleColor(.black, for: .normal)
@@ -140,7 +140,7 @@ extension MainVC {
         messageLabel.textColor = .grey_2
         messageLabel.letterSpacing = -0.65
         messageLabel.lineSpacing(lineHeightMultiple: 1)
-        messageLabel.text = "와이파이나 모바일 데이터가 연결되어 있는지 확인하세요!\n칭찬할고래 iOS 버전은 지은이와 다은이가 만들었습니다!"
+        messageLabel.text = "와이파이, 모바일 데이터 연결을 확인하세요!\n칭찬할고래 iOS는 지은이와 다은이가 만들었습니다!"
     }
     
     /// 유저디폴트에서 닉네임을 받아와 설정하는 함수
