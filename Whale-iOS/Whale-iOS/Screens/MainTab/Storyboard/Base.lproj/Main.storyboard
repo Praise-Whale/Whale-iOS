@@ -133,9 +133,27 @@
                                             <constraint firstAttribute="height" constant="43" id="Ita-DJ-WhI"/>
                                         </constraints>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QGP-NN-orI">
+                                        <rect key="frame" x="18" y="310" width="283" height="43"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfU-pa-yfD">
+                                                <rect key="frame" x="121" y="9" width="41.5" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="tfU-pa-yfD" secondAttribute="bottom" constant="12" id="0Yl-ct-Sqz"/>
+                                            <constraint firstItem="tfU-pa-yfD" firstAttribute="top" secondItem="QGP-NN-orI" secondAttribute="top" constant="9" id="nrC-QE-tKQ"/>
+                                            <constraint firstItem="tfU-pa-yfD" firstAttribute="centerX" secondItem="QGP-NN-orI" secondAttribute="centerX" id="xoY-Qf-hIb"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
+                                    <constraint firstItem="QGP-NN-orI" firstAttribute="width" secondItem="ADv-Fy-7vS" secondAttribute="width" id="0co-5H-kaQ"/>
                                     <constraint firstAttribute="trailing" secondItem="05q-g1-rXZ" secondAttribute="trailing" constant="18" id="9Pb-TG-ixV"/>
                                     <constraint firstItem="ADv-Fy-7vS" firstAttribute="trailing" secondItem="05q-g1-rXZ" secondAttribute="trailing" id="E2k-GM-5nu"/>
                                     <constraint firstItem="05q-g1-rXZ" firstAttribute="top" secondItem="dor-xp-n4B" secondAttribute="top" constant="18" id="GXe-sE-UYE"/>
@@ -143,7 +161,10 @@
                                     <constraint firstAttribute="width" secondItem="dor-xp-n4B" secondAttribute="height" multiplier="276:321" id="Nqc-lv-zXn"/>
                                     <constraint firstItem="ADv-Fy-7vS" firstAttribute="leading" secondItem="05q-g1-rXZ" secondAttribute="leading" id="XHr-x9-YRm"/>
                                     <constraint firstItem="ADv-Fy-7vS" firstAttribute="top" secondItem="05q-g1-rXZ" secondAttribute="bottom" constant="14" id="Z1f-ek-tvo"/>
+                                    <constraint firstItem="QGP-NN-orI" firstAttribute="centerX" secondItem="ADv-Fy-7vS" secondAttribute="centerX" id="ZND-5N-VbA"/>
+                                    <constraint firstItem="QGP-NN-orI" firstAttribute="height" secondItem="ADv-Fy-7vS" secondAttribute="height" id="nTz-QQ-vEy"/>
                                     <constraint firstAttribute="bottom" secondItem="ADv-Fy-7vS" secondAttribute="bottom" constant="18" id="s8L-JW-mHG"/>
+                                    <constraint firstItem="QGP-NN-orI" firstAttribute="centerY" secondItem="ADv-Fy-7vS" secondAttribute="centerY" id="syG-fH-BwW"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKT-W9-rec">
@@ -203,7 +224,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="afterPraiseLabel" destination="tfU-pa-yfD" id="aws-j8-JxJ"/>
+                        <outlet property="afterPraiseView" destination="QGP-NN-orI" id="mg7-Ai-sfx"/>
                         <outlet property="backgroundView" destination="8bC-Xf-vdC" id="5mN-V7-aeL"/>
+                        <outlet property="beforeStackView" destination="ADv-Fy-7vS" id="AN1-FQ-a6y"/>
                         <outlet property="contentBoxView" destination="dor-xp-n4B" id="NUK-hm-rvt"/>
                         <outlet property="contentInnerBoxView" destination="05q-g1-rXZ" id="pg6-Uw-jML"/>
                         <outlet property="contentLabel" destination="n0B-L5-pCZ" id="MM9-XB-7ZS"/>
