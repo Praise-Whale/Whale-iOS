@@ -821,7 +821,6 @@
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
 				37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */,
-				33AAD33A266F878700907BCF /* c.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
 				33AAD350266F87F200907BCF /* g.swift in Sources */,
@@ -838,7 +837,6 @@
 				33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */,
 				33AAD35A266F881900907BCF /*  i.swift in Sources */,
 				37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */,
-				33AAD32E266F873000907BCF /* a.swift in Sources */,
 				33AAD2FA266F76A200907BCF /* GenericResponse.swift in Sources */,
 				33AAD30A266F7AE400907BCF /* UITextField+Extension.swift in Sources */,
 				33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */,
@@ -852,7 +850,6 @@
 				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,
 				37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */,
 				37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */,
-				33AAD33C266F878F00907BCF /* d.swift in Sources */,
 				33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */,
 				33AAD304266F787400907BCF /* UIColor+Additions.swift in Sources */,
 			);
@@ -1003,7 +1000,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZS26WP93H;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1023,7 +1020,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZS26WP93H;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
