@@ -7,12 +7,18 @@
 
 import UIKit
 
+enum PraiseState {
+    case before, success, fail
+}
+
 class MainVC: UIViewController {
     
     //MARK: - Custom Variables
     
     var nickname: String = "다나고래"
     var praiseId: Int = 0
+    
+    var todayPraiseState: PraiseState = .before
     
     //MARK: - IBOutlets
 
@@ -59,6 +65,10 @@ class MainVC: UIViewController {
         print(UserDefaults.standard.integer(forKey: "PraiseId"))
         print(UserDefaults.standard.string(forKey: "DateLastVisited"))
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setWhale()
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {
@@ -136,11 +146,14 @@ extension MainVC {
         didBtn.makeRounded(cornerRadius: didBtn.frame.height/2)
         didBtn.setTitle("했어요!", for: .normal)
         
+        messageImageView.image = UIImage(named: "mainBoxTip")
+        
         messageLabel.font = .NotoSansRegular(size: 13)
         messageLabel.textColor = .grey_2
         messageLabel.letterSpacing = -0.65
         messageLabel.lineSpacing(lineHeightMultiple: 1)
-        messageLabel.text = "와이파이, 모바일 데이터 연결을 확인하세요!\n칭찬할고래 iOS는 지은이와 다은이가 만들었습니다!"
+        messageLabel.textAlignment = .center
+        messageLabel.text = "칭찬할고래 iOS는 지은이와 다은이가 만들었습니다!"
     }
     
     /// 유저디폴트에서 닉네임을 받아와 설정하는 함수
@@ -212,6 +225,17 @@ extension MainVC {
             
             /// 최근 방문 날짜를 오늘 날짜로 업데이트
             UserDefaults.standard.setValue(date, forKey: "DateLastVisited")
+        }
+    }
+    
+    func setWhale() {
+        switch todayPraiseState {
+        case .before:
+            whaleImageView.image = UIImage(named: "mainImgWhale")
+        case .success:
+            whaleImageView.image = UIImage(named: "mainImgWhaleSuccess")
+        case .fail:
+            whaleImageView.image = UIImage(named: "mainImgWhaleFail")
         }
     }
     
