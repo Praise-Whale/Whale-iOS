@@ -21,6 +21,7 @@ class MainYesPopupVC: UIViewController {
     @IBOutlet var titleUnderView: UIView!
     @IBOutlet var closeBtn: UIButton!
     
+    @IBOutlet var nameView: UIView!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var countLabel: UILabel!
     
@@ -65,8 +66,6 @@ extension MainYesPopupVC {
         titleUnderView.backgroundColor = .sand_yellow
         titleUnderView.makeRounded(cornerRadius: 1)
         
-        nameTextField.addLeftPadding(width: 13)
-//        nameTextField.addRightPadding(width: 5)
         nameTextField.font = .NotoSansRegular(size: 13)
         nameTextField.layer.borderColor = UIColor.yellow_3.cgColor
         nameTextField.layer.borderWidth = 1
@@ -93,3 +92,5 @@ extension MainYesPopupVC {
         submitBtn.backgroundColor = .grey_1
     }
 }
+
+
