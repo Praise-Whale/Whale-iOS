@@ -18,7 +18,9 @@ class MainVC: UIViewController {
     var nickname: String = "다나고래"
     var praiseId: Int = 0
     
-    var todayPraiseState: PraiseState = .before
+    var todayPraiseState: PraiseState = .fail
+    
+    var todayMessage: String = ""
     
     //MARK: - IBOutlets
 
@@ -44,6 +46,9 @@ class MainVC: UIViewController {
     @IBOutlet var contentLabel: UILabel!
     @IBOutlet var didntBtn: UIButton!
     @IBOutlet var didBtn: UIButton!
+    @IBOutlet var beforeStackView: UIStackView!
+    @IBOutlet var afterPraiseView: UIView!
+    @IBOutlet weak var afterPraiseLabel: UILabel!
     
     /// 하단 칭찬 설명
     @IBOutlet var whaleImageView: UIImageView!
@@ -68,7 +73,7 @@ class MainVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        setWhale()
+        adjustState()
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {
@@ -146,7 +151,10 @@ extension MainVC {
         didBtn.makeRounded(cornerRadius: didBtn.frame.height/2)
         didBtn.setTitle("했어요!", for: .normal)
         
+        afterPraiseView.makeRounded(cornerRadius: 12)
+        
         messageImageView.image = UIImage(named: "mainBoxTip")
+        messageLabel.font = .NotoSansRegular(size: 15)
         
         messageLabel.font = .NotoSansRegular(size: 13)
         messageLabel.textColor = .grey_2
@@ -184,7 +192,10 @@ extension MainVC {
             case .success(let data):
                 if let praiseData = data as? MainPraiseSentence {
                     self.contentLabel.text = praiseData.homePraise.todayPraise
-                    self.messageLabel.text = praiseData.homePraise.praiseDescription
+                    
+                    if self.todayPraiseState == .before {
+                        self.messageLabel.text = praiseData.homePraise.praiseDescription
+                    }
                 }
             case .requestErr(let msg):
                 print("[main] request error")
@@ -228,15 +239,48 @@ extension MainVC {
         }
     }
     
-    func setWhale() {
+    func adjustState() {
         switch todayPraiseState {
         case .before:
-            whaleImageView.image = UIImage(named: "mainImgWhale")
+            setBeforePraise()
         case .success:
-            whaleImageView.image = UIImage(named: "mainImgWhaleSuccess")
+           setSuccessPraise()
         case .fail:
-            whaleImageView.image = UIImage(named: "mainImgWhaleFail")
+           setFailPraise()
         }
     }
     
+    func setBeforePraise() {
+        beforeStackView.isHidden = false
+        afterPraiseView.isHidden = true
+        whaleImageView.image = UIImage(named: "mainImgWhale")
+    }
+    
+    func setSuccessPraise() {
+        beforeStackView.isHidden = true
+        afterPraiseView.isHidden = false
+        whaleImageView.image = UIImage(named: "mainImgWhaleSuccess")
+        
+        let attributedString = NSMutableAttributedString(string: "오늘의 칭찬 완료")
+        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.NotoSansBold(size: 17), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료"))
+        attributedString.addAttribute(.foregroundColor, value: UIColor(red: 76/255, green: 136/255, blue: 242/255, alpha: 1), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료"))
+        
+        afterPraiseView.backgroundColor = UIColor(red: 76/255, green: 136/255, blue: 242/255, alpha: 0.13)
+        afterPraiseLabel.attributedText = attributedString
+        messageLabel.text = "완료한 칭찬은 카드서랍에서 확인할 수 있어요!"
+    }
+    
+    func setFailPraise() {
+        beforeStackView.isHidden = true
+        afterPraiseView.isHidden = false
+        whaleImageView.image = UIImage(named: "mainImgWhaleFail")
+        
+        let attributedString = NSMutableAttributedString(string: "오늘의 칭찬 미완료")
+        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.NotoSansBold(size: 17), range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
+        attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
+        
+        afterPraiseView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
+        afterPraiseLabel.attributedText = attributedString
+        messageLabel.text = "내일은 꼭 칭찬해서\n고래를 춤 추게 해요!"
+    }
 }
