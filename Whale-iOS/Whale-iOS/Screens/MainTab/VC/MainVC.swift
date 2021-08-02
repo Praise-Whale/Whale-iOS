@@ -18,7 +18,7 @@ class MainVC: UIViewController {
     var nickname: String = "다나고래"
     var praiseId: Int = 0
     
-    var todayPraiseState: PraiseState = .fail
+    var todayPraiseState: PraiseState = .before
     
     var todayMessage: String = ""
     
