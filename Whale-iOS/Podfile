@@ -9,4 +9,5 @@ target 'Whale-iOS' do
   pod 'Alamofire' 
   pod 'Firebase/Analytics'
   pod 'Firebase/Messaging'
+  pod 'lottie-ios'
 end
