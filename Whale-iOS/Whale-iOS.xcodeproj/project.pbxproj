@@ -21,6 +21,7 @@
 		3386D1B526BAF3FE0023579F /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AF26BAF3F40023579F /* AppleSDGothicNeoSB.ttf */; };
 		3386D1B726BAF4020023579F /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B026BAF3F50023579F /* GmarketSansTTFBold.ttf */; };
 		3386D1B826BAF4040023579F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */; };
+		3386D1BA26BB00470023579F /* RoundSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386D1B926BB00470023579F /* RoundSegmentView.swift */; };
 		33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D1266F74AF00907BCF /* AppDelegate.swift */; };
 		33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */; };
 		33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD2D7266F74AF00907BCF /* Main.storyboard */; };
@@ -94,6 +95,7 @@
 		3386D1AF26BAF3F40023579F /* AppleSDGothicNeoSB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoSB.ttf; sourceTree = "<group>"; };
 		3386D1B026BAF3F50023579F /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 		3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		3386D1B926BB00470023579F /* RoundSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentView.swift; sourceTree = "<group>"; };
 		33AAD2CE266F74AF00907BCF /* Whale-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whale-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAD2D1266F74AF00907BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 			children = (
 				33AAD311266F7BA500907BCF /* CircularProgressBar.swift */,
 				33AAD313266F7BC700907BCF /* CustomLabel.swift */,
+				3386D1B926BB00470023579F /* RoundSegmentView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
 				33AAD368266F885E00907BCF /* k.swift in Sources */,
+				3386D1BA26BB00470023579F /* RoundSegmentView.swift in Sources */,
 				335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */,
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
 				33AAD2FC266F76BC00907BCF /* APIConstants.swift in Sources */,
