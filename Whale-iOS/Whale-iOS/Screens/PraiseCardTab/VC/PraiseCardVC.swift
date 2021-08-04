@@ -13,16 +13,26 @@ class PraiseCardVC: UIViewController {
     var nicknameLabel = UILabel()
     var praiseCardLabel = UILabel()
     var yellowBoxView = UIView()
+    @IBOutlet var roundSegmentView: RoundSegmentView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAutoLayout()
         setSuperViewLayout()
         makeTopView()
+    }
+    
+    //추후에 오토레이아웃 적용시 사용할 함수
+    func setAutoLayout() {
+        //screenSize에 따라 달라질 동적 width, height
+        roundSegmentView.frameWidth = 225
+        roundSegmentView.frameHeight = 51
     }
     
     //MARK: - set superView layout
     func setSuperViewLayout() {
         self.view.backgroundColor = .yellow_2
+        self.roundSegmentView.backgroundColor = .clear
     }
     
     //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundSegmentControl)
@@ -60,5 +70,14 @@ class PraiseCardVC: UIViewController {
             make.width.equalTo(81)
             make.centerX.equalTo(praiseCardLabel)
         }
+        
+        roundSegmentView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(yellowBoxView.snp.bottom).offset(34)
+            make.height.equalTo(51)
+            make.width.equalTo(225)
+            make.centerX.equalTo(yellowBoxView)
+        }
     }
 }
+    
+    
