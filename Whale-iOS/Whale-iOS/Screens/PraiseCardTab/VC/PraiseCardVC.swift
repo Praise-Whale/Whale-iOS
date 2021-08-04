@@ -6,16 +6,31 @@
 //
 
 import UIKit
+import SnapKit
 
 class PraiseCardVC: UIViewController {
 
+    var nicknameLabel = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    func makeTopView() {
+        self.view.addSubview(nicknameLabel)
+        nicknameLabel.text = "\(textInputMode)님의"
+        nicknameLabel.textColor = .brown_2
+        nicknameLabel.font = UIFont(name: <#T##String#>, size: <#T##CGFloat#>)
+        nicknameLabel.snp.makeConstraints{ (make) -> Void in
+            make.top.equalTo(self.view).offset(41)
+            make
+            make.center.equalTo(self.view)
+        }
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
