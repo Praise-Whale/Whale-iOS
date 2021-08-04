@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIColor {
-    @nonobjc class var sand_yellow: UIColor {
+    @nonobjc class var yellow_1: UIColor {
         return UIColor(red: 255/255, green: 212/255, blue: 100/255, alpha: 1.0)
     }
     
