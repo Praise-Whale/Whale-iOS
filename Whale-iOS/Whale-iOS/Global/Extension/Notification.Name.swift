@@ -7,5 +7,6 @@
 
 import Foundation
 extension Notification.Name {
-    //static let aa = Notification.Name("aa")
+    static let pushedCardDrawer = Notification.Name("pushedCardDrawer")
+    static let pushedPraiseLank = Notification.Name("pushedPraiseLank")
 }
