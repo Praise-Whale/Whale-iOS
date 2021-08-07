@@ -13,10 +13,12 @@ class PraiseCardVC: UIViewController {
     var nicknameLabel = UILabel()
     var praiseCardLabel = UILabel()
     var yellowBoxView = UIView()
+    var cardBoxImageView = UIImageView()
     @IBOutlet var roundSegmentView: RoundSegmentView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notificationAddObserver()
         setAutoLayout()
         setSuperViewLayout()
         makeTopView()
@@ -27,12 +29,6 @@ class PraiseCardVC: UIViewController {
         //screenSize에 따라 달라질 동적 width, height
         roundSegmentView.frameWidth = 225
         roundSegmentView.frameHeight = 51
-    }
-    
-    //MARK: - set superView layout
-    func setSuperViewLayout() {
-        self.view.backgroundColor = .yellow_2
-        self.roundSegmentView.backgroundColor = .clear
     }
     
     //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundSegmentControl)
@@ -77,7 +73,39 @@ class PraiseCardVC: UIViewController {
             make.width.equalTo(225)
             make.centerX.equalTo(yellowBoxView)
         }
+        
+        self.view.addSubview(cardBoxImageView)
+        cardBoxImageView.image = UIImage(named: "cardBoxBg")
+        cardBoxImageView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(roundSegmentView.snp.bottom).offset(28)
+            make.leading.equalTo(self.view.snp.leading)
+            make.trailing.equalTo(self.view.snp.trailing)
+            make.bottom.equalTo(self.view.snp.bottom)
+            make.centerX.equalTo(roundSegmentView)
+        }
     }
 }
+//MARK: - set defualt superView layout
+extension PraiseCardVC {
     
+    func setSuperViewLayout() {
+        self.view.backgroundColor = .yellow_2
+        self.roundSegmentView.backgroundColor = .clear
+    }
+}
+
+//MARK: - notifiication
+extension PraiseCardVC {
+    func notificationAddObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(whenPushedCardDrawer), name: .pushedCardDrawer, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(whenPushedPraiseLank), name: .pushedPraiseLank, object: nil)
+    }
     
+    @objc func whenPushedCardDrawer() {
+        
+    }
+    
+    @objc func whenPushedPraiseLank() {
+        
+    }
+}
