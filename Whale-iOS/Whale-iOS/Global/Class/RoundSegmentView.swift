@@ -119,9 +119,11 @@ class RoundSegmentView: UIView {
                 UIView.animate(withDuration: 0.3, animations: {
                     if buttonIndex == 0 {
                         self.selector.frame.origin.x = 4
+                        NotificationCenter.default.post(name: Notification.Name.pushedCardDrawer, object: nil)
                     }
                     else {
                         self.selector.frame.origin.x = selectorStartPosition
+                        NotificationCenter.default.post(name: Notification.Name.pushedPraiseLank, object: nil)
                     }
                 })
                 
