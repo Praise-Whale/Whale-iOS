@@ -7,7 +7,8 @@
 
 import Foundation
 
-// MARK: - DataClass
+// MARK: - LoginData
 struct LoginData: Codable {
     let accessToken, refreshToken: String
 }
+https://github.com/Praise-Whale/Whale-iOS/blob/SplashView/Whale-iOS/Whale-iOS/Global/Model/LoginData.swift
