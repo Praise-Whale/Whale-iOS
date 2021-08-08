@@ -15,8 +15,8 @@ struct MainService {
     
     func mainService(id:Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
         
-        var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo1LCJpYXQiOjE2MjM4NTkxMTMsImV4cCI6MTYyNjQ1MTExMywiaXNzIjoicHJhaXNlIn0.cVgVs044cfL3_8iT9HTn_lWSVSTxPbzV85FSmBRyrgY"
-        if let savedToken = UserDefaults.standard.string(forKey: "token") {
+        var token = UserDefaults.standard.string(forKey: "accessToken") ?? ""
+        if let savedToken = UserDefaults.standard.string(forKey: "refreshToken") {
             token = savedToken
         }
         
