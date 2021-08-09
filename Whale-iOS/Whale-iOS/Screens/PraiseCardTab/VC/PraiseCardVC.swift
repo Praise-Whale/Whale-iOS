@@ -67,6 +67,7 @@ class PraiseCardVC: UIViewController {
             make.centerX.equalTo(praiseCardLabel)
         }
         
+        //set snp - segmentView 레이아웃 세팅
         roundSegmentView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(yellowBoxView.snp.bottom).offset(34)
             make.height.equalTo(51)
@@ -74,6 +75,7 @@ class PraiseCardVC: UIViewController {
             make.centerX.equalTo(yellowBoxView)
         }
         
+        //create - cardBoxImageView 생성
         self.view.addSubview(cardBoxImageView)
         cardBoxImageView.image = UIImage(named: "cardBoxBg")
         cardBoxImageView.snp.makeConstraints { (make) -> Void in
@@ -83,6 +85,11 @@ class PraiseCardVC: UIViewController {
             make.bottom.equalTo(self.view.snp.bottom)
             make.centerX.equalTo(roundSegmentView)
         }
+    }
+    
+    //func - 카드서랍에 데이터가 없을 때 실행되는 함수
+    func noDataInCardDrawer() {
+        
     }
 }
 //MARK: - set defualt superView layout
@@ -103,6 +110,8 @@ extension PraiseCardVC {
     
     @objc func whenPushedCardDrawer() {
         
+        // 데이터가 없을 때
+        noDataInCardDrawer()
     }
     
     @objc func whenPushedPraiseLank() {
