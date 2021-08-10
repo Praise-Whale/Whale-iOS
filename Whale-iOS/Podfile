@@ -7,4 +7,5 @@ target 'Whale-iOS' do
 
   # Pods for Whale-iOS
   pod 'Alamofire' 
+  pod 'lottie-ios'
 end
