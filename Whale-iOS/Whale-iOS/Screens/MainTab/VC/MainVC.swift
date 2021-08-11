@@ -98,11 +98,11 @@ extension MainVC {
         /// 배경 색
         backgroundView.backgroundColor = .yellow_2
         
-        nicknameLabel.font = .NotoSansRegular(size: 16)
+        nicknameLabel.font = .AppleSDGothicR(size: 16)
         nicknameLabel.textColor = .brown_2
         nicknameLabel.letterSpacing = -0.8
         
-        titleLabel.font = .NotoSansBold(size: 22)
+        titleLabel.font = .AppleSDGothicB(size: 22)
         titleLabel.textColor = .brown_2
         titleLabel.letterSpacing = -1.1
         titleLabel.text = "오늘의 칭찬 한 마디"
@@ -113,7 +113,7 @@ extension MainVC {
         dateView.makeRounded(cornerRadius: dateView.frame.height/2)
         dateView.backgroundColor = .white
         
-        dateLabel.font = .NotoSansRegular(size: 13)
+        dateLabel.font = .AppleSDGothicR(size: 13)
         dateLabel.textColor = .brown_1
         
         contentBoxView.backgroundColor = .white
@@ -132,21 +132,21 @@ extension MainVC {
             view.makeRounded(cornerRadius: 3.5)
         }
         
-        contentLabel.font = .NotoSansBold(size: 20) // 여기 지마켓으로 고치기
+        contentLabel.font = .AppleSDGothicB(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
         contentLabel.text = "(네트워크 연결을 확인하세요)"
         
         didntBtn.backgroundColor = .grey_1
         didntBtn.setTitleColor(.black, for: .normal)
-        didntBtn.titleLabel?.font = .NotoSansRegular(size: 15)
+        didntBtn.titleLabel?.font = .AppleSDGothicR(size: 15)
         didntBtn.titleLabel?.letterSpacing = -0.75
         didntBtn.makeRounded(cornerRadius: didntBtn.frame.height/2)
         didntBtn.setTitle("못했어요..", for: .normal)
         
         didBtn.backgroundColor = .sand_yellow
         didBtn.setTitleColor(.black, for: .normal)
-        didBtn.titleLabel?.font = .NotoSansRegular(size: 15)
+        didBtn.titleLabel?.font = .AppleSDGothicR(size: 15)
         didBtn.titleLabel?.letterSpacing = -0.75
         didBtn.makeRounded(cornerRadius: didBtn.frame.height/2)
         didBtn.setTitle("했어요!", for: .normal)

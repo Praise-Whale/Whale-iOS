@@ -1,32 +1,32 @@
 //
-//  MainService.swift
+//  LoginService.swift
 //  Whale-iOS
 //
-//  Created by DANNA LEE on 2021/06/09.
+//  Created by 황지은 on 2021/08/08.
 //
 
 import Foundation
 import Alamofire
 
-struct MainService {
-    static let shared = MainService()
+struct LoginService {
+    static let shared = LoginService()
     
-    // MARK: - 메인 칭찬 메시지 받아오기
-    
-    func mainService(id:Int, completion: @escaping (NetworkResult<Any>)->(Void)) {
+    func loginService(nickName: String, completion: @escaping (NetworkResult<Any>)->(Void)) {
         
-        var token = UserDefaults.standard.string(forKey: "accessToken") ?? ""
-        if let savedToken = UserDefaults.standard.string(forKey: "refreshToken") {
-            token = savedToken
-        }
         
-        let url = APIConstants.mainURL + "\(id)"
+        let url = APIConstants.loginURL
+        
         let header: HTTPHeaders = [
-            "Content-Type" : "application/json",
-            "token" : token
+            "Content-Type" : "application/json"
         ]
+        
+        let body: Parameters = [
+            "nickName" : nickName
+        ]
+        
         let dataRequest = AF.request(url,
-                                     method: .get,
+                                     method: .post,
+                                     parameters: body,
                                      encoding: JSONEncoding.default,
                                      headers: header)
         
@@ -39,7 +39,7 @@ struct MainService {
                 guard let data = response.value else {
                     return
                 }
-                completion(judgeMainService(status: statusCode, data: data))
+                completion(judgeLoginService(status: statusCode, data: data))
                 
             case .failure(let err) :
                 print(err)
@@ -47,14 +47,14 @@ struct MainService {
         }
     }
     
-    private func judgeMainService(status: Int, data: Data) -> NetworkResult<Any> {
+    private func judgeLoginService(status: Int, data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<MainPraiseSentence>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<LoginData>.self, from: data) else {
             return .pathErr }
         
         switch status {
         case 200:
-            return .success(decodedData.data)
+            return .success(decodedData.data ?? "None-Data")
         case 400..<500:
             return .requestErr(decodedData.message)
         case 500:

@@ -9,7 +9,7 @@
         <!--WhaleTBC-->
         <scene sceneID="66x-Js-VvP">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="TBR-Uw-VUV" customClass="WhaleTBC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="WhaleTBC" automaticallyAdjustsScrollViewInsets="NO" id="TBR-Uw-VUV" customClass="WhaleTBC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BuB-1T-QmZ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
