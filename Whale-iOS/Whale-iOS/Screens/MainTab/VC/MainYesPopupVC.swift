@@ -59,7 +59,7 @@ extension MainYesPopupVC {
         
         titleLabel.text = "누구에게 칭찬했나요?"
         titleLabel.textColor = .brown_2
-        titleLabel.font = .NotoSansRegular(size: 18)
+        titleLabel.font = .AppleSDGothicR(size: 18)
         titleLabel.letterSpacing = -0.9
         
         titleUnderView.backgroundColor = .sand_yellow
@@ -67,7 +67,7 @@ extension MainYesPopupVC {
         
         nameTextField.addLeftPadding(width: 13)
 //        nameTextField.addRightPadding(width: 5)
-        nameTextField.font = .NotoSansRegular(size: 13)
+        nameTextField.font = .AppleSDGothicR(size: 13)
         nameTextField.layer.borderColor = UIColor.yellow_3.cgColor
         nameTextField.layer.borderWidth = 1
         nameTextField.placeholder = "이름을 실명으로 입력해주세요."
@@ -76,7 +76,7 @@ extension MainYesPopupVC {
         nameTextField.autocorrectionType = .no
         
         recentTitleLabel.textColor = .grey_2
-        recentTitleLabel.font = .NotoSansRegular(size: 14)
+        recentTitleLabel.font = .AppleSDGothicR(size: 14)
         recentTitleLabel.text = "최근 칭찬한 사람"
         recentTitleLabel.letterSpacing = -0.7
         
