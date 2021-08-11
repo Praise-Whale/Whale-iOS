@@ -37,7 +37,7 @@ class PraiseCardVC: UIViewController {
         self.view.addSubview(nicknameLabel)
         nicknameLabel.text = "황지은님의"
         nicknameLabel.textColor = .brown_2
-        nicknameLabel.font = UIFont(name: "AppleSDGothicNeoR00", size: 16)
+        nicknameLabel.font = .AppleSDGothicR(size: 16)
         nicknameLabel.letterSpacing = -0.8
         nicknameLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(self.view).offset(85)
@@ -49,7 +49,7 @@ class PraiseCardVC: UIViewController {
         self.view.addSubview(praiseCardLabel)
         praiseCardLabel.text = "칭찬 카드"
         praiseCardLabel.textColor = .brown_2
-        praiseCardLabel.font = UIFont(name: "AppleSDGothicNeoB00", size: 23)
+        praiseCardLabel.font = .AppleSDGothicB(size: 23)
         praiseCardLabel.letterSpacing = -1.15
         praiseCardLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(nicknameLabel.snp.bottom).offset(2)

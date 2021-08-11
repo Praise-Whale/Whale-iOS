@@ -13,11 +13,11 @@
 		330A4906267268C2002DB3B4 /* LastOnboardingCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A4905267268C2002DB3B4 /* LastOnboardingCVC.swift */; };
 		330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330A490D267275F6002DB3B4 /* SignUp.storyboard */; };
 		330A491026727603002DB3B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A490F26727603002DB3B4 /* SignUpVC.swift */; };
+		330CFE1326C36FD6005380E4 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AD26BAF3F40023579F /* AppleSDGothicNeoR.ttf */; };
 		335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335CF37726C00AE10097AAD2 /* LoginService.swift */; };
 		335CF37A26C00BC30097AAD2 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335CF37926C00BC30097AAD2 /* LoginData.swift */; };
 		3386D1B226BAF3F70023579F /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AC26BAF3F40023579F /* AppleSDGothicNeoB.ttf */; };
 		3386D1B326BAF3FA0023579F /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AE26BAF3F40023579F /* AppleSDGothicNeoM.ttf */; };
-		3386D1B426BAF3FB0023579F /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AD26BAF3F40023579F /* AppleSDGothicNeoR.ttf */; };
 		3386D1B526BAF3FE0023579F /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AF26BAF3F40023579F /* AppleSDGothicNeoSB.ttf */; };
 		3386D1B726BAF4020023579F /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B026BAF3F50023579F /* GmarketSansTTFBold.ttf */; };
 		3386D1B826BAF4040023579F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */; };
@@ -796,10 +796,10 @@
 				33AAD387266F892300907BCF /* TabBar.storyboard in Resources */,
 				33CA10B726AB46B90017EDC9 /* whale.json in Resources */,
 				33AAD35E266F882C00907BCF /* PraiseCard.storyboard in Resources */,
+				330CFE1326C36FD6005380E4 /* AppleSDGothicNeoR.ttf in Resources */,
 				3386D1B826BAF4040023579F /* Roboto-Bold.ttf in Resources */,
 				33AAD342266F87AB00907BCF /* Login.storyboard in Resources */,
 				3386D1B226BAF3F70023579F /* AppleSDGothicNeoB.ttf in Resources */,
-				3386D1B426BAF3FB0023579F /* AppleSDGothicNeoR.ttf in Resources */,
 				33AAD370266F888400907BCF /* Settings.storyboard in Resources */,
 				33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */,
 				330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */,
