@@ -16,7 +16,6 @@ class SplashVC: UIViewController {
         super.viewDidLoad()
         setDeviceSize()
         makeLottieAnimation(animationName: "whale")
-        print(UIScreen.main.bounds.size)
     }
     
     //MARK: - LottieAnimtaion 적용
@@ -30,6 +29,7 @@ class SplashVC: UIViewController {
         lottieAnimationView.loopMode = .playOnce
         lottieAnimationView.play()
         lottieView.addSubview(lottieAnimationView)
+        goToNextScene()
     }
     
     //MARK: - lottieView와 view간 오토레이아웃 변경할때 사용하는 함수
@@ -77,6 +77,66 @@ class SplashVC: UIViewController {
         }
         else {
             print("there's no correct device")
+        }
+    }
+    
+    func goToNextScene() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
+            if (UserDefaults.standard.string(forKey: "isFirstlaunch") == nil) {
+                print("첫 로드 : 온보딩")
+                UserDefaults.standard.set(
+                    true,forKey: "isFirstlaunch")
+                goToOnboarding()
+            }
+            else {
+                loginService("DannaWhale")
+            }
+        }
+    }
+}
+
+extension SplashVC {
+    func loginService(_ nickName: String) {
+        LoginService.shared.loginService(nickName: nickName) { [self]
+            (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let loginData = data as? LoginData {
+                    UserDefaults.standard.setValue(nickName, forKey: "nickName")
+                    UserDefaults.standard.setValue(loginData.accessToken, forKey: "acessToken")
+                    UserDefaults.standard.setValue(loginData.refreshToken, forKey: "refreshToken")
+                    print("refreshToken", loginData.refreshToken)
+                    print("accessToken", loginData.accessToken)
+                    goToMainView()
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}
+
+extension SplashVC {
+    func goToOnboarding() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "OnboardingVC") as? OnboardingVC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func goToMainView() {
+        print("main")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "WhaleTBC") as? WhaleTBC {
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
