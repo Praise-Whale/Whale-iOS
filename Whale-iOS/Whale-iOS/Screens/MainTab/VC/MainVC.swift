@@ -277,8 +277,7 @@ extension MainVC {
         whaleImageView.image = UIImage(named: "mainImgWhaleFail")
         
         let attributedString = NSMutableAttributedString(string: "오늘의 칭찬 미완료")
-        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.AppleSDGothicBold(size: 17), range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
-        attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
+        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.AppleSDGothicB(size: 17), range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
         
         afterPraiseView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
         afterPraiseLabel.attributedText = attributedString
