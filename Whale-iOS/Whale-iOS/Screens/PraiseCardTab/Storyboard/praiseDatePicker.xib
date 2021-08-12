@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="praiseDatePickerView" customModule="Whale_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="customDatePickerView" destination="f74-qR-smW" id="0Z6-eD-K8c"/>
+                <outlet property="dismissBtn" destination="ijT-Bn-Q9M" id="TON-n8-t8f"/>
+                <outlet property="praiseDateLabel" destination="1oC-ut-VXb" id="j0u-a5-EQU"/>
+                <outlet property="settingBtn" destination="Dxu-IV-LW9" id="3cb-Tj-9ia"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="376"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popupBoxPopup3No" translatesAutoresizingMaskIntoConstraints="NO" id="eoX-RB-1HU">
+                    <rect key="frame" x="0.0" y="0.0" width="291" height="376"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oC-ut-VXb">
+                    <rect key="frame" x="27" y="29" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                            <real key="value" value="-1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbk-UQ-qQ6">
+                    <rect key="frame" x="27" y="53" width="42" height="2"/>
+                    <color key="backgroundColor" name="yellow_1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="IrQ-rV-4jh"/>
+                    </constraints>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f74-qR-smW" customClass="CustomPickerView" customModule="Whale_iOS" customModuleProvider="target">
+                    <rect key="frame" x="27" y="85" width="237" height="185"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="QcC-K8-I62"/>
+                        <outlet property="delegate" destination="-1" id="iSm-Fd-itd"/>
+                    </connections>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dxu-IV-LW9">
+                    <rect key="frame" x="27" y="303" width="237" height="43"/>
+                    <color key="backgroundColor" name="yellow_1"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="43" id="d99-mc-OxK"/>
+                    </constraints>
+                    <state key="normal" title="설정"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijT-Bn-Q9M">
+                    <rect key="frame" x="233" y="10" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="ijT-Bn-Q9M" secondAttribute="height" multiplier="1:1" id="9BZ-aL-nQh"/>
+                        <constraint firstAttribute="height" constant="48" id="KDl-26-ztr"/>
+                    </constraints>
+                    <state key="normal" image="popupBtnClose"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1oC-ut-VXb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="B0C-Ud-C32"/>
+                <constraint firstItem="Dxu-IV-LW9" firstAttribute="top" secondItem="f74-qR-smW" secondAttribute="bottom" constant="33" id="CQK-cE-JOe"/>
+                <constraint firstItem="f74-qR-smW" firstAttribute="top" secondItem="Rbk-UQ-qQ6" secondAttribute="bottom" constant="30" id="EeI-Ry-Csq"/>
+                <constraint firstItem="Dxu-IV-LW9" firstAttribute="trailing" secondItem="f74-qR-smW" secondAttribute="trailing" id="Ejq-Sz-E2o"/>
+                <constraint firstAttribute="bottom" secondItem="Dxu-IV-LW9" secondAttribute="bottom" constant="30" id="KQa-xa-7qe"/>
+                <constraint firstAttribute="trailing" secondItem="ijT-Bn-Q9M" secondAttribute="trailing" constant="10" id="OQQ-By-JHb"/>
+                <constraint firstItem="Rbk-UQ-qQ6" firstAttribute="top" secondItem="1oC-ut-VXb" secondAttribute="bottom" constant="3" id="RWL-Dp-WF8"/>
+                <constraint firstItem="ijT-Bn-Q9M" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="SQn-XG-Wmd"/>
+                <constraint firstItem="eoX-RB-1HU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TEu-75-tIe"/>
+                <constraint firstItem="Dxu-IV-LW9" firstAttribute="leading" secondItem="f74-qR-smW" secondAttribute="leading" id="WQN-3g-yfA"/>
+                <constraint firstItem="eoX-RB-1HU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WiV-YK-Rgc"/>
+                <constraint firstAttribute="trailing" secondItem="f74-qR-smW" secondAttribute="trailing" constant="27" id="fjy-Qv-QfN"/>
+                <constraint firstItem="Rbk-UQ-qQ6" firstAttribute="width" secondItem="1oC-ut-VXb" secondAttribute="width" id="grL-kX-SoY"/>
+                <constraint firstAttribute="bottom" secondItem="eoX-RB-1HU" secondAttribute="bottom" id="hcq-Ei-Vhj"/>
+                <constraint firstAttribute="trailing" secondItem="eoX-RB-1HU" secondAttribute="trailing" id="hqN-Sv-itF"/>
+                <constraint firstItem="1oC-ut-VXb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="29" id="hqg-BU-I0Y"/>
+                <constraint firstItem="f74-qR-smW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="27" id="sol-PQ-dgG"/>
+                <constraint firstItem="Rbk-UQ-qQ6" firstAttribute="leading" secondItem="1oC-ut-VXb" secondAttribute="leading" id="uDK-w9-F4l"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138.40579710144928" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="f74-qR-smW">
+            <size key="intrinsicContentSize" width="320" height="162"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="popupBoxPopup3No" width="291" height="376"/>
+        <image name="popupBtnClose" width="16" height="16"/>
+        <namedColor name="yellow_1">
+            <color red="1" green="0.83099997043609619" blue="0.3919999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
