@@ -73,6 +73,8 @@ class MainYesPopupVC: UIViewController {
         dvc.whale = .good
         dvc.modalPresentationStyle = .overCurrentContext
         
+        UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
+        
         self.present(dvc, animated: false)
         //TODO: 이거 dismiss로 바꾸고 메인에서 정상 완료 됐다는 notification 받아서 팝업 띄우기
     }

@@ -70,6 +70,8 @@ class MainVC: UIViewController {
         print(UserDefaults.standard.integer(forKey: "PraiseId"))
         print(UserDefaults.standard.string(forKey: "DateLastVisited"))
         
+        print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -87,6 +89,30 @@ class MainVC: UIViewController {
         
         self.present(dvc, animated: false, completion: nil)
     }
+    
+    @IBAction func didntBtnDidTap(_ sender: Any) {
+        let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
+        
+        guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
+            return
+        }
+        
+        switch UserDefaults.standard.integer(forKey: "accumulatedNo") {
+        case 0:
+            dvc.whale = .sad
+        case 1:
+            dvc.whale = .wannaDance
+        case 2:
+            dvc.whale = .shout
+        default:
+            dvc.whale = .sad
+        }
+        
+        dvc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(dvc, animated: false, completion: nil)
+    }
+    
     
 
 }

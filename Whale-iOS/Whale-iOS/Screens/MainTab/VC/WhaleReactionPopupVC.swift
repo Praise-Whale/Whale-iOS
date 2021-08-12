@@ -21,6 +21,8 @@ class WhaleReactionPopupVC: UIViewController {
 
     @IBOutlet weak var popupView: UIView!
     
+    @IBOutlet weak var closeBtn: UIButton!
+    
     @IBOutlet weak var whaleImageView: UIImageView!
     @IBOutlet weak var mainMessageLabel: UILabel!
     @IBOutlet weak var subMessageLabel: UILabel!
@@ -39,8 +41,19 @@ class WhaleReactionPopupVC: UIViewController {
     
     //MARK: - IBActions
     
+    @IBAction func closeBtnDidTap(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+    }
+    
     @IBAction func okBtnDidTap(_ sender: Any) {
-        self.presentingViewController?.presentingViewController?.dismiss(animated: false, completion: nil)
+        if whale == .sad || whale == .wannaDance || whale == .shout {
+            let savedWhale = UserDefaults.standard.integer(forKey: "accumulatedNo")
+            UserDefaults.standard.setValue(savedWhale < 2 ? savedWhale + 1 : 2, forKey: "accumulatedNo")
+            
+            
+        }
+        
+        self.dismiss(animated: false, completion: nil)
     }
 }
 
@@ -89,6 +102,7 @@ extension WhaleReactionPopupVC {
         whaleImageView.image = UIImage(named: "yes6ImgWhale")
         mainMessageLabel.text = "참 잘했고래!"
         subMessageLabel.text = "내일도 칭찬해요!"
+        closeBtn.isHidden = true
     }
     
     func setWhaleSad() {
@@ -113,30 +127,35 @@ extension WhaleReactionPopupVC {
         whaleImageView.image = UIImage(named: "lvPopupImgWhale")
         mainMessageLabel.text = "레벨업했고래!"
         subMessageLabel.text = "칭찬에 흥미가 생겼군요!"
+        closeBtn.isHidden = true
     }
     
     func setWhaleLevelTwo() {
         whaleImageView.image = UIImage(named: "lvPopupImgWhale")
         mainMessageLabel.text = "레벨업했고래!"
         subMessageLabel.text = "칭찬에 익숙해지고 있네요!"
+        closeBtn.isHidden = true
     }
     
     func setWhaleLevelThree() {
         whaleImageView.image = UIImage(named: "lvPopupImgWhale")
         mainMessageLabel.text = "레벨업했고래!"
         subMessageLabel.text = "둠칫 두둠칫 점점 신이나요!"
+        closeBtn.isHidden = true
     }
     
     func setWhaleLevelFour() {
         whaleImageView.image = UIImage(named: "lvPopupImgWhale")
         mainMessageLabel.text = "레벨업했고래!"
         subMessageLabel.text = "저 춤 출래요, 말리지 마세요!"
+        closeBtn.isHidden = true
     }
     
     func setWhaleLelelFive() {
         whaleImageView.image = UIImage(named: "lvPopupImgWhale")
         mainMessageLabel.text = "이제 만렙 고래!"
         subMessageLabel.text = "친구에게도 칭찬할고래를 알려줘요!"
+        closeBtn.isHidden = true
     }
 }
 

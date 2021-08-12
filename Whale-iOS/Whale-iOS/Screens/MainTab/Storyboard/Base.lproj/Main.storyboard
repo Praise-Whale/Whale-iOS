@@ -119,6 +119,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="135.5" height="43"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="didntBtnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bdi-wN-6D6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLD-Qo-W1d">
                                                 <rect key="frame" x="147.5" y="0.0" width="135.5" height="43"/>

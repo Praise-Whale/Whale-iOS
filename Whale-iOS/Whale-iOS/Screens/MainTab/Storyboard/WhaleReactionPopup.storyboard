@@ -42,6 +42,17 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bP9-4P-e5Y">
+                                        <rect key="frame" x="271" y="10" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="92A-me-VPX"/>
+                                            <constraint firstAttribute="width" constant="40" id="Jb4-0G-hGG"/>
+                                        </constraints>
+                                        <state key="normal" image="popupBtnClose"/>
+                                        <connections>
+                                            <action selector="closeBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dag-wN-a4s"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -50,9 +61,11 @@
                                     <constraint firstItem="eD4-wf-jHB" firstAttribute="centerX" secondItem="8pc-oN-xzB" secondAttribute="centerX" id="JIz-6F-tVE"/>
                                     <constraint firstItem="eD4-wf-jHB" firstAttribute="top" secondItem="DnR-WZ-9D4" secondAttribute="bottom" constant="34" id="b0n-uE-2Sk"/>
                                     <constraint firstAttribute="width" secondItem="8pc-oN-xzB" secondAttribute="height" multiplier="291:413" id="dJL-L4-KJf"/>
+                                    <constraint firstAttribute="trailing" secondItem="bP9-4P-e5Y" secondAttribute="trailing" constant="10" id="fGo-Zc-3et"/>
                                     <constraint firstAttribute="trailing" secondItem="SVc-GZ-YTZ" secondAttribute="trailing" id="kZF-V2-djn"/>
                                     <constraint firstItem="DnR-WZ-9D4" firstAttribute="centerX" secondItem="8pc-oN-xzB" secondAttribute="centerX" id="lE1-8H-7X7"/>
                                     <constraint firstAttribute="bottom" secondItem="eD4-wf-jHB" secondAttribute="bottom" constant="30" id="lHH-d3-ghH"/>
+                                    <constraint firstItem="bP9-4P-e5Y" firstAttribute="top" secondItem="8pc-oN-xzB" secondAttribute="top" constant="10" id="mB3-JU-EF9"/>
                                     <constraint firstItem="eD4-wf-jHB" firstAttribute="width" secondItem="8pc-oN-xzB" secondAttribute="width" multiplier="237:291" id="tFt-aG-nUX"/>
                                 </constraints>
                             </view>
@@ -74,6 +87,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeBtn" destination="bP9-4P-e5Y" id="cV0-qa-hUz"/>
                         <outlet property="mainMessageLabel" destination="2BQ-ot-mgL" id="rnx-To-kDK"/>
                         <outlet property="okButton" destination="eD4-wf-jHB" id="iY8-CJ-n04"/>
                         <outlet property="popupView" destination="8pc-oN-xzB" id="Nym-zo-OMh"/>
@@ -87,6 +101,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="popupBtnClose" width="16" height="16"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
