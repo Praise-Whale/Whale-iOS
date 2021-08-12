@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-uF-vUP">
-                                <rect key="frame" x="31" y="167" width="352" height="386"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKy-uF-vUP">
+                                <rect key="frame" x="31" y="169" width="352" height="386"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQt-0j-fL1">
                                         <rect key="frame" x="32.5" y="50" width="42" height="2"/>
@@ -55,6 +55,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nameTextFieldEditChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="5d5-O6-Qmj"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
@@ -65,9 +68,8 @@
                                             <constraint firstAttribute="trailing" secondItem="bqI-yP-clM" secondAttribute="trailing" constant="10" id="r4p-Sa-t9f"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-Gv-yvF">
-                                        <rect key="frame" x="283" y="124" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-Gv-yvF">
+                                        <rect key="frame" x="277.5" y="131" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -130,6 +132,7 @@
                                     <constraint firstItem="d9X-5h-lCS" firstAttribute="bottom" secondItem="KbA-TT-JYb" secondAttribute="bottom" id="AM0-ai-atI"/>
                                     <constraint firstItem="tOs-t7-8ry" firstAttribute="top" secondItem="eQt-0j-fL1" secondAttribute="bottom" constant="31" id="BTE-A1-NJg"/>
                                     <constraint firstAttribute="trailing" secondItem="d9X-5h-lCS" secondAttribute="trailing" id="Bc9-xh-74J"/>
+                                    <constraint firstItem="fBo-Gv-yvF" firstAttribute="trailing" secondItem="tOs-t7-8ry" secondAttribute="trailing" id="Dbk-du-wlv"/>
                                     <constraint firstItem="eQt-0j-fL1" firstAttribute="leading" secondItem="WJr-2d-VhV" secondAttribute="leading" id="Erc-Z7-Fob"/>
                                     <constraint firstItem="eBw-Kw-ixL" firstAttribute="leading" secondItem="gKy-uF-vUP" secondAttribute="leading" id="FLm-ph-Lnq"/>
                                     <constraint firstItem="mkl-b7-H5P" firstAttribute="centerX" secondItem="gKy-uF-vUP" secondAttribute="centerX" id="HRN-9d-Ec1"/>
@@ -142,6 +145,7 @@
                                     <constraint firstAttribute="width" secondItem="gKy-uF-vUP" secondAttribute="height" multiplier="275:301" id="Qa7-Ew-DQj"/>
                                     <constraint firstItem="tOs-t7-8ry" firstAttribute="leading" secondItem="mkl-b7-H5P" secondAttribute="leading" id="UjI-sv-HNr"/>
                                     <constraint firstAttribute="bottom" secondItem="mkl-b7-H5P" secondAttribute="bottom" constant="30" id="V2r-bj-1P6"/>
+                                    <constraint firstItem="fBo-Gv-yvF" firstAttribute="top" secondItem="tOs-t7-8ry" secondAttribute="bottom" constant="4" id="XbC-3d-C9d"/>
                                     <constraint firstItem="tOs-t7-8ry" firstAttribute="trailing" secondItem="mkl-b7-H5P" secondAttribute="trailing" id="b1i-tZ-Beb"/>
                                     <constraint firstAttribute="trailing" secondItem="Me7-ws-ZlJ" secondAttribute="trailing" constant="5" id="cTO-v6-eaD"/>
                                     <constraint firstItem="KbA-TT-JYb" firstAttribute="leading" secondItem="gKy-uF-vUP" secondAttribute="leading" id="eCl-Mf-Wh3"/>
@@ -181,21 +185,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-23.188405797101453" y="55.580357142857139"/>
-        </scene>
-        <!--Main Yes Second PopupVC-->
-        <scene sceneID="ctO-Vh-PXW">
-            <objects>
-                <viewController id="1LS-2d-uYj" customClass="MainYesSecondPopupVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2Sh-Wj-Vpo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="7ev-Ry-e9A"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8fX-zK-LKm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="857" y="56"/>
         </scene>
     </scenes>
     <resources>
