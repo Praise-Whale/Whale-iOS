@@ -63,6 +63,19 @@ class MainYesPopupVC: UIViewController {
         self.dismiss(animated: false, completion: nil)
     }
     
+    @IBAction func submitBtnDidTap(_ sender: Any) {
+        let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
+        
+        guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
+            return
+        }
+        
+        dvc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(dvc, animated: false)
+        //TODO: 이거 dismiss로 바꾸고 메인에서 정상 완료 됐다는 notification 받아서 팝업 띄우기
+    }
+    
     @IBAction func nameTextFieldEditChanged(_ sender: Any) {
         
         checkMaxLength(textField: nameTextField, maxLength: 6)

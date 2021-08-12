@@ -126,6 +126,9 @@
                                             <constraint firstAttribute="width" secondItem="mkl-b7-H5P" secondAttribute="height" multiplier="237:43" id="6I7-Cj-6Xo"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="submitBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="reX-hF-ife"/>
+                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxBlurFront" translatesAutoresizingMaskIntoConstraints="NO" id="eBw-Kw-ixL">
                                         <rect key="frame" x="0.0" y="233" width="40" height="32"/>
