@@ -14,8 +14,14 @@
 		330A490E267275F6002DB3B4 /* SignUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330A490D267275F6002DB3B4 /* SignUp.storyboard */; };
 		330A491026727603002DB3B4 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A490F26727603002DB3B4 /* SignUpVC.swift */; };
 		330CFE1326C36FD6005380E4 /* AppleSDGothicNeoR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AD26BAF3F40023579F /* AppleSDGothicNeoR.ttf */; };
+		330CFE1526C3973F005380E4 /* praiseDatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 330CFE1426C3973F005380E4 /* praiseDatePicker.xib */; };
+		330CFE1726C397C6005380E4 /* praiseDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CFE1626C397C6005380E4 /* praiseDatePickerView.swift */; };
+		330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330CFE1826C3A15C005380E4 /* CustomPickerView.swift */; };
 		335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335CF37726C00AE10097AAD2 /* LoginService.swift */; };
 		335CF37A26C00BC30097AAD2 /* LoginData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335CF37926C00BC30097AAD2 /* LoginData.swift */; };
+		33686D5D26C444F800711FD6 /* DatePickerPopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686D5C26C444F800711FD6 /* DatePickerPopUpVC.swift */; };
+		33686D5F26C4469500711FD6 /* PraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686D5E26C4469500711FD6 /* PraiseData.swift */; };
+		33686D6126C446F200711FD6 /* PraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33686D6026C446F200711FD6 /* PraiseService.swift */; };
 		3386D1B226BAF3F70023579F /* AppleSDGothicNeoB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AC26BAF3F40023579F /* AppleSDGothicNeoB.ttf */; };
 		3386D1B326BAF3FA0023579F /* AppleSDGothicNeoM.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AE26BAF3F40023579F /* AppleSDGothicNeoM.ttf */; };
 		3386D1B526BAF3FE0023579F /* AppleSDGothicNeoSB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1AF26BAF3F40023579F /* AppleSDGothicNeoSB.ttf */; };
@@ -87,8 +93,14 @@
 		330A4905267268C2002DB3B4 /* LastOnboardingCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastOnboardingCVC.swift; sourceTree = "<group>"; };
 		330A490D267275F6002DB3B4 /* SignUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUp.storyboard; sourceTree = "<group>"; };
 		330A490F26727603002DB3B4 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		330CFE1426C3973F005380E4 /* praiseDatePicker.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = praiseDatePicker.xib; sourceTree = "<group>"; };
+		330CFE1626C397C6005380E4 /* praiseDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = praiseDatePickerView.swift; sourceTree = "<group>"; };
+		330CFE1826C3A15C005380E4 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		335CF37726C00AE10097AAD2 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		335CF37926C00BC30097AAD2 /* LoginData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginData.swift; sourceTree = "<group>"; };
+		33686D5C26C444F800711FD6 /* DatePickerPopUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerPopUpVC.swift; sourceTree = "<group>"; };
+		33686D5E26C4469500711FD6 /* PraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseData.swift; sourceTree = "<group>"; };
+		33686D6026C446F200711FD6 /* PraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseService.swift; sourceTree = "<group>"; };
 		3386D1AC26BAF3F40023579F /* AppleSDGothicNeoB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoB.ttf; sourceTree = "<group>"; };
 		3386D1AD26BAF3F40023579F /* AppleSDGothicNeoR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoR.ttf; sourceTree = "<group>"; };
 		3386D1AE26BAF3F40023579F /* AppleSDGothicNeoM.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AppleSDGothicNeoM.ttf; sourceTree = "<group>"; };
@@ -334,7 +346,10 @@
 		33AAD2F6266F767A00907BCF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				33AAD311266F7BA500907BCF /* CircularProgressBar.swift */,
+				3386D1B926BB00470023579F /* RoundSegmentView.swift */,
 				33AAD30F266F7B7700907BCF /* CircularProgressView.swift */,
+				330CFE1826C3A15C005380E4 /* CustomPickerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -342,9 +357,7 @@
 		33AAD2F7266F768300907BCF /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				33AAD311266F7BA500907BCF /* CircularProgressBar.swift */,
 				33AAD313266F7BC700907BCF /* CustomLabel.swift */,
-				3386D1B926BB00470023579F /* RoundSegmentView.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -411,6 +424,7 @@
 				33AAD2F9266F76A200907BCF /* GenericResponse.swift */,
 				335CF37926C00BC30097AAD2 /* LoginData.swift */,
 				37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */,
+				33686D5E26C4469500711FD6 /* PraiseData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,6 +436,7 @@
 				33AAD2FD266F76CA00907BCF /* NetworkResult.swift */,
 				37B77CCB2670EBF200039277 /* MainService.swift */,
 				335CF37726C00AE10097AAD2 /* LoginService.swift */,
+				33686D6026C446F200711FD6 /* PraiseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -540,6 +555,8 @@
 			isa = PBXGroup;
 			children = (
 				33AAD35B266F882400907BCF /* PraiseCardVC.swift */,
+				330CFE1626C397C6005380E4 /* praiseDatePickerView.swift */,
+				33686D5C26C444F800711FD6 /* DatePickerPopUpVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -548,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD35D266F882C00907BCF /* PraiseCard.storyboard */,
+				330CFE1426C3973F005380E4 /* praiseDatePicker.xib */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -799,6 +817,7 @@
 				330CFE1326C36FD6005380E4 /* AppleSDGothicNeoR.ttf in Resources */,
 				3386D1B826BAF4040023579F /* Roboto-Bold.ttf in Resources */,
 				33AAD342266F87AB00907BCF /* Login.storyboard in Resources */,
+				330CFE1526C3973F005380E4 /* praiseDatePicker.xib in Resources */,
 				3386D1B226BAF3F70023579F /* AppleSDGothicNeoB.ttf in Resources */,
 				33AAD370266F888400907BCF /* Settings.storyboard in Resources */,
 				33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */,
@@ -862,9 +881,12 @@
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
 				33AAD368266F885E00907BCF /* k.swift in Sources */,
+				33686D5D26C444F800711FD6 /* DatePickerPopUpVC.swift in Sources */,
 				3386D1BA26BB00470023579F /* RoundSegmentView.swift in Sources */,
 				335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */,
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
+				33686D5F26C4469500711FD6 /* PraiseData.swift in Sources */,
+				330CFE1726C397C6005380E4 /* praiseDatePickerView.swift in Sources */,
 				33AAD2FC266F76BC00907BCF /* APIConstants.swift in Sources */,
 				33CA10BB26AB47200017EDC9 /* SplashVC.swift in Sources */,
 				33AAD36A266F886600907BCF /* l.swift in Sources */,
@@ -881,6 +903,7 @@
 				33AAD358266F881300907BCF /* j.swift in Sources */,
 				33AAD30C266F7AFE00907BCF /* UIButton+Extension.swift in Sources */,
 				33AAD308266F7AC000907BCF /* UIView+Extension.swift in Sources */,
+				33686D6126C446F200711FD6 /* PraiseService.swift in Sources */,
 				330A4904267249B7002DB3B4 /* Onboarding.swift in Sources */,
 				33AAD372266F888F00907BCF /* SettingsVC.swift in Sources */,
 				33AAD374266F889700907BCF /* m.swift in Sources */,
@@ -896,6 +919,7 @@
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
 				33AAD352266F87F800907BCF /* h.swift in Sources */,
 				33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */,
+				330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */,
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
