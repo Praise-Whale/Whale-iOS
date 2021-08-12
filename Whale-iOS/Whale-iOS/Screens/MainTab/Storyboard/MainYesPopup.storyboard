@@ -48,8 +48,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tOs-t7-8ry">
                                         <rect key="frame" x="32.5" y="83" width="287" height="44"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
-                                                <rect key="frame" x="16" y="0.0" width="255" height="44"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="bqI-yP-clM">
+                                                <rect key="frame" x="16" y="0.0" width="261" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="amm-Ab-oUe"/>
                                                 </constraints>
@@ -62,7 +62,7 @@
                                             <constraint firstAttribute="height" constant="44" id="L8w-HK-lk7"/>
                                             <constraint firstItem="bqI-yP-clM" firstAttribute="leading" secondItem="tOs-t7-8ry" secondAttribute="leading" constant="16" id="aLd-Rr-UuM"/>
                                             <constraint firstItem="bqI-yP-clM" firstAttribute="centerY" secondItem="tOs-t7-8ry" secondAttribute="centerY" id="gSv-bU-gEp"/>
-                                            <constraint firstAttribute="trailing" secondItem="bqI-yP-clM" secondAttribute="trailing" constant="16" id="r4p-Sa-t9f"/>
+                                            <constraint firstAttribute="trailing" secondItem="bqI-yP-clM" secondAttribute="trailing" constant="10" id="r4p-Sa-t9f"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBo-Gv-yvF">
