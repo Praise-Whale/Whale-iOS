@@ -66,7 +66,7 @@ extension MainYesPopupVC {
         titleUnderView.backgroundColor = .sand_yellow
         titleUnderView.makeRounded(cornerRadius: 1)
         
-        nameTextField.font = .NotoSansRegular(size: 13)
+//        nameTextField.font = .AppleSDGothicRegular(size: 13)
         nameTextField.layer.borderColor = UIColor.yellow_3.cgColor
         nameTextField.layer.borderWidth = 1
         nameTextField.placeholder = "이름을 실명으로 입력해주세요."

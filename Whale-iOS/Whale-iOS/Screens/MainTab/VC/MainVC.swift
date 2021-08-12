@@ -154,9 +154,9 @@ extension MainVC {
         afterPraiseView.makeRounded(cornerRadius: 12)
         
         messageImageView.image = UIImage(named: "mainBoxTip")
-        messageLabel.font = .NotoSansRegular(size: 15)
+        messageLabel.font = .AppleSDGothicR(size: 15)
         
-        messageLabel.font = .NotoSansRegular(size: 13)
+        messageLabel.font = .AppleSDGothicR(size: 13)
         messageLabel.textColor = .grey_2
         messageLabel.letterSpacing = -0.65
         messageLabel.lineSpacing(lineHeightMultiple: 1)
@@ -262,7 +262,8 @@ extension MainVC {
         whaleImageView.image = UIImage(named: "mainImgWhaleSuccess")
         
         let attributedString = NSMutableAttributedString(string: "오늘의 칭찬 완료")
-        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.NotoSansBold(size: 17), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료"))
+//        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.AppleSDGothicBold(size: 17), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료"))
+        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.systemFont(ofSize: 17), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료")) // 지우기
         attributedString.addAttribute(.foregroundColor, value: UIColor(red: 76/255, green: 136/255, blue: 242/255, alpha: 1), range: ("오늘의 칭찬 완료" as NSString).range(of: "완료"))
         
         afterPraiseView.backgroundColor = UIColor(red: 76/255, green: 136/255, blue: 242/255, alpha: 0.13)
@@ -276,7 +277,7 @@ extension MainVC {
         whaleImageView.image = UIImage(named: "mainImgWhaleFail")
         
         let attributedString = NSMutableAttributedString(string: "오늘의 칭찬 미완료")
-        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.NotoSansBold(size: 17), range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
+        attributedString.addAttribute(NSAttributedString.Key(rawValue: kCTFontAttributeName as String), value: UIFont.AppleSDGothicBold(size: 17), range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
         attributedString.addAttribute(.foregroundColor, value: UIColor.black, range: ("오늘의 칭찬 미완료" as NSString).range(of: "미완료"))
         
         afterPraiseView.backgroundColor = UIColor(red: 239/255, green: 239/255, blue: 239/255, alpha: 1)
