@@ -200,7 +200,6 @@ extension MainYesPopupVC: UICollectionViewDelegateFlowLayout {
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.x / 10)
         if scrollView.contentOffset.x <= 10 {
             leftBlurImageView.alpha = CGFloat( scrollView.contentOffset.x / 10)
         } else {
