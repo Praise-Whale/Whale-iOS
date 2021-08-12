@@ -11,7 +11,8 @@
             <objects>
                 <tabBarController storyboardIdentifier="WhaleTBC" automaticallyAdjustsScrollViewInsets="NO" id="TBR-Uw-VUV" customClass="WhaleTBC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BuB-1T-QmZ">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" itemSpacing="83" itemWidth="25" id="BuB-1T-QmZ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
