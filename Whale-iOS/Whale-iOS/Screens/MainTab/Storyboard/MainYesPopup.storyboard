@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -80,28 +79,43 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbA-TT-JYb">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KbA-TT-JYb">
                                         <rect key="frame" x="0.0" y="250.5" width="352" height="32"/>
                                         <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="epa-hl-ss7"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zvr-63-YlI">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Zvr-63-YlI">
                                             <size key="itemSize" width="106" height="30"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            <inset key="sectionInset" minX="27" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GZS-PT-EaD">
-                                                <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainRecentCVC" id="GZS-PT-EaD" customClass="MainRecentCVC" customModule="Whale_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="27" y="1" width="106" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bxD-xW-KDB">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="30"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qM-oP-aGD">
+                                                            <rect key="frame" x="32" y="4.5" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="2qM-oP-aGD" firstAttribute="centerY" secondItem="bxD-xW-KDB" secondAttribute="centerY" id="iI6-zm-xiX"/>
+                                                        <constraint firstItem="2qM-oP-aGD" firstAttribute="centerX" secondItem="bxD-xW-KDB" secondAttribute="centerX" id="nes-EU-Cbc"/>
+                                                    </constraints>
                                                 </collectionViewCellContentView>
-                                                <color key="backgroundColor" name="grey_2"/>
                                                 <size key="customSize" width="106" height="30"/>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="2qM-oP-aGD" id="Wvm-xw-062"/>
+                                                    <outlet property="nameView" destination="bxD-xW-KDB" id="ECn-X8-wfr"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -113,16 +127,16 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eBw-Kw-ixL">
-                                        <rect key="frame" x="0.0" y="250.5" width="35" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxBlurFront" translatesAutoresizingMaskIntoConstraints="NO" id="eBw-Kw-ixL">
+                                        <rect key="frame" x="0.0" y="250.5" width="40" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="3Ob-F7-gPI"/>
+                                            <constraint firstAttribute="width" constant="40" id="3Ob-F7-gPI"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d9X-5h-lCS">
-                                        <rect key="frame" x="317" y="250.5" width="35" height="32"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxBlurRear" translatesAutoresizingMaskIntoConstraints="NO" id="d9X-5h-lCS">
+                                        <rect key="frame" x="312" y="250.5" width="40" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="TY4-yK-Ku4"/>
+                                            <constraint firstAttribute="width" constant="40" id="TY4-yK-Ku4"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
@@ -188,10 +202,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="boxBlurFront" width="40" height="32"/>
+        <image name="boxBlurRear" width="40" height="32"/>
         <image name="popupBtnClose" width="16" height="16"/>
-        <namedColor name="grey_2">
-            <color red="0.6119999885559082" green="0.6119999885559082" blue="0.6119999885559082" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

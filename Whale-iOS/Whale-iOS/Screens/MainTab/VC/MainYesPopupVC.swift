@@ -40,6 +40,8 @@ class MainYesPopupVC: UIViewController {
         super.viewDidLoad()
         
         nameTextField.delegate = self
+        recentCollectionView.dataSource = self
+        recentCollectionView.delegate = self
         
         keyBoardAction()
         setDefaultStyle()
@@ -85,16 +87,21 @@ extension MainYesPopupVC {
         popupView.makeRounded(cornerRadius: 15)
         
         titleLabel.text = "누구에게 칭찬했나요?"
-        titleLabel.textColor = .brown_2
-        titleLabel.font = .AppleSDGothicR(size: 18)
-        titleLabel.letterSpacing = -0.9
+        let attributedText = NSMutableAttributedString(string: "누구에게 칭찬했나요?", attributes: [
+            .font: UIFont(name: "AppleSDGothicNeoR00", size: 20.0)!,
+            .foregroundColor: UIColor.brown_2,
+            .kern: -1.0
+        ])
+        attributedText.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeoB00", size: 20.0)!, range: NSRange(location: 5, length: 2))
+        titleLabel.attributedText = attributedText
         
         titleUnderView.backgroundColor = .sand_yellow
         titleUnderView.makeRounded(cornerRadius: 1)
         
-        nameView.layer.borderWidth = 1
         nameView.backgroundColor = .white
         nameView.makeRounded(cornerRadius: 12)
+        nameView.layer.borderWidth = 1
+        nameView.layer.borderColor = UIColor.grey_1.cgColor
         
         nameTextField.font = .AppleSDGothicR(size: 13)
         nameTextField.placeholder = "이름을 실명으로 입력해주세요."
@@ -111,6 +118,7 @@ extension MainYesPopupVC {
         recentTitleLabel.letterSpacing = -0.7
         
         recentCollectionView.backgroundColor = .white
+        leftBlurImageView.alpha = 0
         
         submitBtn.makeRounded(cornerRadius: submitBtn.frame.height/2)
         submitBtn.setTitle("확인", for: .normal)
@@ -155,6 +163,56 @@ extension MainYesPopupVC {
             
             countLabel.isHidden = true
         }
+    }
+}
+
+//MARK: - UICollectionViewDataSource
+
+extension MainYesPopupVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainRecentCVC", for: indexPath) as? MainRecentCVC
+        else {
+            return UICollectionViewCell()
+        }
+        
+        cell.nameLabel.text = "이건임시야!"
+        
+        return cell
+    }
+    
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+
+extension MainYesPopupVC: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let label = UILabel(frame: CGRect.zero)
+        label.text = "이건 임시야!"
+        label.sizeToFit()
+        let cellSize = label.frame.width + 15
+        
+        return CGSize(width: cellSize, height: 32)
+        
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print(scrollView.contentOffset.x / 10)
+        if scrollView.contentOffset.x <= 10 {
+            leftBlurImageView.alpha = CGFloat( scrollView.contentOffset.x / 10)
+        } else {
+            leftBlurImageView.alpha = 1
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        nameTextField.text = "이건임시야!"
+        wordCount = 6
+        setNameTextExists()
+        nameTextField.resignFirstResponder()
     }
 }
 
