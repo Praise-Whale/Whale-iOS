@@ -70,6 +70,7 @@ class MainYesPopupVC: UIViewController {
             return
         }
         
+        dvc.whale = .good
         dvc.modalPresentationStyle = .overCurrentContext
         
         self.present(dvc, animated: false)
