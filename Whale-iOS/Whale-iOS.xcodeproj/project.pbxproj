@@ -73,8 +73,8 @@
 		37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */; };
 		37B77CD02671CCE100039277 /* MainYesPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */; };
 		37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD12671CCF700039277 /* MainYesPopupVC.swift */; };
-		37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* MainNoPopup.storyboard */; };
-		37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* MainNoPopup.swift */; };
+		37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */; };
+		37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */; };
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -148,8 +148,8 @@
 		37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPraiseSentence.swift; sourceTree = "<group>"; };
 		37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainYesPopup.storyboard; sourceTree = "<group>"; };
 		37B77CD12671CCF700039277 /* MainYesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesPopupVC.swift; sourceTree = "<group>"; };
-		37B77CD32671CD1600039277 /* MainNoPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainNoPopup.storyboard; sourceTree = "<group>"; };
-		37B77CD52671CD2C00039277 /* MainNoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoPopup.swift; sourceTree = "<group>"; };
+		37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhaleReactionPopup.storyboard; sourceTree = "<group>"; };
+		37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleReactionPopupVC.swift; sourceTree = "<group>"; };
 		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -502,7 +502,7 @@
 				33AAD34D266F87E900907BCF /* MainVC.swift */,
 				37B77CD12671CCF700039277 /* MainYesPopupVC.swift */,
 				37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */,
-				37B77CD52671CD2C00039277 /* MainNoPopup.swift */,
+				37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -512,7 +512,7 @@
 			children = (
 				33AAD2D7266F74AF00907BCF /* Main.storyboard */,
 				37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */,
-				37B77CD32671CD1600039277 /* MainNoPopup.storyboard */,
+				37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -780,7 +780,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33AAD2DE266F74B000907BCF /* LaunchScreen.storyboard in Resources */,
-				37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */,
+				37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */,
 				3386D1B526BAF3FE0023579F /* AppleSDGothicNeoSB.ttf in Resources */,
 				33CA10B426AB45790017EDC9 /* Splash.storyboard in Resources */,
 				33AAD2DB266F74B000907BCF /* Assets.xcassets in Resources */,
@@ -867,7 +867,7 @@
 				330A491026727603002DB3B4 /* SignUpVC.swift in Sources */,
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
-				37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */,
+				37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
 				33AAD350266F87F200907BCF /* g.swift in Sources */,

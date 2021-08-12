@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainNoPopup: UIViewController {
+class WhaleReactionPopupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
