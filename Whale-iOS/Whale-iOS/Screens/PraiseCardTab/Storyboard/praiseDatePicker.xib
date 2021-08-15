@@ -55,6 +55,9 @@
                         <constraint firstAttribute="height" constant="43" id="d99-mc-OxK"/>
                     </constraints>
                     <state key="normal" title="설정"/>
+                    <connections>
+                        <action selector="setDateBtn:" destination="-1" eventType="touchUpInside" id="lYn-yv-LLS"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ijT-Bn-Q9M">
                     <rect key="frame" x="233" y="10" width="48" height="48"/>
@@ -63,6 +66,9 @@
                         <constraint firstAttribute="height" constant="48" id="KDl-26-ztr"/>
                     </constraints>
                     <state key="normal" image="popupBtnClose"/>
+                    <connections>
+                        <action selector="dismissBtn:" destination="-1" eventType="touchUpInside" id="iHw-kn-Pel"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
