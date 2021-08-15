@@ -11,4 +11,5 @@ target 'Whale-iOS' do
   pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SnapKit'
+  pod 'Then'
 end
