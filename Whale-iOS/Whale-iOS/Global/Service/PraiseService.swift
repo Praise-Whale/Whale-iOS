@@ -13,8 +13,7 @@ struct PraiseService {
     
     func praiseDateService(year: String, month: String, completion: @escaping (NetworkResult<Any>)->(Void)) {
         
-        
-        let url = APIConstants.praiseURL + "/(year)" + "/(month)"
+        let url = APIConstants.praiseURL + year + "/" + month
         
         var token = UserDefaults.standard.string(forKey: "accessToken") ?? ""
         if let savedToken = UserDefaults.standard.string(forKey: "refreshToken") {
