@@ -13,4 +13,9 @@ struct APIConstants {
     static let mainURL = baseURL + "home/"
     /// 로그인 API
     static let loginURL = baseURL + "users/signin"
+    
+    /// 칭찬카드 전체조회 API
+    static let praiseURL = baseURL + "praise/"
+    
+    static let praiseDetailURL = baseURL + "praise?praisedName="
 }
