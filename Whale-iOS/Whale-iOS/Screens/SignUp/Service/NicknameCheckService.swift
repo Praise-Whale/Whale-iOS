@@ -13,11 +13,13 @@ struct NicknameCheckService {
     
     func checkNickname(nickname:String, completion: @escaping (NetworkResult<Any>) -> (Void)){
       
-        let urlString = APIConstants.nicknameCheckURL + nickname
-        let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = URL(string: encodedString)!
+        //한글 인코딩
+        let url = APIConstants.nicknameCheckURL + nickname
+        let encodedString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let encodedUrl = URL(string: encodedString)!
+        
         let header: HTTPHeaders = [ "Content-Type":"application/json"]
-        let dataRequest = AF.request(url,
+        let dataRequest = AF.request(encodedUrl,
                                      method: .get,
                                      encoding: JSONEncoding.default, headers: header)
         
