@@ -7,8 +7,7 @@
 
 import UIKit
 
-class OnboardingCVCell: UICollectionViewCell {
-    
+class OnboardingCVCell: UICollectionViewCell {//
 
     @IBOutlet var firstPraiseLabel: CustomLabel!
     @IBOutlet var secondPraiseLabel: UILabel!

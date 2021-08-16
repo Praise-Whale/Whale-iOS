@@ -85,7 +85,7 @@ class LevelVC: UIViewController {
         
         //create - Yellow line View 생성
         self.view.addSubview(yellowLineView)
-        yellowLineView.backgroundColor = .sand_yellow
+        yellowLineView.backgroundColor = .yellow_1
         
         yellowLineView.snp.makeConstraints { make in
             make.top.equalTo(whaleNameLabel.snp.bottom).offset(6)
@@ -170,7 +170,7 @@ class LevelVC: UIViewController {
         }
         
         self.view.addSubview(yellowLineView2)
-        yellowLineView2.backgroundColor = .sand_yellow
+        yellowLineView2.backgroundColor = .yellow_1
         yellowLineView2.snp.makeConstraints { make in
             make.top.equalTo(praiseCountLabel.snp.bottom).offset(5)
             make.height.equalTo(2)
