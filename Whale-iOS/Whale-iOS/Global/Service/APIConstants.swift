@@ -16,4 +16,6 @@ struct APIConstants {
     
     /// 칭찬카드 전체조회 API
     static let praiseURL = baseURL + "praise/"
+    
+    static let praiseDetailURL = baseURL + "praise?praisedName="
 }
