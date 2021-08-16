@@ -11,6 +11,7 @@ import Lottie
 class SplashVC: UIViewController {
     
     @IBOutlet var lottieView: UIView!
+    var userNickname = UserDefaults.standard.string(forKey: "nickName")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,7 @@ class SplashVC: UIViewController {
                 goToOnboarding()
             }
             else {
-                loginService("DannaWhale")
+                loginService(userNickname ?? "")
             }
         }
     }
@@ -102,7 +103,6 @@ extension SplashVC {
             switch networkResult {
             case .success(let data):
                 if let loginData = data as? LoginData {
-                    UserDefaults.standard.setValue(nickName, forKey: "nickName")
                     UserDefaults.standard.setValue(loginData.accessToken, forKey: "acessToken")
                     UserDefaults.standard.setValue(loginData.refreshToken, forKey: "refreshToken")
                     print("refreshToken", loginData.refreshToken)
