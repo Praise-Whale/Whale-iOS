@@ -62,7 +62,7 @@ extension MainYesPopupVC {
         titleLabel.font = .AppleSDGothicR(size: 18)
         titleLabel.letterSpacing = -0.9
         
-        titleUnderView.backgroundColor = .sand_yellow
+        titleUnderView.backgroundColor = .yellow_1
         titleUnderView.makeRounded(cornerRadius: 1)
         
         nameTextField.addLeftPadding(width: 13)
@@ -86,7 +86,7 @@ extension MainYesPopupVC {
     }
     
     func setNameTextExists() {
-        submitBtn.backgroundColor = .sand_yellow
+        submitBtn.backgroundColor = .yellow_1
     }
     
     func setNameTextNotExists() {
