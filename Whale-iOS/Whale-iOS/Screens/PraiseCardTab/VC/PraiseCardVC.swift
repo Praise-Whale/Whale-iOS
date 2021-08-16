@@ -20,21 +20,37 @@ class PraiseCardVC: UIViewController {
     var emptyImageView = UIImageView()
     let date = Date()
     let calendar = Calendar.current
-    var praiseDataArray: [CollectionPraise] = []
-    lazy var praiseCV: UICollectionView = {
-            let flowLayout = UICollectionViewFlowLayout()
-            flowLayout.scrollDirection = .horizontal
-            flowLayout.minimumLineSpacing = 20 // cell사이의 간격 설정
-            let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-            view.backgroundColor = .clear
-
-            return view
-        }()
+    var praiseCardData: [CollectionPraise] = []
+    var praiseRankData: [RankingCountResult] = []
     var currentYear: String = ""
     var currentMonth: String = ""
     var selectedYear: String = ""
     var selectedMonth: String = ""
     var whiteCardButtonTitle = ""
+    
+    lazy var praiseCV: UICollectionView = {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 20 // cell사이의 간격 설정
+        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.scrollIndicatorInsets = .zero
+        view.backgroundColor = .clear
+        
+        return view
+    }()
+    
+    lazy var praiseRankTV: UITableView = {
+        let view = UITableView(frame: .zero, style: .grouped)
+        view.estimatedRowHeight = 72
+        view.rowHeight = 60
+        view.separatorStyle = .none
+        view.backgroundColor = .clear
+        view.tableHeaderView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 0.0, height: 25))
+        view.layer.backgroundColor = UIColor.clear.cgColor
+        view.isScrollEnabled = false
+        
+        return view
+    }()
     
     //MARK: - IBOutlet
     @IBOutlet var roundSegmentView: RoundSegmentView!
@@ -49,6 +65,20 @@ class PraiseCardVC: UIViewController {
         makeTopView()
         setupDelegate()
         registerCell()
+    }
+    
+    // 대리자 위임
+    private func setupDelegate() {
+        praiseCV.delegate = self
+        praiseCV.dataSource = self
+        praiseRankTV.delegate = self
+        praiseRankTV.dataSource = self
+    }
+    
+    // 셀 등록
+    private func registerCell() {
+        praiseCV.register(PraiseCardCVCell.self, forCellWithReuseIdentifier: PraiseCardCVCell.id)
+        praiseRankTV.register(PraiseRankTVCell.self, forCellReuseIdentifier: PraiseRankTVCell.id)
     }
     
     func getCurrentYearMonth() {
@@ -158,15 +188,6 @@ class PraiseCardVC: UIViewController {
         praiseCV.reloadData()
     }
     
-    private func setupDelegate() {
-        praiseCV.delegate = self
-        praiseCV.dataSource = self
-    }
-    
-    private func registerCell() {
-        praiseCV.register(PraiseCardCVCell.self, forCellWithReuseIdentifier: PraiseCardCVCell.id)
-      }
-    
     //func - 선택된 달에 칭찬기록이 없을 때 UI를 구성하는 함수
     func noPraiseInThisMonth() {
         //create - Yellow box View 생성
@@ -189,6 +210,47 @@ class PraiseCardVC: UIViewController {
         }
     }
     
+    //func - 카드랭킹에 데이터가 없을 때 실행되는 함수 + 칭찬랭킹 하단부 View 생성
+    func noDataInCardRankMakeBottomView() {
+        makeYellowCardBox()
+        noDataTemplateLayout("아직 칭찬을 하지 않았어요!", sub1LabelText: "칭찬 미션을 완료하면", sub2LabelText: "칭찬한 대상에 대한 랭킹이 완성돼요!")
+    }
+    
+    func yesDataInCardRankMakeBottomView(_ praiseRankData: PraiseRankData) {
+        //create - Yellow box View 생성
+        makeYellowCardBox()
+        
+        let praiseRankCountLabel = UILabel()
+        let praiseCountText = "\(praiseRankData.totalPraiserCount)번의 칭찬"
+        let range1 = "\(praiseRankData.totalPraiserCount)번"
+        
+        let praiseCountLabelAttributedString = NSMutableAttributedString(string: praiseCountText, attributes: [
+                                                                            .font: UIFont.AppleSDGothicR(size: 22),
+                                                                            .foregroundColor: UIColor.brown_1,
+                                                                            .kern: -1.1 ])
+        praiseCountLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseCountText as NSString).range(of: range1))
+        praiseRankCountLabel.attributedText = praiseCountLabelAttributedString
+        
+        
+        self.view.addSubview(praiseRankCountLabel)
+        praiseRankCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(cardBoxImageView.snp.top).offset(28)
+            make.leading.equalTo(cardBoxImageView.snp.leading).offset(42)
+        }
+        
+        self.view.addSubview(praiseRankTV)
+        praiseRankTV.snp.makeConstraints { make in
+            make.top.equalTo(praiseRankCountLabel.snp.bottom).offset(0)
+            make.leading.equalTo(cardBoxImageView.snp.leading).offset(0)
+            make.trailing.equalTo(cardBoxImageView.snp.trailing).offset(0)
+            //shadow를 위해 tableView 크게 생성
+            make.height.equalTo(405)
+        }
+        
+        praiseRankTV.reloadData()
+    }
+    
+    //func - 칭찬랭킹뷰
     func makeLankingBottomView() {
         makeYellowCardBox()
         let praiseCountLabel = UILabel()
@@ -225,24 +287,26 @@ extension PraiseCardVC: selectYearMonthFromPicker {
     }
 }
 
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension PraiseCardVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return praiseDataArray.count
+        return praiseCardData.count
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = praiseCV.dequeueReusableCell(withReuseIdentifier: PraiseCardCVCell.id, for: indexPath)
         if let cell = cell as? PraiseCardCVCell {
-            cell.toPraisePersonText = praiseDataArray[indexPath.item].praisedName
-            cell.praisedDateText = praiseDataArray[indexPath.item].createdAt
-            cell.praiseContentText = praiseDataArray[indexPath.item].todayPraise
+            cell.toPraisePersonText = praiseCardData[indexPath.item].praisedName
+            cell.praisedDateText = praiseCardData[indexPath.item].createdAt
+            cell.praiseContentText = praiseCardData[indexPath.item].todayPraise
         }
-
+        
         return cell
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension PraiseCardVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 291, height: 340)
@@ -250,6 +314,51 @@ extension PraiseCardVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 42)
+    }
+}
+
+extension PraiseCardVC: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let praiseDetailVC = self.storyboard?.instantiateViewController(identifier: "PraiseRankDetailVC") as! PraiseRankDetailVC
+        praiseDetailVC.priasedName = praiseRankData[indexPath.row].praisedName
+        self.navigationController?.pushViewController(praiseDetailVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let view:UIView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.bounds.size.width, height: 12))
+        view.backgroundColor = .clear
+        
+        return view
+    }
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 12
+    }
+}
+
+extension PraiseCardVC: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return praiseRankData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = praiseRankTV.dequeueReusableCell(withIdentifier: PraiseRankTVCell.id, for: indexPath)
+        if let cell = cell as? PraiseRankTVCell {
+            cell.selectionStyle = .none
+            cell.backgroundColor = .clear
+            cell.clipsToBounds = true
+            
+            cell.praisedNumber = indexPath.row
+            cell.praisedPersonText = praiseRankData[indexPath.row].praisedName
+            cell.praisedCountText = "\(praiseRankData[indexPath.row].praiserCount)번"
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 72
     }
 }
 
@@ -269,7 +378,7 @@ extension PraiseCardVC {
     @objc func whenPushedPraiseLank() {
         
         print("PraiseLank")
-        makeLankingBottomView()
+        praiseRankService()
     }
 }
 
@@ -280,7 +389,7 @@ extension PraiseCardVC {
             switch networkResult {
             case .success(let data):
                 if let praiseData = data as? PraiseData {
-                    praiseDataArray = praiseData.collectionPraise
+                    praiseCardData = praiseData.collectionPraise
                     if UserDefaults.standard.string(forKey: "praiseFirstDate") == nil {
                         UserDefaults.standard.set( praiseData.firstDate.createdAt.split(separator: "T")[0], forKey: "praiseFirstDate")
                     }
@@ -296,6 +405,35 @@ extension PraiseCardVC {
             case .requestErr(let msg):
                 if msg is String {
                     noDataInCardDrawerMakeBottomView()
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func praiseRankService() {
+        PraiseService.shared.praiseLankService { [self] (networkResult) -> Void in
+            switch networkResult {
+            case .success(let data):
+                if let praiseRank = data as? PraiseRankData {
+                    print(praiseRank.rankingCountResult)
+                    praiseRankData = praiseRank.rankingCountResult
+                    
+                    if praiseRank.totalPraiserCount == 0 {
+                        noDataInCardRankMakeBottomView()
+                    }
+                    else {
+                        yesDataInCardRankMakeBottomView(praiseRank)
+                    }
+                }
+            case .requestErr(let msg):
+                if msg is String {
+                    print(msg)
                 }
             case .pathErr:
                 print("pathErr")
