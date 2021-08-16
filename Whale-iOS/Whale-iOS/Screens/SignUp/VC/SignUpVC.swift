@@ -15,9 +15,13 @@ class SignUpVC: UIViewController {
     @IBOutlet var personalAgreeBtn: UIButton!
     @IBOutlet var serviceAgreeBtn: UIButton!
     @IBOutlet var nextBtn: UIButton!
+    var praiseWhaleText  = "칭찬할고래의"
+    var praiseWhaleTextRange  = "칭찬할고래"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNextBtnLayout(25)
+        setLabelAttributesText()
     }
     
     func setNextBtnLayout(_ cornerRadius: CGFloat) {
@@ -25,6 +29,14 @@ class SignUpVC: UIViewController {
         nextBtn.layer.cornerRadius = cornerRadius
     }
     
+    func setLabelAttributesText() {
+        let firstPraiseAttributedString = NSMutableAttributedString(string: praiseWhaleText, attributes: [
+                                                                        .font: UIFont.AppleSDGothicR(size: 22),
+                                                            .foregroundColor: UIColor.brown_2,
+                                                            .kern: -1.1 ])
+        firstPraiseAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseWhaleText as NSString).range(of: praiseWhaleTextRange))
+        firstTitleLabel.attributedText = firstPraiseAttributedString
+    }
     
     @IBAction func touchUpAgreeAllBtn(_ sender: UIButton) {
         if agreeAllBtn.isSelected == false {
@@ -32,7 +44,7 @@ class SignUpVC: UIViewController {
             personalAgreeBtn.isSelected = true
             serviceAgreeBtn.isSelected = true
             nextBtn.isEnabled = true
-            nextBtn.backgroundColor = .sand_yellow
+            nextBtn.backgroundColor = .yellow_1
         }
         else {
             agreeAllBtn.isSelected = false
@@ -49,7 +61,7 @@ class SignUpVC: UIViewController {
             if serviceAgreeBtn.isSelected == true {
                 agreeAllBtn.isSelected = true
                 nextBtn.isEnabled = true
-                nextBtn.backgroundColor = .sand_yellow
+                nextBtn.backgroundColor = .yellow_1
             }
         }
         else {
@@ -66,7 +78,7 @@ class SignUpVC: UIViewController {
             if personalAgreeBtn.isSelected == true {
                 agreeAllBtn.isSelected = true
                 nextBtn.isEnabled = true
-                nextBtn.backgroundColor = .sand_yellow
+                nextBtn.backgroundColor = .yellow_1
             }
         }
         else {
