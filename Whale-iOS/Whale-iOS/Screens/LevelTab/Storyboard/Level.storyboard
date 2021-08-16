@@ -15,28 +15,57 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaI-kZ-RqR">
-                                <rect key="frame" x="186" y="442.5" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="UaI-kZ-RqR" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="FKG-qO-Ifk"/>
-                            <constraint firstItem="UaI-kZ-RqR" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="cXX-xh-3fN"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="35" y="97"/>
         </scene>
+        <!--Level InfoVC-->
+        <scene sceneID="Are-vF-nae">
+            <objects>
+                <viewController storyboardIdentifier="LevelInfoVC" id="1vt-2h-Kbf" customClass="LevelInfoVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qid-5R-7Vv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lvInfoImg" translatesAutoresizingMaskIntoConstraints="NO" id="hT7-Dx-scO">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nJ-L1-qdf">
+                                <rect key="frame" x="12" y="44" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9nJ-L1-qdf" secondAttribute="height" multiplier="1:1" id="42a-aE-7f4"/>
+                                    <constraint firstAttribute="height" constant="48" id="R2p-3D-cG8"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="lvInfoBtnClose"/>
+                                <connections>
+                                    <action selector="dismissBtn:" destination="1vt-2h-Kbf" eventType="touchUpInside" id="iHz-Lk-6oK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e8y-TS-OF9"/>
+                        <color key="backgroundColor" red="1" green="0.98431372549019602" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="hT7-Dx-scO" firstAttribute="leading" secondItem="qid-5R-7Vv" secondAttribute="leading" id="YaR-LL-Q1j"/>
+                            <constraint firstItem="e8y-TS-OF9" firstAttribute="bottom" secondItem="hT7-Dx-scO" secondAttribute="bottom" id="aGk-S6-CoZ"/>
+                            <constraint firstItem="9nJ-L1-qdf" firstAttribute="top" secondItem="e8y-TS-OF9" secondAttribute="top" id="ax2-2b-GSG"/>
+                            <constraint firstItem="hT7-Dx-scO" firstAttribute="top" secondItem="e8y-TS-OF9" secondAttribute="top" id="gIa-xv-HYp"/>
+                            <constraint firstItem="e8y-TS-OF9" firstAttribute="trailing" secondItem="hT7-Dx-scO" secondAttribute="trailing" id="gu7-NE-GVf"/>
+                            <constraint firstItem="9nJ-L1-qdf" firstAttribute="leading" secondItem="e8y-TS-OF9" secondAttribute="leading" constant="12" id="sNs-Yp-Eex"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PRG-Gp-9Uh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="95.758928571428569"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="lvInfoBtnClose" width="20" height="20"/>
+        <image name="lvInfoImg" width="375" height="812"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
