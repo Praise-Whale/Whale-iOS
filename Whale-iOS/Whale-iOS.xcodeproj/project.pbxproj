@@ -76,6 +76,11 @@
 		33CA10BB26AB47200017EDC9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA10BA26AB47200017EDC9 /* SplashVC.swift */; };
 		33F2C33926C95B5E0096006D /* PraiseCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C33826C95B5E0096006D /* PraiseCardCVCell.swift */; };
 		33F2C33B26C9671C0096006D /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F2C33A26C967170096006D /* GmarketSansTTFMedium.ttf */; };
+		33F2C34126C9915D0096006D /* PraiseRankData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34026C9915D0096006D /* PraiseRankData.swift */; };
+		33F2C34326C9977A0096006D /* PraiseRankTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34226C9977A0096006D /* PraiseRankTVCell.swift */; };
+		33F2C34526CA49350096006D /* PraiseRankDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34426CA49350096006D /* PraiseRankDetailVC.swift */; };
+		33F2C34726CA51400096006D /* PraiseDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34626CA51400096006D /* PraiseDetailData.swift */; };
+		33F2C34926CA5C2A0096006D /* PraiseCardNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34826CA5C2A0096006D /* PraiseCardNC.swift */; };
 		37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC72670CCA900039277 /* UIFont+Extension.swift */; };
 		37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC92670DAF300039277 /* UILabel+Extension.swift */; };
 		37B77CCC2670EBF200039277 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCB2670EBF200039277 /* MainService.swift */; };
@@ -160,6 +165,11 @@
 		33CA10BA26AB47200017EDC9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		33F2C33826C95B5E0096006D /* PraiseCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseCardCVCell.swift; sourceTree = "<group>"; };
 		33F2C33A26C967170096006D /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
+		33F2C34026C9915D0096006D /* PraiseRankData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRankData.swift; sourceTree = "<group>"; };
+		33F2C34226C9977A0096006D /* PraiseRankTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRankTVCell.swift; sourceTree = "<group>"; };
+		33F2C34426CA49350096006D /* PraiseRankDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRankDetailVC.swift; sourceTree = "<group>"; };
+		33F2C34626CA51400096006D /* PraiseDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseDetailData.swift; sourceTree = "<group>"; };
+		33F2C34826CA5C2A0096006D /* PraiseCardNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseCardNC.swift; sourceTree = "<group>"; };
 		37B77CC72670CCA900039277 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		37B77CC92670DAF300039277 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		37B77CCB2670EBF200039277 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -431,6 +441,8 @@
 				335CF37926C00BC30097AAD2 /* LoginData.swift */,
 				37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */,
 				33686D5E26C4469500711FD6 /* PraiseData.swift */,
+				33F2C34026C9915D0096006D /* PraiseRankData.swift */,
+				33F2C34626CA51400096006D /* PraiseDetailData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				33F2C33826C95B5E0096006D /* PraiseCardCVCell.swift */,
+				33F2C34226C9977A0096006D /* PraiseRankTVCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -563,6 +576,8 @@
 				33AAD35B266F882400907BCF /* PraiseCardVC.swift */,
 				330CFE1626C397C6005380E4 /* praiseDatePickerView.swift */,
 				33686D5C26C444F800711FD6 /* DatePickerPopUpVC.swift */,
+				33F2C34426CA49350096006D /* PraiseRankDetailVC.swift */,
+				33F2C34826CA5C2A0096006D /* PraiseCardNC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -885,7 +900,9 @@
 				33AAD306266F7A9A00907BCF /* Notification.Name.swift in Sources */,
 				37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */,
 				33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */,
+				33F2C34926CA5C2A0096006D /* PraiseCardNC.swift in Sources */,
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
+				33F2C34726CA51400096006D /* PraiseDetailData.swift in Sources */,
 				3311510526C7AF9D00556631 /* Int+Extension.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
 				33AAD368266F885E00907BCF /* k.swift in Sources */,
@@ -898,6 +915,7 @@
 				33AAD2FC266F76BC00907BCF /* APIConstants.swift in Sources */,
 				33CA10BB26AB47200017EDC9 /* SplashVC.swift in Sources */,
 				33AAD36A266F886600907BCF /* l.swift in Sources */,
+				33F2C34526CA49350096006D /* PraiseRankDetailVC.swift in Sources */,
 				330A491026727603002DB3B4 /* SignUpVC.swift in Sources */,
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
@@ -930,8 +948,10 @@
 				330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */,
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
+				33F2C34326C9977A0096006D /* PraiseRankTVCell.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
 				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,
+				33F2C34126C9915D0096006D /* PraiseRankData.swift in Sources */,
 				37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */,
 				37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */,
 				33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */,

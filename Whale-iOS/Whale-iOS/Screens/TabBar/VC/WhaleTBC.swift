@@ -37,8 +37,8 @@ class WhaleTBC: UITabBarController {
         
         // 칭찬카드탭
         let PraiseCardTab = UIStoryboard.init(name: "PraiseCard", bundle: nil)
-        guard let secondTab = PraiseCardTab.instantiateViewController(identifier: "PraiseCardVC")
-                as? PraiseCardVC  else {
+        guard let secondTab = PraiseCardTab.instantiateViewController(identifier: "PraiseCardNC")
+                as? PraiseCardNC  else {
             return
         }
         secondTab.tabBarItem.image = UIImage(named: "naviIcCard")
