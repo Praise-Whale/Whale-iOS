@@ -31,9 +31,11 @@ class LevelVC: UIViewController {
     var whaleName: String = ""
     var praiseCnt: CGFloat = 0
     var levelUpNeedCount: Int = 0
+    var goal: Int = 0
     var levelImageName: String = ""
     var whaleImageName: String = ""
     var levelDescText: String = ""
+    var nextLavelGuideText: String = ""
     var whaleImageFrame: CGSize?
     
     
@@ -179,16 +181,32 @@ class LevelVC: UIViewController {
         }
         
         self.view.addSubview(nextLevelGuideLabel)
-        let nextLevelGuideText = "\(nickName)님은 이제 칭찬의 신!"
-        let nextLevelGuideRange = "칭찬의 신!"
-        
-        let nextLevelGuideLabelAttributedString = NSMutableAttributedString(string: nextLevelGuideText, attributes: [
-                                                                            .font: UIFont.AppleSDGothicR(size: 16),
-                                                                                .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
-                                                                            .kern: -0.8 ])
-        nextLevelGuideLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 16), range: (nextLevelGuideText as NSString).range(of: nextLevelGuideRange))
-        
-        nextLevelGuideLabel.attributedText = nextLevelGuideLabelAttributedString
+        if level != 5 {
+            let nextLevelGuideText = nextLavelGuideText
+            let nextLevelGuideRange = "\(goal)번"
+            
+            let nextLevelGuideLabelAttributedString = NSMutableAttributedString(string: nextLevelGuideText, attributes: [
+                                                                                .font: UIFont.AppleSDGothicR(size: 16),
+                                                                                    .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
+                                                                                .kern: -0.8 ])
+            nextLevelGuideLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 16), range: (nextLevelGuideText as NSString).range(of: nextLevelGuideRange))
+            
+            nextLevelGuideLabel.attributedText = nextLevelGuideLabelAttributedString
+            
+        }
+        else {
+            let nextLevelGuideText = "\(nickName)님은 이제 칭찬의 신!"
+            let nextLevelGuideRange = "칭찬의 신!"
+            
+            let nextLevelGuideLabelAttributedString = NSMutableAttributedString(string: nextLevelGuideText, attributes: [
+                                                                                .font: UIFont.AppleSDGothicR(size: 16),
+                                                                                    .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
+                                                                                .kern: -0.8 ])
+            nextLevelGuideLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 16), range: (nextLevelGuideText as NSString).range(of: nextLevelGuideRange))
+            
+            nextLevelGuideLabel.attributedText = nextLevelGuideLabelAttributedString
+            
+        }
         
         nextLevelGuideLabel.snp.makeConstraints { make in
             make.top.equalTo(yellowLineView2.snp.bottom).offset(5)
@@ -217,6 +235,7 @@ extension LevelVC {
         if level == 0 {
             print("level 0")
             standard = 5
+            goal = 5
             exchangePraiseCnt = praiseCnt
             gagePercent = exchangePraiseCnt / standard
             
@@ -224,10 +243,12 @@ extension LevelVC {
             whaleImageName = "lv0ImgWhale"
             whaleImageFrame = CGSize(width: 167.7, height: 155)
             levelDescText = "아직은 칭찬이 어색한 고래"
+            nextLavelGuideText = "5번 달성시 다음 레벨!"
         }
         else if level == 1 {
             print("level 1")
             standard = 5
+            goal = 10
             exchangePraiseCnt = praiseCnt - standard
             gagePercent = exchangePraiseCnt / standard
             
@@ -235,10 +256,12 @@ extension LevelVC {
             whaleImageName = "lv1ImgWhale"
             whaleImageFrame = CGSize(width: 203.4, height: 167)
             levelDescText = "칭찬에 흥미가 생긴 고래"
+            nextLavelGuideText = "10번 달성시 다음 레벨!"
         }
         else if level == 2 {
             print("level 2")
             standard = 20
+            goal = 30
             exchangePraiseCnt = praiseCnt - 10
             gagePercent = exchangePraiseCnt / standard
             
@@ -246,10 +269,12 @@ extension LevelVC {
             whaleImageName = "lv2ImgWhale"
             whaleImageFrame = CGSize(width: 234.5, height: 230)
             levelDescText = "칭찬에 익숙해진 고래"
+            nextLavelGuideText = "30번 달성시 다음 레벨!"
         }
         else if level == 3 {
             print("level 3")
             standard = 20
+            goal = 50
             exchangePraiseCnt = praiseCnt - 30
             gagePercent = exchangePraiseCnt / standard
             
@@ -257,10 +282,12 @@ extension LevelVC {
             whaleImageName = "lv3ImgWhale"
             whaleImageFrame = CGSize(width: 248.7, height: 193)
             levelDescText = "슬슬 리듬타기 시작한 고래"
+            nextLavelGuideText = "50번 달성시 다음 레벨!"
         }
         else if level == 4 {
             print("level 4")
             standard = 50
+            goal = 100
             exchangePraiseCnt = praiseCnt - standard
             gagePercent = exchangePraiseCnt / standard
             
@@ -268,6 +295,7 @@ extension LevelVC {
             whaleImageName = "lv4ImgWhale"
             whaleImageFrame = CGSize(width: 251.1, height: 220)
             levelDescText = "신나게 춤 추는 고래"
+            nextLavelGuideText = "100번 달성시 다음 레벨!"
         }
         else {
             print("level 5")
@@ -277,6 +305,7 @@ extension LevelVC {
             whaleImageName = "lv5ImgWhale"
             whaleImageFrame = CGSize(width: 264.8, height: 230)
             levelDescText = "춤신 춤왕 만렙 고래"
+            nextLavelGuideText = "\(nickName)님은 이제 칭찬의 신!"
         }
         
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
