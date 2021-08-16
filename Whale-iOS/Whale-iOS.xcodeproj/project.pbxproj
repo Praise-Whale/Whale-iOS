@@ -37,7 +37,6 @@
 		33AAD30C266F7AFE00907BCF /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD30B266F7AFE00907BCF /* UIButton+Extension.swift */; };
 		33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD30D266F7B3800907BCF /* UIWindow+Extension.swift */; };
 		33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD30F266F7B7700907BCF /* CircularProgressView.swift */; };
-		33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD311266F7BA500907BCF /* CircularProgressBar.swift */; };
 		33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD313266F7BC700907BCF /* CustomLabel.swift */; };
 		33AAD32A266F871600907BCF /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD329266F871600907BCF /* Onboarding.storyboard */; };
 		33AAD342266F87AB00907BCF /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD341266F87AB00907BCF /* Login.storyboard */; };
@@ -67,6 +66,11 @@
 		33CA10B426AB45790017EDC9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10B326AB45790017EDC9 /* Splash.storyboard */; };
 		33CA10B726AB46B90017EDC9 /* whale.json in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10B626AB46B90017EDC9 /* whale.json */; };
 		33CA10BB26AB47200017EDC9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA10BA26AB47200017EDC9 /* SplashVC.swift */; };
+		33F2C34F26CA822C0096006D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34E26CA822C0096006D /* Timer.swift */; };
+		33F2C35126CA82920096006D /* CircularGradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */; };
+		33F2C35326CA991B0096006D /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35226CA991B0096006D /* LevelData.swift */; };
+		33F2C35526CA9A030096006D /* LevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35426CA9A030096006D /* LevelService.swift */; };
+		33F2C35726CAAEDF0096006D /* LevelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */; };
 		37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC72670CCA900039277 /* UIFont+Extension.swift */; };
 		37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC92670DAF300039277 /* UILabel+Extension.swift */; };
 		37B77CCC2670EBF200039277 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCB2670EBF200039277 /* MainService.swift */; };
@@ -112,7 +116,6 @@
 		33AAD30B266F7AFE00907BCF /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		33AAD30D266F7B3800907BCF /* UIWindow+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
 		33AAD30F266F7B7700907BCF /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		33AAD311266F7BA500907BCF /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		33AAD313266F7BC700907BCF /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		33AAD329266F871600907BCF /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		33AAD341266F87AB00907BCF /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -142,6 +145,11 @@
 		33CA10B326AB45790017EDC9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		33CA10B626AB46B90017EDC9 /* whale.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = whale.json; sourceTree = "<group>"; };
 		33CA10BA26AB47200017EDC9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		33F2C34E26CA822C0096006D /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradientProgressBar.swift; sourceTree = "<group>"; };
+		33F2C35226CA991B0096006D /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		33F2C35426CA9A030096006D /* LevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelService.swift; sourceTree = "<group>"; };
+		33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelInfoVC.swift; sourceTree = "<group>"; };
 		37B77CC72670CCA900039277 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		37B77CC92670DAF300039277 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		37B77CCB2670EBF200039277 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -333,6 +341,8 @@
 			isa = PBXGroup;
 			children = (
 				33AAD30F266F7B7700907BCF /* CircularProgressView.swift */,
+				33F2C34E26CA822C0096006D /* Timer.swift */,
+				33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -340,7 +350,6 @@
 		33AAD2F7266F768300907BCF /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				33AAD311266F7BA500907BCF /* CircularProgressBar.swift */,
 				33AAD313266F7BC700907BCF /* CustomLabel.swift */,
 			);
 			path = Class;
@@ -408,6 +417,7 @@
 				33AAD2F9266F76A200907BCF /* GenericResponse.swift */,
 				335CF37926C00BC30097AAD2 /* LoginData.swift */,
 				37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */,
+				33F2C35226CA991B0096006D /* LevelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +429,7 @@
 				33AAD2FD266F76CA00907BCF /* NetworkResult.swift */,
 				37B77CCB2670EBF200039277 /* MainService.swift */,
 				335CF37726C00AE10097AAD2 /* LoginService.swift */,
+				33F2C35426CA9A030096006D /* LevelService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -569,6 +580,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD365266F885800907BCF /* LevelVC.swift */,
+				33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -854,10 +866,12 @@
 			files = (
 				33AAD344266F87B600907BCF /* LoginVC.swift in Sources */,
 				33AAD306266F7A9A00907BCF /* Notification.Name.swift in Sources */,
+				33F2C35526CA9A030096006D /* LevelService.swift in Sources */,
 				37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */,
 				33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */,
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
+				33F2C35326CA991B0096006D /* LevelData.swift in Sources */,
 				33AAD368266F885E00907BCF /* k.swift in Sources */,
 				335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */,
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
@@ -883,6 +897,7 @@
 				37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */,
 				335CF37A26C00BC30097AAD2 /* LoginData.swift in Sources */,
 				33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */,
+				33F2C35726CAAEDF0096006D /* LevelInfoVC.swift in Sources */,
 				33AAD35A266F881900907BCF /*  i.swift in Sources */,
 				37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */,
 				33AAD2FA266F76A200907BCF /* GenericResponse.swift in Sources */,
@@ -895,9 +910,10 @@
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
-				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,
 				37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */,
+				33F2C34F26CA822C0096006D /* Timer.swift in Sources */,
 				37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */,
+				33F2C35126CA82920096006D /* CircularGradientProgressBar.swift in Sources */,
 				33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */,
 				33AAD304266F787400907BCF /* UIColor+Additions.swift in Sources */,
 			);
