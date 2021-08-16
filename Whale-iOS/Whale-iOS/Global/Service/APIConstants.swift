@@ -14,10 +14,14 @@ struct APIConstants {
     /// 로그인 API
     static let loginURL = baseURL + "users/signin"
     
+    static let signUpURL = baseURL + "users/signup"
+    
     /// 레벨 정보 조회 API
     static let levelURL = baseURL + "users/home"
     /// 칭찬카드 전체조회 API
     static let praiseURL = baseURL + "praise/"
     
     static let praiseDetailURL = baseURL + "praise?praisedName="
+    
+    static let nicknameCheckURL = baseURL + "users/check/"
 }

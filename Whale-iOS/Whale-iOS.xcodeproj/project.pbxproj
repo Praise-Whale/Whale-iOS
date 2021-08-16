@@ -29,6 +29,10 @@
 		3386D1B726BAF4020023579F /* GmarketSansTTFBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B026BAF3F50023579F /* GmarketSansTTFBold.ttf */; };
 		3386D1B826BAF4040023579F /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */; };
 		3386D1BA26BB00470023579F /* RoundSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386D1B926BB00470023579F /* RoundSegmentView.swift */; };
+		3387DD9126728F6800CF26F1 /* SignUpNicknameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */; };
+		3387DD932672901200CF26F1 /* SignUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD922672901200CF26F1 /* SignUpData.swift */; };
+		3387DD97267297AA00CF26F1 /* NicknameCheckService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */; };
+		3387DD9926729AD200CF26F1 /* BasicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3387DD9826729AD200CF26F1 /* BasicData.swift */; };
 		33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D1266F74AF00907BCF /* AppDelegate.swift */; };
 		33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */; };
 		33AAD2D9266F74AF00907BCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33AAD2D7266F74AF00907BCF /* Main.storyboard */; };
@@ -73,11 +77,6 @@
 		33CA10B426AB45790017EDC9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10B326AB45790017EDC9 /* Splash.storyboard */; };
 		33CA10B726AB46B90017EDC9 /* whale.json in Resources */ = {isa = PBXBuildFile; fileRef = 33CA10B626AB46B90017EDC9 /* whale.json */; };
 		33CA10BB26AB47200017EDC9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA10BA26AB47200017EDC9 /* SplashVC.swift */; };
-		33F2C34F26CA822C0096006D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34E26CA822C0096006D /* Timer.swift */; };
-		33F2C35126CA82920096006D /* CircularGradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */; };
-		33F2C35326CA991B0096006D /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35226CA991B0096006D /* LevelData.swift */; };
-		33F2C35526CA9A030096006D /* LevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35426CA9A030096006D /* LevelService.swift */; };
-		33F2C35726CAAEDF0096006D /* LevelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */; };
 		33F2C33926C95B5E0096006D /* PraiseCardCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C33826C95B5E0096006D /* PraiseCardCVCell.swift */; };
 		33F2C33B26C9671C0096006D /* GmarketSansTTFMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33F2C33A26C967170096006D /* GmarketSansTTFMedium.ttf */; };
 		33F2C34126C9915D0096006D /* PraiseRankData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34026C9915D0096006D /* PraiseRankData.swift */; };
@@ -85,6 +84,13 @@
 		33F2C34526CA49350096006D /* PraiseRankDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34426CA49350096006D /* PraiseRankDetailVC.swift */; };
 		33F2C34726CA51400096006D /* PraiseDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34626CA51400096006D /* PraiseDetailData.swift */; };
 		33F2C34926CA5C2A0096006D /* PraiseCardNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34826CA5C2A0096006D /* PraiseCardNC.swift */; };
+		33F2C34F26CA822C0096006D /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C34E26CA822C0096006D /* Timer.swift */; };
+		33F2C35126CA82920096006D /* CircularGradientProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */; };
+		33F2C35326CA991B0096006D /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35226CA991B0096006D /* LevelData.swift */; };
+		33F2C35526CA9A030096006D /* LevelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35426CA9A030096006D /* LevelService.swift */; };
+		33F2C35726CAAEDF0096006D /* LevelInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */; };
+		33F2C35926CAD0E10096006D /* SignUpWhaleNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35826CAD0E10096006D /* SignUpWhaleNameVC.swift */; };
+		33F2C35B26CAD8FA0096006D /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F2C35A26CAD8FA0096006D /* SignUpService.swift */; };
 		37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC72670CCA900039277 /* UIFont+Extension.swift */; };
 		37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CC92670DAF300039277 /* UILabel+Extension.swift */; };
 		37B77CCC2670EBF200039277 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCB2670EBF200039277 /* MainService.swift */; };
@@ -120,6 +126,10 @@
 		3386D1B026BAF3F50023579F /* GmarketSansTTFBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFBold.ttf; sourceTree = "<group>"; };
 		3386D1B126BAF3F50023579F /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3386D1B926BB00470023579F /* RoundSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundSegmentView.swift; sourceTree = "<group>"; };
+		3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpNicknameVC.swift; sourceTree = "<group>"; };
+		3387DD922672901200CF26F1 /* SignUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignUpData.swift; path = "Whale-iOS/Screens/SignUp/Model/SignUpData.swift"; sourceTree = SOURCE_ROOT; };
+		3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameCheckService.swift; sourceTree = "<group>"; };
+		3387DD9826729AD200CF26F1 /* BasicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicData.swift; sourceTree = "<group>"; };
 		33AAD2CE266F74AF00907BCF /* Whale-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Whale-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33AAD2D1266F74AF00907BCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33AAD2D3266F74AF00907BCF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,11 +176,6 @@
 		33CA10B326AB45790017EDC9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		33CA10B626AB46B90017EDC9 /* whale.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = whale.json; sourceTree = "<group>"; };
 		33CA10BA26AB47200017EDC9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
-		33F2C34E26CA822C0096006D /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradientProgressBar.swift; sourceTree = "<group>"; };
-		33F2C35226CA991B0096006D /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
-		33F2C35426CA9A030096006D /* LevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelService.swift; sourceTree = "<group>"; };
-		33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelInfoVC.swift; sourceTree = "<group>"; };
 		33F2C33826C95B5E0096006D /* PraiseCardCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseCardCVCell.swift; sourceTree = "<group>"; };
 		33F2C33A26C967170096006D /* GmarketSansTTFMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansTTFMedium.ttf; sourceTree = "<group>"; };
 		33F2C34026C9915D0096006D /* PraiseRankData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRankData.swift; sourceTree = "<group>"; };
@@ -178,6 +183,13 @@
 		33F2C34426CA49350096006D /* PraiseRankDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseRankDetailVC.swift; sourceTree = "<group>"; };
 		33F2C34626CA51400096006D /* PraiseDetailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseDetailData.swift; sourceTree = "<group>"; };
 		33F2C34826CA5C2A0096006D /* PraiseCardNC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseCardNC.swift; sourceTree = "<group>"; };
+		33F2C34E26CA822C0096006D /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		33F2C35026CA82920096006D /* CircularGradientProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularGradientProgressBar.swift; sourceTree = "<group>"; };
+		33F2C35226CA991B0096006D /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		33F2C35426CA9A030096006D /* LevelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelService.swift; sourceTree = "<group>"; };
+		33F2C35626CAAEDF0096006D /* LevelInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelInfoVC.swift; sourceTree = "<group>"; };
+		33F2C35826CAD0E10096006D /* SignUpWhaleNameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWhaleNameVC.swift; sourceTree = "<group>"; };
+		33F2C35A26CAD8FA0096006D /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		37B77CC72670CCA900039277 /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		37B77CC92670DAF300039277 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		37B77CCB2670EBF200039277 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -209,8 +221,8 @@
 			children = (
 				330A4909267275D6002DB3B4 /* Storyboard */,
 				330A490A267275DB002DB3B4 /* VC */,
-				330A490C267275E4002DB3B4 /* Cell */,
-				330A490B267275E0002DB3B4 /* Model */,
+				3387DD94267290ED00CF26F1 /* Model */,
+				3387DD952672978900CF26F1 /* Service */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -227,22 +239,26 @@
 			isa = PBXGroup;
 			children = (
 				330A490F26727603002DB3B4 /* SignUpVC.swift */,
+				3387DD9026728F6800CF26F1 /* SignUpNicknameVC.swift */,
+				33F2C35826CAD0E10096006D /* SignUpWhaleNameVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
 		};
-		330A490B267275E0002DB3B4 /* Model */ = {
+		3387DD94267290ED00CF26F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3387DD922672901200CF26F1 /* SignUpData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		330A490C267275E4002DB3B4 /* Cell */ = {
+		3387DD952672978900CF26F1 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3387DD96267297AA00CF26F1 /* NicknameCheckService.swift */,
 			);
-			path = Cell;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		33AAD2C5266F74AF00907BCF = {
@@ -369,7 +385,6 @@
 		33AAD2F6266F767A00907BCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				33AAD311266F7BA500907BCF /* CircularProgressBar.swift */,
 				3386D1B926BB00470023579F /* RoundSegmentView.swift */,
 				33AAD30F266F7B7700907BCF /* CircularProgressView.swift */,
 				33F2C34E26CA822C0096006D /* Timer.swift */,
@@ -454,6 +469,7 @@
 				33686D5E26C4469500711FD6 /* PraiseData.swift */,
 				33F2C34026C9915D0096006D /* PraiseRankData.swift */,
 				33F2C34626CA51400096006D /* PraiseDetailData.swift */,
+				3387DD9826729AD200CF26F1 /* BasicData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,6 +483,7 @@
 				335CF37726C00AE10097AAD2 /* LoginService.swift */,
 				33F2C35426CA9A030096006D /* LevelService.swift */,
 				33686D6026C446F200711FD6 /* PraiseService.swift */,
+				33F2C35A26CAD8FA0096006D /* SignUpService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -924,6 +941,8 @@
 				33686D5D26C444F800711FD6 /* DatePickerPopUpVC.swift in Sources */,
 				3386D1BA26BB00470023579F /* RoundSegmentView.swift in Sources */,
 				335CF37826C00AE10097AAD2 /* LoginService.swift in Sources */,
+				3387DD9926729AD200CF26F1 /* BasicData.swift in Sources */,
+				3387DD97267297AA00CF26F1 /* NicknameCheckService.swift in Sources */,
 				330A49002672432C002DB3B4 /* OnboardingVC.swift in Sources */,
 				33686D5F26C4469500711FD6 /* PraiseData.swift in Sources */,
 				330CFE1726C397C6005380E4 /* praiseDatePickerView.swift in Sources */,
@@ -938,6 +957,7 @@
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
 				33AAD350266F87F200907BCF /* g.swift in Sources */,
+				3387DD932672901200CF26F1 /* SignUpData.swift in Sources */,
 				330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */,
 				33AAD2FE266F76CA00907BCF /* NetworkResult.swift in Sources */,
 				330A4906267268C2002DB3B4 /* LastOnboardingCVC.swift in Sources */,
@@ -952,11 +972,12 @@
 				335CF37A26C00BC30097AAD2 /* LoginData.swift in Sources */,
 				33AAD30E266F7B3800907BCF /* UIWindow+Extension.swift in Sources */,
 				33F2C35726CAAEDF0096006D /* LevelInfoVC.swift in Sources */,
-				33AAD35A266F881900907BCF /*  i.swift in Sources */,
 				37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */,
 				33AAD2FA266F76A200907BCF /* GenericResponse.swift in Sources */,
+				33F2C35926CAD0E10096006D /* SignUpWhaleNameVC.swift in Sources */,
 				33AAD30A266F7AE400907BCF /* UITextField+Extension.swift in Sources */,
 				33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */,
+				33F2C35B26CAD8FA0096006D /* SignUpService.swift in Sources */,
 				33AAD366266F885800907BCF /* LevelVC.swift in Sources */,
 				33F2C33926C95B5E0096006D /* PraiseCardCVCell.swift in Sources */,
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
@@ -967,13 +988,13 @@
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33F2C34326C9977A0096006D /* PraiseRankTVCell.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,
-				33AAD312266F7BA500907BCF /* CircularProgressBar.swift in Sources */,
 				33F2C34126C9915D0096006D /* PraiseRankData.swift in Sources */,
 				37B77CC82670CCA900039277 /* UIFont+Extension.swift in Sources */,
 				33F2C34F26CA822C0096006D /* Timer.swift in Sources */,
 				37B77CCA2670DAF300039277 /* UILabel+Extension.swift in Sources */,
 				33F2C35126CA82920096006D /* CircularGradientProgressBar.swift in Sources */,
 				33AAD310266F7B7700907BCF /* CircularProgressView.swift in Sources */,
+				3387DD9126728F6800CF26F1 /* SignUpNicknameVC.swift in Sources */,
 				33AAD304266F787400907BCF /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1125,6 +1146,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1132,7 +1154,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.praise.Whale-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1145,6 +1167,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2ZS26WP93H;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1152,7 +1175,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.praise.Whale-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
