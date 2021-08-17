@@ -12,7 +12,7 @@ class MainYesPopupVC: UIViewController {
     //MARK: - Custom Variables
     
     var wordCount: Int = 0
-    let praiseId: Int = 0
+    let praiseId: Int = UserDefaults.standard.integer(forKey: "PraiseId")
     
     var nameTyped: String = ""
     
