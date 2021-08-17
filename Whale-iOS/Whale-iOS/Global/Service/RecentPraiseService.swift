@@ -15,10 +15,7 @@ struct RecentPraiseService {
     
     func getUser(completion: @escaping (NetworkResult<Any>)->(Void)) {
         
-        var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo2LCJpYXQiOjE2Mjc5MjYyMTgsImV4cCI6MTYzMDUxODIxOCwiaXNzIjoicHJhaXNlIn0.AIv-crWxnFfhorn8T_-oCEFPXXCr3ohCOuQ7CuyRNvM"
-        if let savedToken = UserDefaults.standard.string(forKey: "accessToken") {
-            token = savedToken
-        }
+        let token = UserDefaults.standard.string(forKey: "accessToken") ?? ""
         
         let url = APIConstants.getRecentURL
         let header: HTTPHeaders = [
@@ -69,10 +66,7 @@ struct RecentPraiseService {
     
     func postUser(id: Int, name: String, completion: @escaping (NetworkResult<Any>)->(Void)) {
         
-        var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWR4Ijo2LCJpYXQiOjE2Mjc5MjYyMTgsImV4cCI6MTYzMDUxODIxOCwiaXNzIjoicHJhaXNlIn0.AIv-crWxnFfhorn8T_-oCEFPXXCr3ohCOuQ7CuyRNvM"
-        if let savedToken = UserDefaults.standard.string(forKey: "accessToken") {
-            token = savedToken
-        }
+        let token = UserDefaults.standard.string(forKey: "accessToken") ?? ""
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
