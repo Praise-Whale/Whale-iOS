@@ -18,6 +18,7 @@ class MainRecentCVC: UICollectionViewCell {
     }
     @IBOutlet weak var nameLabel: UILabel! {
         didSet {
+            nameLabel.textColor = .brown_1
             nameLabel.font = .AppleSDGothicR(size: 13)
         }
     }

@@ -12,6 +12,12 @@ class MainYesPopupVC: UIViewController {
     //MARK: - Custom Variables
     
     var wordCount: Int = 0
+    let praiseId: Int = 0
+    
+    var nameTyped: String = ""
+    
+    var recentUserData: [RecentPraiseData] = []
+    var resultData: RecentPraisePostResultData?
     
     
     //MARK: - IBOutlets
@@ -46,6 +52,7 @@ class MainYesPopupVC: UIViewController {
         keyBoardAction()
         setDefaultStyle()
         
+        callGetService()
         
     }
     
@@ -64,24 +71,31 @@ class MainYesPopupVC: UIViewController {
     }
     
     @IBAction func submitBtnDidTap(_ sender: Any) {
-        let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
         
-        guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
-            return
-        }
+//        // 입력된 이름이 컬렉션뷰 안에 이미 있는 거면 서비스 안 부르기
+//        // 없으면 서비스 부르기
+//        var isExist: Bool = false
+//        if recentUserData.count != 0 {
+//            for i in 0...recentUserData.count-1 {
+//                if recentUserData[i].praisedName == nameTyped {
+//                    isExist = true
+//                    break
+//                }
+//            }
+//        }
+//        if !isExist {
+//            callPostService()
+//        }
         
-        dvc.whale = .good
-        dvc.modalPresentationStyle = .overCurrentContext
+        callPostService()
         
-        UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
         
-        self.present(dvc, animated: false)
-        //TODO: 이거 dismiss로 바꾸고 메인에서 정상 완료 됐다는 notification 받아서 팝업 띄우기
     }
     
     @IBAction func nameTextFieldEditChanged(_ sender: Any) {
         
         checkMaxLength(textField: nameTextField, maxLength: 6)
+        nameTyped = nameTextField.text ?? ""
         
         if nameTextField.text?.count == 0 {
             wordCount = 0
@@ -120,6 +134,7 @@ extension MainYesPopupVC {
         nameView.layer.borderColor = UIColor.grey_1.cgColor
         
         nameTextField.font = .AppleSDGothicR(size: 13)
+        nameTextField.textColor = .black
         nameTextField.placeholder = "이름을 실명으로 입력해주세요."
         nameTextField.clearButtonMode = .always
         nameTextField.autocorrectionType = .no
@@ -132,13 +147,17 @@ extension MainYesPopupVC {
         recentTitleLabel.font = .AppleSDGothicR(size: 14)
         recentTitleLabel.text = "최근 칭찬한 사람"
         recentTitleLabel.letterSpacing = -0.7
+//        recentTitleLabel.isHidden = true
         
+//        recentCollectionView.isHidden = true
         recentCollectionView.backgroundColor = .white
         leftBlurImageView.alpha = 0
         
+        submitBtn.isUserInteractionEnabled = false
         submitBtn.makeRounded(cornerRadius: submitBtn.frame.height/2)
         submitBtn.setTitle("확인", for: .normal)
         submitBtn.setTitleColor(.black, for: .normal)
+        submitBtn.backgroundColor = .grey_1
     }
     
     func setNameTextExists() {
@@ -152,6 +171,7 @@ extension MainYesPopupVC {
             countLabel.attributedText = attributedStr
         }
         
+        submitBtn.isUserInteractionEnabled = true
         submitBtn.backgroundColor = .sand_yellow
     }
     
@@ -159,6 +179,7 @@ extension MainYesPopupVC {
         countLabel.text = "\(wordCount)/6"
         countLabel.textColor = .grey_2
         
+        submitBtn.isUserInteractionEnabled = false
         submitBtn.backgroundColor = .grey_1
     }
     
@@ -180,13 +201,82 @@ extension MainYesPopupVC {
             countLabel.isHidden = true
         }
     }
+    
+    func callGetService() {
+        RecentPraiseService.shared.getUser() { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let praiseData = data as? [RecentPraiseData] {
+                    self.recentUserData = praiseData
+                    
+                    if self.recentUserData.count >= 1 {
+                        self.recentTitleLabel.isHidden = false
+                        self.recentCollectionView.isHidden = false
+                        self.recentCollectionView.reloadData()
+                    }
+                } else {
+                    print("[Get RecentPraise] struct error")
+                }
+            case .requestErr(let msg):
+                print("[Get RecentPraise] request error")
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("[Get RecentPraise] path error")
+            case .serverErr:
+                print("[Get RecentPraise] server error")
+            case .networkFail:
+                print("[Get RecentPraise] network fail")
+            }
+        }
+    }
+    
+    func callPostService() {
+        RecentPraiseService.shared.postUser(id: praiseId, name: nameTyped) { (networkResult) -> (Void) in
+            switch networkResult {
+            case .success(let data):
+                if let resultData = data as? RecentPraisePostResultData {
+                    self.resultData = resultData
+                    
+                    let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
+                    
+                    guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
+                        return
+                    }
+                    
+                    dvc.whale = .good
+                    dvc.modalPresentationStyle = .overCurrentContext
+                    
+                    UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
+                    
+                    self.present(dvc, animated: false)
+                    //TODO: 이거 dismiss로 바꾸고 메인에서 정상 완료 됐다는 notification 받아서 팝업 띄우기
+                    
+                } else {
+                    print("[Post RecentPraise] struct error")
+                }
+            case .requestErr(let msg):
+                print("[Post RecentPraise] request error")
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("[Post RecentPraise] path error")
+            case .serverErr:
+                print("[Post RecentPraise] server error")
+            case .networkFail:
+                print("[Post} RecentPraise] network fail")
+            }
+        }
+    }
 }
 
 //MARK: - UICollectionViewDataSource
 
 extension MainYesPopupVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return recentUserData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -195,7 +285,7 @@ extension MainYesPopupVC: UICollectionViewDataSource {
             return UICollectionViewCell()
         }
         
-        cell.nameLabel.text = "이건임시야!"
+        cell.nameLabel.text = recentUserData[indexPath.row].praisedName
         
         return cell
     }
@@ -224,8 +314,9 @@ extension MainYesPopupVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        nameTextField.text = "이건임시야!"
-        wordCount = 6
+        nameTextField.text = recentUserData[indexPath.row].praisedName
+        wordCount = recentUserData[indexPath.row].praisedName.count
+        nameTyped = recentUserData[indexPath.row].praisedName
         setNameTextExists()
         nameTextField.resignFirstResponder()
     }
