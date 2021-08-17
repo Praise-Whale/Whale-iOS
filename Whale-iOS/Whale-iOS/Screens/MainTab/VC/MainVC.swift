@@ -68,10 +68,9 @@ class MainVC: UIViewController {
         callMainService()
         
         print(UserDefaults.standard.integer(forKey: "PraiseId"))
-        print(UserDefaults.standard.string(forKey: "DateLastVisited"))
-        
-        print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
-        
+        print(UserDefaults.standard.string(forKey: "dateLastVisited"))
+                        
+                        print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
         
@@ -269,17 +268,17 @@ extension MainVC {
     func updatePraiseId() {
         /// 오늘 날짜 받아오기
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM-dd"
+        formatter.dateFormat = "YYYY-MM-dd"
         let date = formatter.string(from: Date())
         
-        if let lastDate = UserDefaults.standard.string(forKey: "DateLastVisited") { /// 유저디폴트에 저장된 마지막 방문 날짜가 있으면
+        if let lastDate = UserDefaults.standard.string(forKey: "dateLastVisited") { /// 유저디폴트에 저장된 마지막 방문 날짜가 있으면
             if lastDate != date { /// 마지막으로 방문한 게 오늘이 아니라면
                 /// 아이디를 하나 올려서 다시 저장
                 praiseId = UserDefaults.standard.integer(forKey: "PraiseId") + 1
                 UserDefaults.standard.setValue(praiseId, forKey: "PraiseId")
                 
                 /// 최근 방문 날짜를 오늘 날짜로 업데이트
-                UserDefaults.standard.setValue(date, forKey: "DateLastVisited")
+                UserDefaults.standard.setValue(date, forKey: "dateLastVisited")
             } else { /// 마지막으로 방문한 게 오늘이라면
                 praiseId = UserDefaults.standard.integer(forKey: "PraiseId")
             }
@@ -289,7 +288,7 @@ extension MainVC {
             UserDefaults.standard.setValue(praiseId, forKey: "PraiseId")
             
             /// 최근 방문 날짜를 오늘 날짜로 업데이트
-            UserDefaults.standard.setValue(date, forKey: "DateLastVisited")
+            UserDefaults.standard.setValue(date, forKey: "dateLastVisited")
         }
     }
     
