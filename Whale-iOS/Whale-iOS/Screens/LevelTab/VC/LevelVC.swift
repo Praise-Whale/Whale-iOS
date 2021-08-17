@@ -41,6 +41,7 @@ class LevelVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        popUpWhenLevelUp()
         getWhaleLevelService()
     }
     
@@ -214,6 +215,43 @@ class LevelVC: UIViewController {
             make.centerX.equalTo(yellowLineView2)
         }
     }
+    
+    //MARK: - 레벨업 팝업 띄우는 함수
+    func popUpWhenLevelUp() {
+        if UserDefaults.standard.bool(forKey: "levelUp") == true {
+            //팝업 띄우기
+            
+            let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
+            
+            guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
+                return
+            }
+            
+            let levelUpStatus: Int = UserDefaults.standard.integer(forKey: "beforelevel")
+            
+            if levelUpStatus == 0 {
+                dvc.whale = .levelOne
+            }
+            else if levelUpStatus == 1 {
+                dvc.whale = .levelTwo
+            }
+            else if levelUpStatus == 2 {
+                dvc.whale = .levelThree
+            }
+            else if levelUpStatus == 3 {
+                dvc.whale = .levelFour
+            }
+            else {
+                dvc.whale = .levelFive
+            }
+            
+            dvc.modalPresentationStyle = .overCurrentContext
+            
+            self.present(dvc, animated: false)
+            
+            UserDefaults.standard.set(false, forKey: "levelUp")
+        }
+    }
 }
 // Button Action
 extension LevelVC {
@@ -334,8 +372,7 @@ extension LevelVC {
                     userLevel = CGFloat(whaleLevelData.userLevel)
                     levelUpNeedCount = whaleLevelData.levelUpNeedCount
                     makeTopView(level: userLevel, praiseCnt: praiseCnt)
-                    print(praiseCnt)
-                    print(userLevel)
+                    UserDefaults.standard.set(userLevel, forKey: "beforelevel")
                 }
             case .requestErr(_):
                 print("requestErr")
