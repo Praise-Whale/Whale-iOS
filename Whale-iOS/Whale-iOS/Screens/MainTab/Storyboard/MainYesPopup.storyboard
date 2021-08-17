@@ -54,17 +54,11 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
-                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="nameTextFieldEditChanged:" destination="Y6W-OH-hqX" eventType="editingChanged" id="5d5-O6-Qmj"/>
                                                 </connections>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemGray3Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="L8w-HK-lk7"/>
                                             <constraint firstItem="bqI-yP-clM" firstAttribute="leading" secondItem="tOs-t7-8ry" secondAttribute="leading" constant="16" id="aLd-Rr-UuM"/>
