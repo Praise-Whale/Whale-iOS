@@ -52,11 +52,10 @@ class MainYesPopupVC: UIViewController {
         keyBoardAction()
         setDefaultStyle()
         
-        callGetService()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        callGetService()
         nameTextField.becomeFirstResponder()
     }
     
@@ -223,19 +222,11 @@ extension MainYesPopupVC {
                 if let resultData = data as? RecentPraisePostResultData {
                     self.resultData = resultData
                     
-                    let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
-                    
-                    guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
-                        return
-                    }
-                    
-                    dvc.whale = .good
-                    dvc.modalPresentationStyle = .overCurrentContext
-                    
                     UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
                     
-                    self.present(dvc, animated: false)
-                    //TODO: 이거 dismiss로 바꾸고 메인에서 정상 완료 됐다는 notification 받아서 팝업 띄우기
+                    self.dismiss(animated: false) {
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseSuccess"), object: nil)
+                    }
                     
                 } else {
                     print("[Post RecentPraise] struct error")

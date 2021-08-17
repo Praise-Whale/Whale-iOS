@@ -72,10 +72,27 @@ class MainVC: UIViewController {
         
         print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
         
+        NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         adjustState()
+    }
+    
+    @objc func praiseSuccess(_ noti : Notification){
+        _ = noti.object
+        
+        let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
+        
+        guard let dvc = nextStoryboard.instantiateViewController(identifier: "WhaleReactionPopupVC") as? WhaleReactionPopupVC else {
+            return
+        }
+        
+        dvc.whale = .good
+        dvc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(dvc, animated: false)
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {
