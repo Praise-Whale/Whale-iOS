@@ -222,6 +222,10 @@ extension MainYesPopupVC {
                 if let resultData = data as? RecentPraisePostResultData {
                     self.resultData = resultData
                     
+                    if resultData.levelCheck == true {
+                        UserDefaults.standard.set(true, forKey: "levelUp")
+                    }
+                    
                     UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
                     
                     self.dismiss(animated: false) {
