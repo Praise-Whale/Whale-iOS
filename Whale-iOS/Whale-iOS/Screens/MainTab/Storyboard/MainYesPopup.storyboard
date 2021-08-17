@@ -99,15 +99,17 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2qM-oP-aGD">
-                                                            <rect key="frame" x="32" y="4.5" width="42" height="21"/>
+                                                            <rect key="frame" x="15" y="4.5" width="76" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstItem="2qM-oP-aGD" firstAttribute="leading" secondItem="bxD-xW-KDB" secondAttribute="leading" constant="15" id="LhR-8Y-pzg"/>
                                                         <constraint firstItem="2qM-oP-aGD" firstAttribute="centerY" secondItem="bxD-xW-KDB" secondAttribute="centerY" id="iI6-zm-xiX"/>
                                                         <constraint firstItem="2qM-oP-aGD" firstAttribute="centerX" secondItem="bxD-xW-KDB" secondAttribute="centerX" id="nes-EU-Cbc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="2qM-oP-aGD" secondAttribute="trailing" constant="15" id="v6Q-lg-3S4"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="106" height="30"/>
