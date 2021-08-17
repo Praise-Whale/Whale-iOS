@@ -103,7 +103,7 @@ extension SplashVC {
             case .success(let data):
                 if let loginData = data as? LoginData {
                     UserDefaults.standard.setValue(nickName, forKey: "nickName")
-                    UserDefaults.standard.setValue(loginData.accessToken, forKey: "acessToken")
+                    UserDefaults.standard.setValue(loginData.accessToken, forKey: "accessToken")
                     UserDefaults.standard.setValue(loginData.refreshToken, forKey: "refreshToken")
                     print("refreshToken", loginData.refreshToken)
                     print("accessToken", loginData.accessToken)

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIFont {
-    // MARK: NotoSans Font
+    // MARK: AppleSDGothic Font
     class func AppleSDGothicB(size: CGFloat) -> UIFont {
         return UIFont(name: "AppleSDGothicNeoB00", size: size)!
     }
@@ -26,6 +26,7 @@ extension UIFont {
         return UIFont(name: "AppleSDGothicNeoSB00", size: size)!
     }
     
+    // MARK: GmarketSans Font
     class func GmarketSansBold(size: CGFloat) -> UIFont {
         return UIFont(name: "GmarketSansTTFBold", size: size)!
     }
@@ -34,6 +35,7 @@ extension UIFont {
         return UIFont(name: "GmarketSansTTFMedium", size: size)!
     }
     
+    // MARK: Roboto Font
     class func RobotoB(size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Bold", size: size)!
     }
