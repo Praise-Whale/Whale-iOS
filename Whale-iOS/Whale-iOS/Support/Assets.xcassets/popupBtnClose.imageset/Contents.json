@@ -1,14 +1,14 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "filename" : "popupBtnClose.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "popupBtnClose@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "popupBtnClose@2x.png"
     },
     {
       "idiom" : "universal",

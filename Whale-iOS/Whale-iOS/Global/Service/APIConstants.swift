@@ -17,4 +17,15 @@ struct APIConstants {
     static let getRecentURL = baseURL + "praise/target"
     /// 최근 칭찬 유저 등록하기
     static let postRecentURL = baseURL + "praise/"
+    
+    static let signUpURL = baseURL + "users/signup"
+    
+    /// 레벨 정보 조회 API
+    static let levelURL = baseURL + "users/home"
+    /// 칭찬카드 전체조회 API
+    static let praiseURL = baseURL + "praise/"
+    
+    static let praiseDetailURL = baseURL + "praise?praisedName="
+    
+    static let nicknameCheckURL = baseURL + "users/check/"
 }

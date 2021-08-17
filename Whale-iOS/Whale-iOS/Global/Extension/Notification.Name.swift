@@ -7,5 +7,8 @@
 
 import Foundation
 extension Notification.Name {
-    //static let aa = Notification.Name("aa")
+    static let pushedCardDrawer = Notification.Name("pushedCardDrawer")
+    static let pushedPraiseLank = Notification.Name("pushedPraiseLank")
+    static let dismissDatePickerPopUp = Notification.Name("dismissDatePickerPopUp")
+    static let selectDatePickerPopUp = Notification.Name("selectDatePickerPopUp")
 }

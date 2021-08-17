@@ -31,6 +31,10 @@ extension UIFont {
         return UIFont(name: "GmarketSansTTFBold", size: size)!
     }
     
+    class func GmarketSansMedium(size: CGFloat) -> UIFont {
+        return UIFont(name: "GmarketSansTTFMedium", size: size)!
+    }
+    
     // MARK: Roboto Font
     class func RobotoB(size: CGFloat) -> UIFont {
         return UIFont(name: "Roboto-Bold", size: size)!
