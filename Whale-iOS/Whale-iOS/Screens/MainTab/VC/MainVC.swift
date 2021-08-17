@@ -73,6 +73,7 @@ class MainVC: UIViewController {
         print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
         
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
         
     }
     
@@ -93,6 +94,16 @@ class MainVC: UIViewController {
         dvc.modalPresentationStyle = .overCurrentContext
         
         self.present(dvc, animated: false)
+        
+        todayPraiseState = .success
+        adjustState()
+    }
+    
+    @objc func praiseFail(_ noti : Notification) {
+        _ = noti.object
+        
+        todayPraiseState = .fail
+        adjustState()
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {

@@ -50,7 +50,9 @@ class WhaleReactionPopupVC: UIViewController {
             let savedWhale = UserDefaults.standard.integer(forKey: "accumulatedNo")
             UserDefaults.standard.setValue(savedWhale < 2 ? savedWhale + 1 : 2, forKey: "accumulatedNo")
             
-            
+            self.dismiss(animated: false) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseFail"), object: nil)
+            }
         }
         
         self.dismiss(animated: false, completion: nil)
