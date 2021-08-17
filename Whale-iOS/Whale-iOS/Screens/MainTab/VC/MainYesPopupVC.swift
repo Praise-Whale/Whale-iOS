@@ -72,24 +72,8 @@ class MainYesPopupVC: UIViewController {
     
     @IBAction func submitBtnDidTap(_ sender: Any) {
         
-//        // 입력된 이름이 컬렉션뷰 안에 이미 있는 거면 서비스 안 부르기
-//        // 없으면 서비스 부르기
-//        var isExist: Bool = false
-//        if recentUserData.count != 0 {
-//            for i in 0...recentUserData.count-1 {
-//                if recentUserData[i].praisedName == nameTyped {
-//                    isExist = true
-//                    break
-//                }
-//            }
-//        }
-//        if !isExist {
-//            callPostService()
-//        }
-        
         callPostService()
-        
-        
+  
     }
     
     @IBAction func nameTextFieldEditChanged(_ sender: Any) {
