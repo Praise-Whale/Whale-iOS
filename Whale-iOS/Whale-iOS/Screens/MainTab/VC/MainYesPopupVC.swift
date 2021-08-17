@@ -108,7 +108,7 @@ extension MainYesPopupVC {
         attributedText.addAttribute(.font, value: UIFont(name: "AppleSDGothicNeoB00", size: 20.0)!, range: NSRange(location: 5, length: 2))
         titleLabel.attributedText = attributedText
         
-        titleUnderView.backgroundColor = .sand_yellow
+        titleUnderView.backgroundColor = .yellow_1
         titleUnderView.makeRounded(cornerRadius: 1)
         
         nameView.backgroundColor = .white
@@ -155,7 +155,7 @@ extension MainYesPopupVC {
         }
         
         submitBtn.isUserInteractionEnabled = true
-        submitBtn.backgroundColor = .sand_yellow
+        submitBtn.backgroundColor = .yellow_1
     }
     
     func setNameTextNotExists() {

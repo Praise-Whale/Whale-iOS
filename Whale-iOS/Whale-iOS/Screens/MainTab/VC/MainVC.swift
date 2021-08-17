@@ -158,7 +158,7 @@ extension MainVC {
         titleLabel.letterSpacing = -1.1
         titleLabel.text = "오늘의 칭찬 한 마디"
         
-        titleLineView.backgroundColor = .sand_yellow
+        titleLineView.backgroundColor = .yellow_1
         titleLineView.makeRounded(cornerRadius: 1)
         
         dateView.makeRounded(cornerRadius: dateView.frame.height/2)
@@ -195,7 +195,7 @@ extension MainVC {
         didntBtn.makeRounded(cornerRadius: didntBtn.frame.height/2)
         didntBtn.setTitle("못했어요..", for: .normal)
         
-        didBtn.backgroundColor = .sand_yellow
+        didBtn.backgroundColor = .yellow_1
         didBtn.setTitleColor(.black, for: .normal)
         didBtn.titleLabel?.font = .AppleSDGothicR(size: 15)
         didBtn.titleLabel?.letterSpacing = -0.75
