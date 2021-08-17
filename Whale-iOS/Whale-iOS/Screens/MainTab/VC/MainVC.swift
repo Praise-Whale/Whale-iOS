@@ -66,11 +66,7 @@ class MainVC: UIViewController {
         setDateBox()
         updatePraiseId()
         callMainService()
-        
-        print(UserDefaults.standard.integer(forKey: "PraiseId"))
-        print(UserDefaults.standard.string(forKey: "dateLastVisited"))
-                        
-                        print("no", UserDefaults.standard.integer(forKey: "accumulatedNo"))
+
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
         
@@ -94,6 +90,7 @@ class MainVC: UIViewController {
         
         self.present(dvc, animated: false)
         
+        UserDefaults.standard.setValue("success", forKey: "todayPraiseState")
         todayPraiseState = .success
         adjustState()
     }
@@ -101,6 +98,7 @@ class MainVC: UIViewController {
     @objc func praiseFail(_ noti : Notification) {
         _ = noti.object
         
+        UserDefaults.standard.setValue("fail", forKey: "todayPraiseState")
         todayPraiseState = .fail
         adjustState()
     }
@@ -279,8 +277,26 @@ extension MainVC {
                 
                 /// 최근 방문 날짜를 오늘 날짜로 업데이트
                 UserDefaults.standard.setValue(date, forKey: "dateLastVisited")
+                /// 오늘 칭찬 상태를 초기화
+                UserDefaults.standard.setValue("", forKey: "todayPraiseState")
             } else { /// 마지막으로 방문한 게 오늘이라면
                 praiseId = UserDefaults.standard.integer(forKey: "PraiseId")
+                
+                /// 오늘 칭찬 상태를 체크했는지 검사
+                if UserDefaults.standard.string(forKey: "todayPraiseState") != nil {
+                    switch UserDefaults.standard.string(forKey: "todayPraiseState") {
+                    case "success":
+                        todayPraiseState = .success
+                        adjustState()
+                    case "fail":
+                        todayPraiseState = .fail
+                        adjustState()
+                    default:
+                        todayPraiseState = .before
+                        adjustState()
+                    }
+                }
+                
             }
         } else { /// 없으면
             /// praiseId 새로 부여
