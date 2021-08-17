@@ -130,9 +130,9 @@ extension MainYesPopupVC {
         recentTitleLabel.font = .AppleSDGothicR(size: 14)
         recentTitleLabel.text = "최근 칭찬한 사람"
         recentTitleLabel.letterSpacing = -0.7
-//        recentTitleLabel.isHidden = true
+        recentTitleLabel.isHidden = true
         
-//        recentCollectionView.isHidden = true
+        recentCollectionView.isHidden = true
         recentCollectionView.backgroundColor = .white
         leftBlurImageView.alpha = 0
         
