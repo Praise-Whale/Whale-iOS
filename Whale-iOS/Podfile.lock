@@ -1,12 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
   - lottie-ios (3.1.9)
-  - nanopb (2.30907.0):
-    - nanopb/decode (= 2.30907.0)
-    - nanopb/encode (= 2.30907.0)
-  - nanopb/decode (2.30907.0)
-  - nanopb/encode (2.30907.0)
-  - PromisesObjC (1.2.12)
   - SnapKit (5.0.1)
   - Then (2.7.0)
 
@@ -20,19 +14,15 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - lottie-ios
-    - nanopb
-    - PromisesObjC
     - SnapKit
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
-  nanopb: 59221d7f958fb711001e6a449489542d92ae113e
-  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 7fe9058ae76835cac5537b85ebfa6cab690b1130
+PODFILE CHECKSUM: f0aca87ed24589c94c1acdcd338199f4efa9e857
 
 COCOAPODS: 1.10.2
