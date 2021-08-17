@@ -55,7 +55,6 @@
 		33AAD344266F87B600907BCF /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD343266F87B600907BCF /* LoginVC.swift */; };
 		33AAD346266F87BC00907BCF /* e.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD345266F87BC00907BCF /* e.swift */; };
 		33AAD34E266F87E900907BCF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD34D266F87E900907BCF /* MainVC.swift */; };
-		33AAD350266F87F200907BCF /* g.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD34F266F87F200907BCF /* g.swift */; };
 		33AAD352266F87F800907BCF /* h.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD351266F87F800907BCF /* h.swift */; };
 		33AAD358266F881300907BCF /* j.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD357266F881300907BCF /* j.swift */; };
 		33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD35B266F882400907BCF /* PraiseCardVC.swift */; };
@@ -97,9 +96,12 @@
 		37B77CCE2670EECB00039277 /* MainPraiseSentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */; };
 		37B77CD02671CCE100039277 /* MainYesPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */; };
 		37B77CD22671CCF700039277 /* MainYesPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD12671CCF700039277 /* MainYesPopupVC.swift */; };
-		37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* MainNoPopup.storyboard */; };
-		37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* MainNoPopup.swift */; };
+		37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */; };
+		37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */; };
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
+		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
+		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
+		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
 		E6E4775C6B7E0734447810F1 /* Pods_Whale_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,7 +156,6 @@
 		33AAD343266F87B600907BCF /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		33AAD345266F87BC00907BCF /* e.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e.swift; sourceTree = "<group>"; };
 		33AAD34D266F87E900907BCF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
-		33AAD34F266F87F200907BCF /* g.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = g.swift; sourceTree = "<group>"; };
 		33AAD351266F87F800907BCF /* h.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = h.swift; sourceTree = "<group>"; };
 		33AAD357266F881300907BCF /* j.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = j.swift; sourceTree = "<group>"; };
 		33AAD35B266F882400907BCF /* PraiseCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PraiseCardVC.swift; sourceTree = "<group>"; };
@@ -196,10 +197,13 @@
 		37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPraiseSentence.swift; sourceTree = "<group>"; };
 		37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainYesPopup.storyboard; sourceTree = "<group>"; };
 		37B77CD12671CCF700039277 /* MainYesPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesPopupVC.swift; sourceTree = "<group>"; };
-		37B77CD32671CD1600039277 /* MainNoPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainNoPopup.storyboard; sourceTree = "<group>"; };
-		37B77CD52671CD2C00039277 /* MainNoPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNoPopup.swift; sourceTree = "<group>"; };
+		37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WhaleReactionPopup.storyboard; sourceTree = "<group>"; };
+		37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleReactionPopupVC.swift; sourceTree = "<group>"; };
 		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
+		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
+		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
 		87AA4C944A19190EC6844C7B /* Pods-Whale-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		F0D0971945F9B7655482D500 /* Pods-Whale-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whale-iOS.release.xcconfig"; path = "Target Support Files/Pods-Whale-iOS/Pods-Whale-iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -465,6 +469,7 @@
 				33AAD2F9266F76A200907BCF /* GenericResponse.swift */,
 				335CF37926C00BC30097AAD2 /* LoginData.swift */,
 				37B77CCD2670EECB00039277 /* MainPraiseSentence.swift */,
+				86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */,
 				33F2C35226CA991B0096006D /* LevelData.swift */,
 				33686D5E26C4469500711FD6 /* PraiseData.swift */,
 				33F2C34026C9915D0096006D /* PraiseRankData.swift */,
@@ -480,6 +485,7 @@
 				33AAD2FB266F76BC00907BCF /* APIConstants.swift */,
 				33AAD2FD266F76CA00907BCF /* NetworkResult.swift */,
 				37B77CCB2670EBF200039277 /* MainService.swift */,
+				86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */,
 				335CF37726C00AE10097AAD2 /* LoginService.swift */,
 				33F2C35426CA9A030096006D /* LevelService.swift */,
 				33686D6026C446F200711FD6 /* PraiseService.swift */,
@@ -556,7 +562,7 @@
 		33AAD34A266F87CA00907BCF /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				33AAD34F266F87F200907BCF /* g.swift */,
+				86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -567,7 +573,7 @@
 				33AAD34D266F87E900907BCF /* MainVC.swift */,
 				37B77CD12671CCF700039277 /* MainYesPopupVC.swift */,
 				37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */,
-				37B77CD52671CD2C00039277 /* MainNoPopup.swift */,
+				37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -577,7 +583,7 @@
 			children = (
 				33AAD2D7266F74AF00907BCF /* Main.storyboard */,
 				37B77CCF2671CCE100039277 /* MainYesPopup.storyboard */,
-				37B77CD32671CD1600039277 /* MainNoPopup.storyboard */,
+				37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -852,7 +858,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33AAD2DE266F74B000907BCF /* LaunchScreen.storyboard in Resources */,
-				37B77CD42671CD1600039277 /* MainNoPopup.storyboard in Resources */,
+				37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */,
 				3386D1B526BAF3FE0023579F /* AppleSDGothicNeoSB.ttf in Resources */,
 				33CA10B426AB45790017EDC9 /* Splash.storyboard in Resources */,
 				33AAD2DB266F74B000907BCF /* Assets.xcassets in Resources */,
@@ -952,11 +958,12 @@
 				33F2C34526CA49350096006D /* PraiseRankDetailVC.swift in Sources */,
 				330A491026727603002DB3B4 /* SignUpVC.swift in Sources */,
 				33AAD37E266F88D400907BCF /* LevelsInfoVC.swift in Sources */,
+				86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */,
 				33AAD382266F88E000907BCF /* p.swift in Sources */,
-				37B77CD62671CD2C00039277 /* MainNoPopup.swift in Sources */,
+				37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */,
+				86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
-				33AAD350266F87F200907BCF /* g.swift in Sources */,
 				3387DD932672901200CF26F1 /* SignUpData.swift in Sources */,
 				330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */,
 				33AAD2FE266F76CA00907BCF /* NetworkResult.swift in Sources */,
@@ -983,6 +990,7 @@
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
 				33AAD352266F87F800907BCF /* h.swift in Sources */,
 				33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */,
+				86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */,
 				330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */,
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
@@ -1144,7 +1152,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZS26WP93H;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1165,7 +1173,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2ZS26WP93H;
+				DEVELOPMENT_TEAM = J92QJ4K4KU;
 				INFOPLIST_FILE = "$(SRCROOT)/Whale-iOS/Support/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (

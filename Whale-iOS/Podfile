@@ -7,8 +7,6 @@ target 'Whale-iOS' do
 
   # Pods for Whale-iOS
   pod 'Alamofire' 
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Messaging'
   pod 'lottie-ios'
   pod 'SnapKit'
   pod 'Then'
