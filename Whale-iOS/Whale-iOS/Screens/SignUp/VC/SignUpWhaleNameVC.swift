@@ -261,6 +261,7 @@ extension SignUpWhaleNameVC {
                     UserDefaults.standard.setValue(nickName, forKey: "nickName")
                     UserDefaults.standard.setValue(loginData.accessToken, forKey: "accessToken")
                     UserDefaults.standard.setValue(loginData.refreshToken, forKey: "refreshToken")
+                    UserDefaults.standard.setValue(true, forKey: "isSignedUp")
                     print("refreshToken", loginData.refreshToken)
                     print("accessToken", loginData.accessToken)
                     goToMainView()
