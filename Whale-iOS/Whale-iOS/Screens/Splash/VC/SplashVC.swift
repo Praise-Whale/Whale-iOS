@@ -83,13 +83,18 @@ class SplashVC: UIViewController {
     
     func goToNextScene() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [self] in
-            if (UserDefaults.standard.string(forKey: "isFirstlaunch") == nil) {
+            if (UserDefaults.standard.bool(forKey: "isFirstlaunch") == false) && (UserDefaults.standard.bool(forKey: "isSignedUp") == false) {
                 print("첫 로드 : 온보딩")
                 UserDefaults.standard.set(
                     true,forKey: "isFirstlaunch")
                 goToOnboarding()
             }
+            else if (UserDefaults.standard.bool(forKey: "isFirstlaunch") == true && UserDefaults.standard.bool(forKey: "isSignedUp") == false) {
+                print("첫 로드 : 회원가입")
+                goToSignUp()
+            }
             else {
+                print("첫 로드 : 메인뷰")
                 loginService(userNickname ?? "")
             }
         }
@@ -137,6 +142,14 @@ extension SplashVC {
         print("main")
         let storyBoard: UIStoryboard = UIStoryboard(name: "TabBar", bundle: nil)
         if let vc = storyBoard.instantiateViewController(identifier: "WhaleTBC") as? WhaleTBC {
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func goToSignUp() {
+        print("signUp")
+        let storyBoard: UIStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(identifier: "SignUpVC") as? SignUpVC {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
