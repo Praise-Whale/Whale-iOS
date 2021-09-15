@@ -12,7 +12,12 @@ class OnboardingVC: UIViewController {
     
     @IBOutlet var onboardingCV: UICollectionView!
     @IBOutlet var onboardingPageControl: UIPageControl!
-    @IBOutlet var nextBtn: UIButton!
+    @IBOutlet var nextBtn: UIButton! {
+        didSet {
+            nextBtn.setTitle("다음", for: .normal)
+            nextBtn.layer.cornerRadius = 25
+        }
+    }
     var onboardingArray:[Onboarding] = []
     // 페이징 관련 index 정의 변수
     private var indexOfCellBeforeDragging = 0
@@ -25,7 +30,6 @@ class OnboardingVC: UIViewController {
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
         setOnboardingData()
-        setNextBtnProperty()
     }
     
     // Onboarding Data 구성
@@ -38,18 +42,15 @@ class OnboardingVC: UIViewController {
         onboardingPageControl.numberOfPages = onboardingArray.count + 1
     }
     
-    // 하단 버튼 초기 상태 set
-    func setNextBtnProperty() {
-        nextBtn.setTitle("다음", for: .normal)
-        nextBtn.layer.cornerRadius = 25
-    }
-    
     // Left Paging (오른쪽으로 넘길 때)
     private func indexOfMajorCell() -> Int {
         let itemWidth = screenWidth
-        let proportionalOffset = (onboardingCV.contentOffset.x / itemWidth)+0.3
+        let proportionalOffset = (onboardingCV.contentOffset.x / itemWidth)
         let index = Int(round(proportionalOffset))
         let safeIndex = max(0, min(onboardingArray.count, index))
+        if safeIndex == 3 {
+            nextBtn.setTitle("시작하기", for: .normal)
+        }
         return safeIndex
     }
     
@@ -59,6 +60,8 @@ class OnboardingVC: UIViewController {
         let proportionalOffset = (onboardingCV.contentOffset.x / itemWidth)
         let back_index = Int(floor(proportionalOffset))
         let safeIndex = max(0, min(onboardingArray.count - 1, back_index))
+        
+        nextBtn.setTitle("다음", for: .normal)
         return safeIndex
     }
     
@@ -68,7 +71,6 @@ class OnboardingVC: UIViewController {
         
         if indexPath.row == 4 {
             // 회원가입 뷰로 이동
-
             let signUpSB: UIStoryboard = UIStoryboard(name: "SignUp", bundle: nil)
             if let signUpVC = signUpSB.instantiateViewController(identifier: "SignUpVC") as? SignUpVC {
                 self.navigationController?.pushViewController(signUpVC, animated: true)
@@ -77,6 +79,9 @@ class OnboardingVC: UIViewController {
         else {
             // 페이지 이동
             onboardingCV.collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            if indexPath.item == 3 {
+                nextBtn.setTitle("시작하기", for: .normal)
+            }
         }
     }
 }
@@ -85,21 +90,20 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return onboardingArray.count + 1
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row < 3 {
+        if indexPath.item < 3 {
             let firstOnboardingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCVCell", for: indexPath) as! OnboardingCVCell
-            
             firstOnboardingCell.customLabels(onboardingArray[indexPath.row].firstPraiseText, onboardingArray[indexPath.row].secondPraiseText, onboardingArray[indexPath.row].firstRange1Text, onboardingArray[indexPath.row].secondRange1Text, onboardingArray[indexPath.row].subExpText, descriptionText: onboardingArray[indexPath.row].descriptionText)
             firstOnboardingCell.whaleImageView.image = UIImage(named: onboardingArray[indexPath.row].subImgName)
             firstOnboardingCell.makeAnimation()
-            
+            firstOnboardingCell.setDeviceSizeLayout()
             return firstOnboardingCell
         }
-        else if indexPath.row == 3 {
+        else if indexPath.item == 3 {
             let lastOnboardingCell = collectionView.dequeueReusableCell(withReuseIdentifier: "LastOnboardingCVC", for: indexPath) as! LastOnboardingCVC
             lastOnboardingCell.makeAnimation()
             return lastOnboardingCell
@@ -110,7 +114,10 @@ extension OnboardingVC: UICollectionViewDelegate, UICollectionViewDataSource, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: screenWidth, height: 751)
+        let width = self.view.frame.width
+        let height =  self.onboardingCV.frame.height
+        
+        return CGSize(width: width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:
@@ -132,7 +139,7 @@ extension OnboardingVC : UIScrollViewDelegate {
             let indexOfMajorCell = self.indexOfMajorCell()
             let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
             onboardingCV.collectionViewLayout.collectionView!.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        }else{
+        } else{
             let indexOfBeforCell = self.indexOfBeforCell()
             
             let indexPath = IndexPath(row: indexOfBeforCell, section: 0)
@@ -143,16 +150,7 @@ extension OnboardingVC : UIScrollViewDelegate {
     
     //MARK: - scroll animation이 끝나고 적용되는 함수
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        let indexOfMajorCell = self.indexOfMajorCell()
-        let indexPath = IndexPath(row: indexOfMajorCell, section: 0)
         // scrollAnimation이 끝나고 pageControl의 현재 페이지를 animation이 끝난 상태값으로 바꿔준다.
         onboardingPageControl.currentPage = Int(round(onboardingCV.contentOffset.x / onboardingCV.frame.size.width))
-        
-        if indexPath.row == 3 {
-            nextBtn.setTitle("시작하기", for: .normal)
-        }
-        else {
-            nextBtn.setTitle("다음", for: .normal)
-        }
     }
 }
