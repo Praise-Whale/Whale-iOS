@@ -14,7 +14,12 @@ class OnboardingCVCell: UICollectionViewCell {//
     @IBOutlet var subExplanationLabel: UILabel!
     @IBOutlet var descLabel: CustomLabel!
     @IBOutlet var whaleImageView: UIImageView!
+    @IBOutlet var whaleImageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var whaleImageViewWidthConstraint: NSLayoutConstraint!
     
+    // ScreenSize 가져오는 변수
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
     
     //MARK: - 라벨 AttributeFont 설정
     func customLabels(_ firstPraiseText: String, _ secondPraiseText: String, _ firstRegularRange1: String, _ secondRegularRange1: String, _ subExplainText: String, descriptionText: String) {
@@ -56,5 +61,30 @@ class OnboardingCVCell: UICollectionViewCell {//
         UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse] , animations: {
             self.whaleImageView.frame = CGRect(x: 10, y: 253, width: self.whaleImageView.frame.width, height: self.whaleImageView.frame.height)
         })
+    }
+}
+
+extension OnboardingCVCell {
+    func setDeviceSizeLayout() {
+        if UIDevice.current.isiPhone12mini {
+            whaleImageViewHeightConstraint.constant = 269
+            whaleImageViewWidthConstraint.constant = screenWidth
+        }
+        else if UIDevice.current.isiPhone12 {
+            whaleImageViewHeightConstraint.constant = 284
+            whaleImageViewWidthConstraint.constant = screenWidth
+        }
+        else if UIDevice.current.isiPhone11 {
+            whaleImageViewHeightConstraint.constant = 383
+            whaleImageViewWidthConstraint.constant = screenWidth
+        }
+        else if UIDevice.current.isiPhone8Plus {
+            whaleImageViewHeightConstraint.constant = 193
+            whaleImageViewWidthConstraint.constant = screenWidth
+        }
+        else if UIDevice.current.isiPhoneSE2 {
+            whaleImageViewHeightConstraint.constant = 124
+            whaleImageViewWidthConstraint.constant = screenWidth
+        }
     }
 }
