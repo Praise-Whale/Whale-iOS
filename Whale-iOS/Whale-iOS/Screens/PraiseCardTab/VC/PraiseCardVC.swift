@@ -221,8 +221,8 @@ class PraiseCardVC: UIViewController {
         makeYellowCardBox()
         
         let praiseRankCountLabel = UILabel()
-        let praiseCountText = "\(praiseRankData.totalPraiserCount)번의 칭찬"
-        let range1 = "\(praiseRankData.totalPraiserCount)번"
+        let praiseCountText = "\(praiseRankData.totalPraiserCount)명에게 칭찬"
+        let range1 = "\(praiseRankData.totalPraiserCount)명"
         
         let praiseCountLabelAttributedString = NSMutableAttributedString(string: praiseCountText, attributes: [
                                                                             .font: UIFont.AppleSDGothicR(size: 22),
