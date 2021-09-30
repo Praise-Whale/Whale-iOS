@@ -48,7 +48,7 @@ class WhaleReactionPopupVC: UIViewController {
     @IBAction func okBtnDidTap(_ sender: Any) {
         if whale == .sad || whale == .wannaDance || whale == .shout {
             let savedWhale = UserDefaults.standard.integer(forKey: "accumulatedNo")
-            UserDefaults.standard.setValue(savedWhale < 2 ? savedWhale + 1 : 2, forKey: "accumulatedNo")
+            UserDefaults.standard.setValue(savedWhale < 6 ? savedWhale + 1 : 0, forKey: "accumulatedNo")
             
             self.dismiss(animated: false) {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseFail"), object: nil)

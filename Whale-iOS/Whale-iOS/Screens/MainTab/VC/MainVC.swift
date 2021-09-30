@@ -136,8 +136,14 @@ class MainVC: UIViewController {
         case 0:
             dvc.whale = .sad
         case 1:
-            dvc.whale = .wannaDance
+            dvc.whale = .sad
         case 2:
+            dvc.whale = .wannaDance
+        case 3:
+            dvc.whale = .wannaDance
+        case 4:
+            dvc.whale = .shout
+        case 5:
             dvc.whale = .shout
         default:
             dvc.whale = .sad
