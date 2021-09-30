@@ -187,7 +187,7 @@ extension MainVC {
         contentBoxView.makeRounded(cornerRadius: 15)
         contentBoxView.layer.borderWidth = 2
         contentBoxView.layer.borderColor = UIColor.yellow_3.cgColor
-        contentBoxView.dropShadow(color: .yellow_3, offSet: CGSize(width: 1, height: 1), opacity: 0.1, radius: 15)
+        contentBoxView.dropShadow(color: UIColor(red: 130/255, green: 86/255, blue: 0, alpha: 0.1), offSet: CGSize(width: 0, height: 6), opacity: 1, radius: 15)
         
         contentInnerBoxView.backgroundColor = .white
         contentInnerBoxView.makeRounded(cornerRadius: 12)
@@ -199,7 +199,7 @@ extension MainVC {
             view.makeRounded(cornerRadius: 3.5)
         }
         
-        contentLabel.font = .AppleSDGothicB(size: 20) // 여기 지마켓으로 고치기
+        contentLabel.font = .GmarketSansMedium(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
         contentLabel.text = "(네트워크 연결을 확인하세요)"
