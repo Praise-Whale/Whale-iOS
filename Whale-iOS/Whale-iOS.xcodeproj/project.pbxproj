@@ -99,6 +99,7 @@
 		37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */; };
 		37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */; };
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
+		867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */; };
 		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
 		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
 		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
@@ -201,6 +202,7 @@
 		37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleReactionPopupVC.swift; sourceTree = "<group>"; };
 		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
 		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
 		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				33AAD300266F782700907BCF /* UIDevice+ScreenSize.swift */,
 				33AAD303266F787400907BCF /* UIColor+Additions.swift */,
 				33AAD307266F7AC000907BCF /* UIView+Extension.swift */,
+				867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */,
 				33AAD309266F7AE400907BCF /* UITextField+Extension.swift */,
 				33AAD30B266F7AFE00907BCF /* UIButton+Extension.swift */,
 				37B77CC92670DAF300039277 /* UILabel+Extension.swift */,
@@ -963,6 +966,7 @@
 				37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */,
 				86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */,
 				33AAD34E266F87E900907BCF /* MainVC.swift in Sources */,
+				867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */,
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
 				3387DD932672901200CF26F1 /* SignUpData.swift in Sources */,
 				330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */,
