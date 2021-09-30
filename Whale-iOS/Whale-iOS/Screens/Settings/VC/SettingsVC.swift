@@ -32,6 +32,22 @@ class SettingsVC: UIViewController {
 
 extension SettingsVC {
     func setStyle() {
+        titleLabel.font = .AppleSDGothicB(size: 23)
         
+        titleUnderLineView.backgroundColor = .yellow_1
+        
+        for i in 0..<settingView.count {
+            settingView[i].backgroundColor = .clear
+            settingTitleLabel[i].font = .AppleSDGothicR(size: 18)
+            if i < 2 {
+                settingDetailLabel[i].font = .AppleSDGothicR(size: 15)
+                settingDetailLabel[i].textColor = .brown_1
+            }
+            if i != settingView.count - 1 {
+                settingUnderView[i].backgroundColor = .grey_1
+            }
+        }
+        
+        settingDetailLabel[0].text = UserDefaults.standard.string(forKey: "nickName")
     }
 }
