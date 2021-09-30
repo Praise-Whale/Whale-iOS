@@ -219,7 +219,7 @@ extension MainVC {
     func setNicknameLabel() {
         
         /// 유저디폴트에 저장된 닉네임이 있으면 닉네임 업데이트
-        if let savedNickname = UserDefaults.standard.string(forKey: "nickname") {
+        if let savedNickname = UserDefaults.standard.string(forKey: "nickName") {
             nickname = savedNickname
         }
         
