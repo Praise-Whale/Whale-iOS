@@ -199,7 +199,7 @@ extension MainVC {
             view.makeRounded(cornerRadius: 3.5)
         }
         
-        contentLabel.font = .AppleSDGothicB(size: 20) // 여기 지마켓으로 고치기
+        contentLabel.font = .GmarketSansMedium(size: 20) // 여기 지마켓으로 고치기
         contentLabel.textColor = .brown_1
         contentLabel.textAlignment = .center
         contentLabel.text = "(네트워크 연결을 확인하세요)"
