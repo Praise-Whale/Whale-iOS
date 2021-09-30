@@ -16,6 +16,8 @@ class MainYesPopupVC: UIViewController {
     
     var nameTyped: String = ""
     
+    var isLevelUp: Bool = false
+    
     var recentUserData: [RecentPraiseData] = []
     var resultData: RecentPraisePostResultData?
     
@@ -224,12 +226,13 @@ extension MainYesPopupVC {
                     
                     if resultData.levelCheck == true {
                         UserDefaults.standard.set(true, forKey: "levelUp")
+                        self.isLevelUp = true
                     }
                     
                     UserDefaults.standard.setValue(0, forKey: "accumulatedNo")
                     
                     self.dismiss(animated: false) {
-                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseSuccess"), object: nil)
+                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseSuccess"), object: self.isLevelUp)
                     }
                     
                 } else {

@@ -17,6 +17,7 @@ class MainVC: UIViewController {
     
     var nickname: String = "다나고래"
     var praiseId: Int = 0
+    var isLevelUp = false
     
     var todayPraiseState: PraiseState = .before
     
@@ -69,6 +70,7 @@ class MainVC: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reactionDone(_:)), name: NSNotification.Name("ReactionDone"), object: nil)
         
     }
     
@@ -77,7 +79,7 @@ class MainVC: UIViewController {
     }
     
     @objc func praiseSuccess(_ noti : Notification){
-        _ = noti.object
+        self.isLevelUp = noti.object as! Bool
         
         let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
         
@@ -103,6 +105,14 @@ class MainVC: UIViewController {
         adjustState()
     }
     
+    @objc func reactionDone(_ noti : Notification) {
+        _ = noti.object
+        
+        if self.isLevelUp {
+            self.showToast(message: "레벨업 되었어요! 고래를 확인해보세요!")
+        }
+    }
+    
     @IBAction func didBtnDidTap(_ sender: Any) {
         let nextStoryboard = UIStoryboard(name: "MainYesPopup", bundle: nil)
         
@@ -126,8 +136,14 @@ class MainVC: UIViewController {
         case 0:
             dvc.whale = .sad
         case 1:
-            dvc.whale = .wannaDance
+            dvc.whale = .sad
         case 2:
+            dvc.whale = .wannaDance
+        case 3:
+            dvc.whale = .wannaDance
+        case 4:
+            dvc.whale = .shout
+        case 5:
             dvc.whale = .shout
         default:
             dvc.whale = .sad
@@ -219,7 +235,7 @@ extension MainVC {
     func setNicknameLabel() {
         
         /// 유저디폴트에 저장된 닉네임이 있으면 닉네임 업데이트
-        if let savedNickname = UserDefaults.standard.string(forKey: "nickname") {
+        if let savedNickname = UserDefaults.standard.string(forKey: "nickName") {
             nickname = savedNickname
         }
         
@@ -296,7 +312,6 @@ extension MainVC {
                         adjustState()
                     }
                 }
-                
             }
         } else { /// 없으면
             /// praiseId 새로 부여
