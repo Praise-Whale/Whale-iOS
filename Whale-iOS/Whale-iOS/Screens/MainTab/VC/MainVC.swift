@@ -187,7 +187,7 @@ extension MainVC {
         contentBoxView.makeRounded(cornerRadius: 15)
         contentBoxView.layer.borderWidth = 2
         contentBoxView.layer.borderColor = UIColor.yellow_3.cgColor
-        contentBoxView.dropShadow(color: .yellow_3, offSet: CGSize(width: 1, height: 1), opacity: 0.1, radius: 15)
+        contentBoxView.dropShadow(color: UIColor(red: 130/255, green: 86/255, blue: 0, alpha: 0.1), offSet: CGSize(width: 0, height: 6), opacity: 1, radius: 15)
         
         contentInnerBoxView.backgroundColor = .white
         contentInnerBoxView.makeRounded(cornerRadius: 12)
