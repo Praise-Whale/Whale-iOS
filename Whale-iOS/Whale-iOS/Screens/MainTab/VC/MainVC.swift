@@ -312,10 +312,6 @@ extension MainVC {
                         adjustState()
                     }
                 }
-                
-                // 이거 지우기
-                todayPraiseState = .before
-                
             }
         } else { /// 없으면
             /// praiseId 새로 부여
