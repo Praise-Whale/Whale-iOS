@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SettingsVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SettingsVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,6 +23,9 @@
                                     <constraint firstAttribute="height" constant="48" id="hbL-57-0Th"/>
                                 </constraints>
                                 <state key="normal" image="popupBtnClose"/>
+                                <connections>
+                                    <action selector="closeBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="q5W-Nw-tzk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXx-XY-XMg">
                                 <rect key="frame" x="42" y="105" width="29.666666666666671" height="20.333333333333329"/>
@@ -309,7 +312,7 @@
                                         <rect key="frame" x="0.0" y="440.66666666666663" width="306" height="73.333333333333371"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-Lx-Dzz">
-                                                <rect key="frame" x="0.0" y="5" width="306" height="30"/>
+                                                <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="63.333333333333343"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스 라이센스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-tm-CS9">
                                                 <rect key="frame" x="0.0" y="26.333333333333371" width="122" height="20.333333333333329"/>
@@ -333,6 +336,7 @@
                                             <constraint firstAttribute="trailing" secondItem="p7O-Lx-Dzz" secondAttribute="trailing" id="DVd-2V-Eng"/>
                                             <constraint firstAttribute="trailing" secondItem="Mrv-mf-KFf" secondAttribute="trailing" constant="18" id="Gjk-eo-yhF"/>
                                             <constraint firstItem="p7O-Lx-Dzz" firstAttribute="top" secondItem="evU-GD-npG" secondAttribute="top" constant="5" id="Mpx-65-ItV"/>
+                                            <constraint firstAttribute="bottom" secondItem="p7O-Lx-Dzz" secondAttribute="bottom" constant="5" id="oX6-2w-rKt"/>
                                             <constraint firstItem="p7O-Lx-Dzz" firstAttribute="leading" secondItem="evU-GD-npG" secondAttribute="leading" id="rjC-0Z-w6U"/>
                                         </constraints>
                                     </view>
@@ -357,6 +361,32 @@
                             <constraint firstItem="eXx-XY-XMg" firstAttribute="top" secondItem="JHu-M4-gic" secondAttribute="bottom" constant="13" id="xoN-lI-lbA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="eXx-XY-XMg" id="ZV0-xn-3sk"/>
+                        <outlet property="titleUnderLineView" destination="qUL-2D-C4h" id="mAS-sx-c1z"/>
+                        <outletCollection property="settingView" destination="4Om-7W-dnQ" collectionClass="NSMutableArray" id="6mS-E4-DUe"/>
+                        <outletCollection property="settingView" destination="7sK-Jc-nHF" collectionClass="NSMutableArray" id="PX7-cl-0d9"/>
+                        <outletCollection property="settingView" destination="vuA-GT-LhM" collectionClass="NSMutableArray" id="WPW-lr-E0G"/>
+                        <outletCollection property="settingView" destination="z8m-SQ-bsB" collectionClass="NSMutableArray" id="zsY-bb-zfT"/>
+                        <outletCollection property="settingView" destination="FUo-SF-Ids" collectionClass="NSMutableArray" id="ZW5-eR-tB0"/>
+                        <outletCollection property="settingView" destination="nJA-BO-1Le" collectionClass="NSMutableArray" id="Nwz-Mw-nik"/>
+                        <outletCollection property="settingView" destination="evU-GD-npG" collectionClass="NSMutableArray" id="yCU-Bl-lJJ"/>
+                        <outletCollection property="settingTitleLabel" destination="PhH-Jo-WJ5" collectionClass="NSMutableArray" id="KaC-2Q-oiD"/>
+                        <outletCollection property="settingDetailLabel" destination="xk5-Gn-phP" collectionClass="NSMutableArray" id="lng-G4-nqV"/>
+                        <outletCollection property="settingTitleLabel" destination="Tqu-qv-gra" collectionClass="NSMutableArray" id="N75-y5-Idd"/>
+                        <outletCollection property="settingTitleLabel" destination="U2D-RL-MYN" collectionClass="NSMutableArray" id="jwi-H7-pV2"/>
+                        <outletCollection property="settingTitleLabel" destination="Uun-O9-a6w" collectionClass="NSMutableArray" id="hW1-R5-N9V"/>
+                        <outletCollection property="settingTitleLabel" destination="RfO-mT-apY" collectionClass="NSMutableArray" id="cKf-AC-5Ts"/>
+                        <outletCollection property="settingTitleLabel" destination="dre-5U-noO" collectionClass="NSMutableArray" id="M1p-V1-iJf"/>
+                        <outletCollection property="settingTitleLabel" destination="HLy-tm-CS9" collectionClass="NSMutableArray" id="lqM-J1-idI"/>
+                        <outletCollection property="settingDetailLabel" destination="Zfy-s2-cxK" collectionClass="NSMutableArray" id="ooQ-IW-kA3"/>
+                        <outletCollection property="settingUnderView" destination="PVE-WV-iWl" collectionClass="NSMutableArray" id="1bf-hj-jF8"/>
+                        <outletCollection property="settingUnderView" destination="0pG-fY-ZfM" collectionClass="NSMutableArray" id="hE8-bA-HWC"/>
+                        <outletCollection property="settingUnderView" destination="3GT-gi-jjh" collectionClass="NSMutableArray" id="UIZ-q9-sao"/>
+                        <outletCollection property="settingUnderView" destination="KcT-4W-3ho" collectionClass="NSMutableArray" id="6fS-5D-ExP"/>
+                        <outletCollection property="settingUnderView" destination="ppk-RU-Iwc" collectionClass="NSMutableArray" id="GYn-65-Csx"/>
+                        <outletCollection property="settingUnderView" destination="gHm-HE-V2P" collectionClass="NSMutableArray" id="EdN-Tk-LvU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

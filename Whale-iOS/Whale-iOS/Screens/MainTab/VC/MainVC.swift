@@ -154,6 +154,17 @@ class MainVC: UIViewController {
         self.present(dvc, animated: false, completion: nil)
     }
     
+    @IBAction func settingBtnDidTap(_ sender: Any) {
+        let nextStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        
+        guard let dvc = nextStoryboard.instantiateViewController(identifier: "SettingsVC") as? SettingsVC else {
+            return
+        }
+        
+        dvc.modalPresentationStyle = .fullScreen
+        
+        self.present(dvc, animated: true, completion: nil)
+    }
     
 
 }
