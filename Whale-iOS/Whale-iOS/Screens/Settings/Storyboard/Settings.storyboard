@@ -122,6 +122,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-fg-5ca">
                                                 <rect key="frame" x="0.0" y="36.333333333333343" width="130.33333333333334" height="22"/>
                                                 <state key="normal" image="settingsIcArrow"/>
+                                                <connections>
+                                                    <action selector="changeAlertTimeBtnDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PaH-BT-V3J"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>

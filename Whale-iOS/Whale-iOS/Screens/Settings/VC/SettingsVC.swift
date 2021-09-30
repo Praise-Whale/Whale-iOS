@@ -27,7 +27,10 @@ class SettingsVC: UIViewController {
         self.dismiss(animated: true)
     }
     
-
+    @IBAction func changeAlertTimeBtnDidTap(_ sender: Any) {
+        self.showToast(message: "아직 준비 중인 기능이에요! 기다려주세요!", bottom: 115)
+    }
+    
 }
 
 extension SettingsVC {
