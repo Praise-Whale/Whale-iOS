@@ -54,6 +54,11 @@ class WhaleReactionPopupVC: UIViewController {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "PraiseFail"), object: nil)
             }
         }
+        else if whale == .good {
+            self.dismiss(animated: false) {
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "ReactionDone"), object: nil)
+            }
+        }
         
         self.dismiss(animated: false, completion: nil)
     }

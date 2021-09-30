@@ -17,6 +17,7 @@ class MainVC: UIViewController {
     
     var nickname: String = "다나고래"
     var praiseId: Int = 0
+    var isLevelUp = false
     
     var todayPraiseState: PraiseState = .before
     
@@ -69,6 +70,7 @@ class MainVC: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reactionDone(_:)), name: NSNotification.Name("ReactionDone"), object: nil)
         
     }
     
@@ -77,7 +79,7 @@ class MainVC: UIViewController {
     }
     
     @objc func praiseSuccess(_ noti : Notification){
-        _ = noti.object
+        self.isLevelUp = noti.object as! Bool
         
         let nextStoryboard = UIStoryboard(name: "WhaleReactionPopup", bundle: nil)
         
@@ -101,6 +103,14 @@ class MainVC: UIViewController {
         UserDefaults.standard.setValue("fail", forKey: "todayPraiseState")
         todayPraiseState = .fail
         adjustState()
+    }
+    
+    @objc func reactionDone(_ noti : Notification) {
+        _ = noti.object
+        
+        if self.isLevelUp {
+            self.showToast(message: "레벨업 되었어요! 고래를 확인해보세요!")
+        }
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {
@@ -296,6 +306,9 @@ extension MainVC {
                         adjustState()
                     }
                 }
+                
+                // 이거 지우기
+                todayPraiseState = .before
                 
             }
         } else { /// 없으면
