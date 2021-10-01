@@ -577,6 +577,9 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="nameTextFieldEditChanged:" destination="U91-ws-edD" eventType="editingChanged" id="SAp-sb-Kvr"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -601,6 +604,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이미 사용 중인 닉네임이에요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-AH-hV3">
+                                        <rect key="frame" x="48" y="134" width="195" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -611,6 +620,7 @@
                                     <constraint firstAttribute="width" constant="291" id="HMN-2Q-L3c"/>
                                     <constraint firstItem="6fl-od-oEM" firstAttribute="leading" secondItem="EKZ-Dm-pyW" secondAttribute="leading" id="LDg-BA-36H"/>
                                     <constraint firstItem="IoQ-1P-cMH" firstAttribute="centerX" secondItem="Hoe-36-HMw" secondAttribute="centerX" id="V7b-dZ-bt1"/>
+                                    <constraint firstItem="PCU-AH-hV3" firstAttribute="top" secondItem="IoQ-1P-cMH" secondAttribute="bottom" constant="4" id="VUW-ar-P8s"/>
                                     <constraint firstAttribute="trailing" secondItem="FCX-qh-Jep" secondAttribute="trailing" constant="10" id="W5O-hv-Cgf"/>
                                     <constraint firstItem="VUw-Au-je8" firstAttribute="top" secondItem="IoQ-1P-cMH" secondAttribute="bottom" constant="4" id="XoE-9C-KDw"/>
                                     <constraint firstItem="6fl-od-oEM" firstAttribute="top" secondItem="EKZ-Dm-pyW" secondAttribute="bottom" constant="3" id="dli-pF-nla"/>
@@ -619,6 +629,7 @@
                                     <constraint firstItem="EKZ-Dm-pyW" firstAttribute="top" secondItem="Hoe-36-HMw" secondAttribute="top" constant="29" id="qOk-P1-L2C"/>
                                     <constraint firstAttribute="bottom" secondItem="oFf-1a-6nk" secondAttribute="bottom" constant="30" id="t2V-fY-k45"/>
                                     <constraint firstItem="VUw-Au-je8" firstAttribute="trailing" secondItem="IoQ-1P-cMH" secondAttribute="trailing" id="tt2-c6-QN2"/>
+                                    <constraint firstItem="PCU-AH-hV3" firstAttribute="centerX" secondItem="IoQ-1P-cMH" secondAttribute="centerX" id="ua6-WI-yzK"/>
                                     <constraint firstAttribute="height" constant="340" id="vDg-d7-Lat"/>
                                 </constraints>
                             </view>
@@ -632,6 +643,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="alreadyInUseLabel" destination="PCU-AH-hV3" id="oVO-ly-HB1"/>
                         <outlet property="modifyBtn" destination="oFf-1a-6nk" id="zth-CD-RqL"/>
                         <outlet property="nicknameTextfield" destination="FkV-2B-VxT" id="2v5-BB-Cju"/>
                         <outlet property="popupView" destination="Hoe-36-HMw" id="KcE-yJ-bcO"/>
@@ -643,7 +655,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-2k-N1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="-2147"/>
+            <point key="canvasLocation" x="1611" y="-1413"/>
         </scene>
     </scenes>
     <resources>
