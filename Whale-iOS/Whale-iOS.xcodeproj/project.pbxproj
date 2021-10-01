@@ -102,6 +102,8 @@
 		867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */; };
 		867AAED82707006A00DA25E9 /* ChangeNicknamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */; };
 		867AAEDA2707086200DA25E9 /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */; };
+		867AAEDC27070B7700DA25E9 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */; };
+		867AAEDF27070DE700DA25E9 /* SettingsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAEDE27070DE700DA25E9 /* SettingsNVC.swift */; };
 		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
 		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
 		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
@@ -207,6 +209,8 @@
 		867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeNicknamePopupVC.swift; path = "Whale-iOS/Screens/Settings/VC/ChangeNicknamePopupVC.swift"; sourceTree = SOURCE_ROOT; };
 		867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
+		867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
+		867AAEDE27070DE700DA25E9 /* SettingsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNVC.swift; sourceTree = "<group>"; };
 		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
 		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
 		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
@@ -581,6 +585,7 @@
 				37B77CD12671CCF700039277 /* MainYesPopupVC.swift */,
 				37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */,
 				37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */,
+				867AAEDE27070DE700DA25E9 /* SettingsNVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -688,6 +693,7 @@
 				33AAD371266F888F00907BCF /* SettingsVC.swift */,
 				867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */,
 				867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */,
+				867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1004,7 +1010,9 @@
 				33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */,
 				86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */,
 				330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */,
+				867AAEDC27070B7700DA25E9 /* DeveloperInfoVC.swift in Sources */,
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,
+				867AAEDF27070DE700DA25E9 /* SettingsNVC.swift in Sources */,
 				33AAD2D4266F74AF00907BCF /* SceneDelegate.swift in Sources */,
 				33F2C34326C9977A0096006D /* PraiseRankTVCell.swift in Sources */,
 				33AAD380266F88DA00907BCF /* o.swift in Sources */,

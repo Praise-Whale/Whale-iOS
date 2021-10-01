@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -287,6 +287,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8L-jT-0xR">
                                                 <rect key="frame" x="0.0" y="4.9999999999999964" width="306" height="62.666666666666657"/>
+                                                <connections>
+                                                    <segue destination="FWM-v4-ghp" kind="presentation" modalPresentationStyle="fullScreen" id="4Q5-Tn-ate"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dre-5U-noO">
                                                 <rect key="frame" x="0.0" y="26.666666666666629" width="78" height="20.333333333333329"/>
@@ -377,6 +380,7 @@
                             <constraint firstItem="eXx-XY-XMg" firstAttribute="top" secondItem="JHu-M4-gic" secondAttribute="bottom" constant="13" id="xoN-lI-lbA"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="vzH-ha-3Bb"/>
                     <connections>
                         <outlet property="changeAlertStateSwitch" destination="ynm-MB-B1v" id="Tcr-SV-eJC"/>
                         <outlet property="titleLabel" destination="eXx-XY-XMg" id="ZV0-xn-3sk"/>
@@ -441,7 +445,56 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZ3-Nc-TR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128" y="336"/>
+            <point key="canvasLocation" x="1128" y="209"/>
+        </scene>
+        <!--Developer InfoVC-->
+        <scene sceneID="spf-gy-p3d">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pp1-uV-0xp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="DeveloperInfoVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FWM-v4-ghp" customClass="DeveloperInfoVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SQW-QF-WQv">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="developerImg" translatesAutoresizingMaskIntoConstraints="NO" id="kik-h4-FOD">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="developerText" translatesAutoresizingMaskIntoConstraints="NO" id="pAZ-4p-qdb">
+                                <rect key="frame" x="138.66666666666666" y="85" width="113" height="437"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="113" id="o7a-nH-A9o"/>
+                                    <constraint firstAttribute="height" constant="437" id="p1C-P4-o8T"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3T-g6-eZh">
+                                <rect key="frame" x="3" y="44" width="48" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="CwR-18-htw"/>
+                                    <constraint firstAttribute="height" constant="48" id="vYf-kj-jau"/>
+                                </constraints>
+                                <state key="normal" image="popupBtnClose"/>
+                                <connections>
+                                    <action selector="backBtnDidTap:" destination="FWM-v4-ghp" eventType="touchUpInside" id="mx2-NY-6JG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="SBL-2h-0W4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pAZ-4p-qdb" firstAttribute="centerX" secondItem="SQW-QF-WQv" secondAttribute="centerX" id="49e-p2-I61"/>
+                            <constraint firstAttribute="bottom" secondItem="kik-h4-FOD" secondAttribute="bottom" id="7j0-0b-jV3"/>
+                            <constraint firstItem="kik-h4-FOD" firstAttribute="top" secondItem="SQW-QF-WQv" secondAttribute="top" id="87d-L4-ksn"/>
+                            <constraint firstItem="pAZ-4p-qdb" firstAttribute="top" secondItem="SBL-2h-0W4" secondAttribute="top" constant="41" id="HSp-dG-a4v"/>
+                            <constraint firstItem="O3T-g6-eZh" firstAttribute="leading" secondItem="SBL-2h-0W4" secondAttribute="leading" constant="3" id="chl-NC-XYR"/>
+                            <constraint firstItem="kik-h4-FOD" firstAttribute="leading" secondItem="SBL-2h-0W4" secondAttribute="leading" id="fBm-MP-DKg"/>
+                            <constraint firstItem="kik-h4-FOD" firstAttribute="trailing" secondItem="SBL-2h-0W4" secondAttribute="trailing" id="gYO-WK-ZvW"/>
+                            <constraint firstItem="O3T-g6-eZh" firstAttribute="top" secondItem="SBL-2h-0W4" secondAttribute="top" id="pjY-RB-LhZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="87B-gx-TAR"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1127.6923076923076" y="914.92890995260655"/>
         </scene>
         <!--Change Nickname PopupVC-->
         <scene sceneID="4Vo-Tg-63j">
@@ -558,6 +611,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="developerImg" width="375" height="812"/>
+        <image name="developerText" width="113" height="437"/>
         <image name="popupBtnClose" width="16" height="16"/>
         <image name="settingsIcArrow" width="7" height="12"/>
         <systemColor name="systemBackgroundColor">
