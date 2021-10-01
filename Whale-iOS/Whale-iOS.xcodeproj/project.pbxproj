@@ -101,6 +101,7 @@
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
 		867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */; };
 		867AAED82707006A00DA25E9 /* ChangeNicknamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */; };
+		867AAEDA2707086200DA25E9 /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */; };
 		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
 		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
 		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
@@ -205,6 +206,7 @@
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeNicknamePopupVC.swift; path = "Whale-iOS/Screens/Settings/VC/ChangeNicknamePopupVC.swift"; sourceTree = SOURCE_ROOT; };
+		867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
 		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
 		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
 		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
@@ -685,6 +687,7 @@
 			children = (
 				33AAD371266F888F00907BCF /* SettingsVC.swift */,
 				867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */,
+				867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				33AAD346266F87BC00907BCF /* e.swift in Sources */,
 				3387DD932672901200CF26F1 /* SignUpData.swift in Sources */,
 				330A49022672474F002DB3B4 /* OnboardingCVCell.swift in Sources */,
+				867AAEDA2707086200DA25E9 /* PrivacyPolicyVC.swift in Sources */,
 				33AAD2FE266F76CA00907BCF /* NetworkResult.swift in Sources */,
 				330A4906267268C2002DB3B4 /* LastOnboardingCVC.swift in Sources */,
 				33AAD358266F881300907BCF /* j.swift in Sources */,

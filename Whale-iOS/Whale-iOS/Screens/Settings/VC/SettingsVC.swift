@@ -37,6 +37,24 @@ class SettingsVC: UIViewController {
             self.showToast(message: "앞으로 오전 9:00 에 칭찬 알림을 보내드릴게요!", bottom: 115)
         }
     }
+    
+    @IBAction func privacyPolicyDidTap(_ sender: Any) {
+        guard let dvc = self.storyboard?.instantiateViewController(identifier: "PrivacyPolicyVC") as? PrivacyPolicyVC else {
+            return
+        }
+        
+        dvc.whatToShow = .privacyPolicy
+        self.present(dvc, animated: true)
+    }
+    
+    @IBAction func termsOfServiceDidTap(_ sender: Any) {
+        guard let dvc = self.storyboard?.instantiateViewController(identifier: "PrivacyPolicyVC") as? PrivacyPolicyVC else {
+            return
+        }
+        
+        dvc.whatToShow = .termsOfService
+        self.present(dvc, animated: true)
+    }
 }
 
 extension SettingsVC {

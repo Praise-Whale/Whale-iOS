@@ -197,6 +197,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1D-t0-K9R">
                                                 <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="62.333333333333343"/>
+                                                <connections>
+                                                    <action selector="privacyPolicyDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="vSF-It-fyD"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개인정보 처리방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uun-O9-a6w">
                                                 <rect key="frame" x="0.0" y="26.666666666666629" width="122" height="20.333333333333329"/>
@@ -239,6 +242,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biv-UF-bWK">
                                                 <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="62.333333333333343"/>
+                                                <connections>
+                                                    <action selector="termsOfServiceDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="mf6-3D-K4u"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 이용약관" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RfO-mT-apY">
                                                 <rect key="frame" x="0.0" y="26.666666666666686" width="107.33333333333333" height="20.333333333333329"/>
@@ -402,6 +408,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.38461538461539" y="61.137440758293835"/>
+        </scene>
+        <!--Privacy PolicyVC-->
+        <scene sceneID="nIx-wR-IlX">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyPolicyVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kGt-dV-tab" customClass="PrivacyPolicyVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gip-sU-JJZ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nwR-LC-IY2">
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZoN-oA-DRl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZoN-oA-DRl" firstAttribute="bottom" secondItem="nwR-LC-IY2" secondAttribute="bottom" id="2TY-O8-nSh"/>
+                            <constraint firstItem="nwR-LC-IY2" firstAttribute="top" secondItem="ZoN-oA-DRl" secondAttribute="top" id="A23-Cc-cQP"/>
+                            <constraint firstItem="ZoN-oA-DRl" firstAttribute="trailing" secondItem="nwR-LC-IY2" secondAttribute="trailing" id="PEz-F1-fxH"/>
+                            <constraint firstItem="nwR-LC-IY2" firstAttribute="leading" secondItem="ZoN-oA-DRl" secondAttribute="leading" id="kyV-gG-XFU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="nwR-LC-IY2" id="Hak-o7-gWj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nZ3-Nc-TR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="336"/>
         </scene>
         <!--Change Nickname PopupVC-->
         <scene sceneID="4Vo-Tg-63j">
