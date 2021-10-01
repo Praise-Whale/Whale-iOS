@@ -332,6 +332,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7O-Lx-Dzz">
                                                 <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="63.333333333333343"/>
+                                                <connections>
+                                                    <segue destination="i2j-6t-Acq" kind="presentation" id="1OX-UB-JOX"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스 라이센스" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLy-tm-CS9">
                                                 <rect key="frame" x="0.0" y="26.333333333333371" width="122" height="20.333333333333329"/>
@@ -445,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZ3-Nc-TR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128" y="209"/>
+            <point key="canvasLocation" x="1462" y="-766"/>
         </scene>
         <!--Developer InfoVC-->
         <scene sceneID="spf-gy-p3d">
@@ -494,7 +497,37 @@
                     <navigationItem key="navigationItem" id="87B-gx-TAR"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1127.6923076923076" y="914.92890995260655"/>
+            <point key="canvasLocation" x="1462" y="-59"/>
+        </scene>
+        <!--Open Source LicenseVC-->
+        <scene sceneID="2q4-tM-fUH">
+            <objects>
+                <viewController id="i2j-6t-Acq" customClass="OpenSourceLicenseVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0b-0B-k6T">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="오픈소스 라이센스 (곧 정리해서 올릴 예정)" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eUy-KI-9SU">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xBm-g7-lkH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xBm-g7-lkH" firstAttribute="bottom" secondItem="eUy-KI-9SU" secondAttribute="bottom" id="0gW-pb-wvD"/>
+                            <constraint firstItem="eUy-KI-9SU" firstAttribute="leading" secondItem="xBm-g7-lkH" secondAttribute="leading" id="5wv-Lq-fbQ"/>
+                            <constraint firstItem="xBm-g7-lkH" firstAttribute="trailing" secondItem="eUy-KI-9SU" secondAttribute="trailing" id="Aw9-1l-yiN"/>
+                            <constraint firstItem="eUy-KI-9SU" firstAttribute="top" secondItem="xBm-g7-lkH" secondAttribute="top" id="UkI-d3-C4j"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9w-R2-5Rn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="628"/>
         </scene>
         <!--Change Nickname PopupVC-->
         <scene sceneID="4Vo-Tg-63j">
@@ -607,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-2k-N1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127.6923076923076" y="-468.48341232227489"/>
+            <point key="canvasLocation" x="1462" y="-1442"/>
         </scene>
     </scenes>
     <resources>
@@ -615,6 +648,9 @@
         <image name="developerText" width="113" height="437"/>
         <image name="popupBtnClose" width="16" height="16"/>
         <image name="settingsIcArrow" width="7" height="12"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

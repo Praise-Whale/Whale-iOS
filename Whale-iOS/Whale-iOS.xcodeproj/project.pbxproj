@@ -104,6 +104,7 @@
 		867AAEDA2707086200DA25E9 /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */; };
 		867AAEDC27070B7700DA25E9 /* DeveloperInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */; };
 		867AAEDF27070DE700DA25E9 /* SettingsNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAEDE27070DE700DA25E9 /* SettingsNVC.swift */; };
+		867AAEE127070F9600DA25E9 /* OpenSourceLicenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAEE027070F9600DA25E9 /* OpenSourceLicenseVC.swift */; };
 		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
 		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
 		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
@@ -211,6 +212,7 @@
 		867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
 		867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperInfoVC.swift; sourceTree = "<group>"; };
 		867AAEDE27070DE700DA25E9 /* SettingsNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNVC.swift; sourceTree = "<group>"; };
+		867AAEE027070F9600DA25E9 /* OpenSourceLicenseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLicenseVC.swift; sourceTree = "<group>"; };
 		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
 		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
 		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 				867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */,
 				867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */,
 				867AAEDB27070B7700DA25E9 /* DeveloperInfoVC.swift */,
+				867AAEE027070F9600DA25E9 /* OpenSourceLicenseVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -1004,6 +1007,7 @@
 				33AAD2D2266F74AF00907BCF /* AppDelegate.swift in Sources */,
 				33F2C35B26CAD8FA0096006D /* SignUpService.swift in Sources */,
 				33AAD366266F885800907BCF /* LevelVC.swift in Sources */,
+				867AAEE127070F9600DA25E9 /* OpenSourceLicenseVC.swift in Sources */,
 				33F2C33926C95B5E0096006D /* PraiseCardCVCell.swift in Sources */,
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
 				33AAD352266F87F800907BCF /* h.swift in Sources */,
