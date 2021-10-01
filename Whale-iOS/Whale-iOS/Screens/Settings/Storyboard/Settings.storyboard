@@ -48,6 +48,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKd-ny-PpU">
                                                 <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="62.333333333333343"/>
+                                                <connections>
+                                                    <segue destination="U91-ws-edD" kind="presentation" animates="NO" modalPresentationStyle="overCurrentContext" id="7d3-Bz-CwR"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임 변경" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PhH-Jo-WJ5">
                                                 <rect key="frame" x="0.0" y="12.999999999999998" width="78" height="20.333333333333329"/>
@@ -395,6 +398,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="135.38461538461539" y="61.137440758293835"/>
+        </scene>
+        <!--Change Nickname PopupVC-->
+        <scene sceneID="4Vo-Tg-63j">
+            <objects>
+                <viewController storyboardIdentifier="changeNicknamePopupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="U91-ws-edD" customClass="changeNicknamePopupVC" customModule="Whale_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hp4-VB-Dvi">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="l52-I3-04E"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-2k-N1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1129" y="-468"/>
         </scene>
     </scenes>
     <resources>

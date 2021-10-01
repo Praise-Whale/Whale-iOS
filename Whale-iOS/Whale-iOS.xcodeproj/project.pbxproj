@@ -100,6 +100,7 @@
 		37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */; };
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
 		867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */; };
+		867AAED82707006A00DA25E9 /* changeNicknamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED72707006A00DA25E9 /* changeNicknamePopupVC.swift */; };
 		86DF8C1A26C3078B00EC9A6B /* MainRecentCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */; };
 		86DF8C1C26C66F3B00EC9A6B /* RecentPraiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */; };
 		86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */; };
@@ -203,6 +204,7 @@
 		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		867AAED72707006A00DA25E9 /* changeNicknamePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = changeNicknamePopupVC.swift; path = "Whale-iOS/Screens/Settings/VC/changeNicknamePopupVC.swift"; sourceTree = SOURCE_ROOT; };
 		86DF8C1926C3078B00EC9A6B /* MainRecentCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRecentCVC.swift; sourceTree = "<group>"; };
 		86DF8C1B26C66F3B00EC9A6B /* RecentPraiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseService.swift; sourceTree = "<group>"; };
 		86DF8C1D26C66FC900EC9A6B /* RecentPraiseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentPraiseData.swift; sourceTree = "<group>"; };
@@ -682,6 +684,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD371266F888F00907BCF /* SettingsVC.swift */,
+				867AAED72707006A00DA25E9 /* changeNicknamePopupVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -942,6 +945,7 @@
 				33AAD314266F7BC700907BCF /* CustomLabel.swift in Sources */,
 				33F2C34926CA5C2A0096006D /* PraiseCardNC.swift in Sources */,
 				33AAD389266F895300907BCF /* WhaleTBC.swift in Sources */,
+				867AAED82707006A00DA25E9 /* changeNicknamePopupVC.swift in Sources */,
 				33F2C34726CA51400096006D /* PraiseDetailData.swift in Sources */,
 				3311510526C7AF9D00556631 /* Int+Extension.swift in Sources */,
 				33AAD376266F889E00907BCF /* n.swift in Sources */,
