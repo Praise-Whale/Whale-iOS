@@ -177,6 +177,9 @@
                                     <constraint firstAttribute="height" constant="48" id="gOR-tk-Lol"/>
                                 </constraints>
                                 <state key="normal" image="mainIcSettings"/>
+                                <connections>
+                                    <action selector="settingBtnDidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="500-4L-rbe"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-14-Nsz">
                                 <rect key="frame" x="232.5" y="545" width="175.5" height="213.5"/>

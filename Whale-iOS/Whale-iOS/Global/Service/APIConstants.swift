@@ -28,4 +28,6 @@ struct APIConstants {
     static let praiseDetailURL = baseURL + "praise?praisedName="
     
     static let nicknameCheckURL = baseURL + "users/check/"
+    
+    static let nicknameChangeURL = baseURL + "users/nickname"
 }
