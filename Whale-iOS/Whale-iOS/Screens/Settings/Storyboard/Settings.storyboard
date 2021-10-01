@@ -498,6 +498,7 @@
                     <connections>
                         <outlet property="modifyBtn" destination="oFf-1a-6nk" id="zth-CD-RqL"/>
                         <outlet property="nicknameTextfield" destination="FkV-2B-VxT" id="2v5-BB-Cju"/>
+                        <outlet property="popupView" destination="Hoe-36-HMw" id="KcE-yJ-bcO"/>
                         <outlet property="textfieldWrapView" destination="IoQ-1P-cMH" id="69c-uZ-PVd"/>
                         <outlet property="titleLabel" destination="EKZ-Dm-pyW" id="Iu7-7M-8c6"/>
                         <outlet property="titleUnderbarView" destination="6fl-od-oEM" id="dY5-JK-jdm"/>

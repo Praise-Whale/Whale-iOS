@@ -14,6 +14,8 @@ class ChangeNicknamePopupVC: UIViewController {
     
     //MARK: - IBOutlets
     
+    @IBOutlet var popupView: UIView!
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleUnderbarView: UIView!
     
@@ -28,6 +30,7 @@ class ChangeNicknamePopupVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setStyle()
     }
     
     //MARK: - IBActions
@@ -37,4 +40,28 @@ class ChangeNicknamePopupVC: UIViewController {
 
 extension ChangeNicknamePopupVC {
     //MARK: - Custom Methods
+    
+    func setStyle() {
+        popupView.makeRounded(cornerRadius: 15)
+        popupView.layer.borderColor = UIColor.yellow_3.cgColor
+        popupView.layer.borderWidth = 3
+        
+        titleLabel.textColor = .brown_2
+        titleLabel.font = .AppleSDGothicR(size: 20)
+        
+        titleUnderbarView.backgroundColor = .yellow_1
+        
+        textfieldWrapView.layer.borderWidth = 1
+        textfieldWrapView.layer.borderColor = UIColor.yellow_4.cgColor
+        textfieldWrapView.makeRounded(cornerRadius: 12)
+        
+        nicknameTextfield.placeholder = UserDefaults.standard.string(forKey: "nickName")
+        nicknameTextfield.font = .AppleSDGothicR(size: 13)
+        
+        wordCountLabel.font = .AppleSDGothicR(size: 13)
+        
+        modifyBtn.setTitle("변경", for: .normal)
+        modifyBtn.titleLabel?.font = .AppleSDGothicR(size: 15)
+        modifyBtn.makeRounded(cornerRadius: modifyBtn.frame.height/2)
+    }
 }
