@@ -64,6 +64,11 @@ class ChangeNicknamePopupVC: UIViewController {
         }
     }
     
+    @IBAction func modifyBtnDidTap(_ sender: Any) {
+        callPutService()
+    }
+    
+    
 }
 
 extension ChangeNicknamePopupVC {
@@ -169,6 +174,29 @@ extension ChangeNicknamePopupVC {
                 print("networkFail")
 //                setStateOfBtnNicknameTF(false)
                 setNameTextNotExists()
+            }
+        }
+    }
+    
+    func callPutService() {
+        NicknameChangeService.shared.nicknameChangeService(newNickname: nameTyped) { [self]
+            (networkResult) -> (Void) in
+            switch networkResult {
+            case .success:
+                UserDefaults.standard.setValue(nameTyped, forKey: "nickName")
+                self.dismiss(animated: false) {
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "nicknameChanged"), object: nameTyped)
+                }
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
             }
         }
     }

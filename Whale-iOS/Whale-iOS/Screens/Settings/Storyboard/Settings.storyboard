@@ -597,6 +597,9 @@
                                             <constraint firstAttribute="width" secondItem="oFf-1a-6nk" secondAttribute="height" multiplier="237:43" id="uje-T6-HrW"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="modifyBtnDidTap:" destination="U91-ws-edD" eventType="touchUpInside" id="mRJ-10-NNm"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUw-Au-je8">
                                         <rect key="frame" x="222.00000000000003" y="134" width="41.999999999999972" height="21"/>

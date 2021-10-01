@@ -23,6 +23,15 @@ class SettingsVC: UIViewController {
         super.viewDidLoad()
         
         setStyle()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(nicknameChanged(_:)), name: NSNotification.Name("nicknameChanged"), object: nil)
+    }
+    
+    @objc func nicknameChanged(_ noti: Notification) {
+        let newNickname = noti.object as! String
+        
+        self.showToast(message: "닉네임이 변경되었어요!", bottom: 115)
+        settingDetailLabel[0].text = newNickname
     }
     
     @IBAction func closeBtnDidTap(_ sender: Any) {
