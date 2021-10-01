@@ -121,6 +121,9 @@
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ynm-MB-B1v">
                                                 <rect key="frame" x="255" y="21.333333333333343" width="51" height="31"/>
                                                 <color key="onTintColor" red="1" green="0.83137254901960778" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <action selector="changeAlertStateSwitch:" destination="Y6W-OH-hqX" eventType="valueChanged" id="RPt-CC-Wcq"/>
+                                                </connections>
                                             </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dD6-fg-5ca">
                                                 <rect key="frame" x="0.0" y="36.333333333333343" width="130.33333333333334" height="22"/>
@@ -369,6 +372,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeAlertStateSwitch" destination="ynm-MB-B1v" id="Tcr-SV-eJC"/>
                         <outlet property="titleLabel" destination="eXx-XY-XMg" id="ZV0-xn-3sk"/>
                         <outlet property="titleUnderLineView" destination="qUL-2D-C4h" id="mAS-sx-c1z"/>
                         <outletCollection property="settingView" destination="4Om-7W-dnQ" collectionClass="NSMutableArray" id="6mS-E4-DUe"/>
@@ -423,6 +427,9 @@
                                             <constraint firstAttribute="width" constant="48" id="b8x-y8-u0b"/>
                                         </constraints>
                                         <state key="normal" image="popupBtnClose"/>
+                                        <connections>
+                                            <action selector="closeBtnDidTap:" destination="U91-ws-edD" eventType="touchUpInside" id="0jY-9I-vKh"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fl-od-oEM">
                                         <rect key="frame" x="27" y="53" width="78" height="2"/>

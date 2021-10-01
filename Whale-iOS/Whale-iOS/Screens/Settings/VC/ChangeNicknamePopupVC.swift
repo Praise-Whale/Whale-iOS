@@ -35,6 +35,9 @@ class ChangeNicknamePopupVC: UIViewController {
     
     //MARK: - IBActions
 
+    @IBAction func closeBtnDidTap(_ sender: Any) {
+        self.dismiss(animated: false)
+    }
     
 }
 

@@ -15,6 +15,7 @@ class SettingsVC: UIViewController {
     @IBOutlet var settingTitleLabel: [UILabel]!
     @IBOutlet var settingDetailLabel: [UILabel]!
     @IBOutlet var settingUnderView: [UIView]!
+    @IBOutlet var changeAlertStateSwitch: UISwitch!
     
     
     override func viewDidLoad() {
@@ -31,6 +32,11 @@ class SettingsVC: UIViewController {
         self.showToast(message: "아직 준비 중인 기능이에요! 기다려주세요!", bottom: 115)
     }
     
+    @IBAction func changeAlertStateSwitch(_ sender: Any) {
+        if changeAlertStateSwitch.isOn {
+            self.showToast(message: "앞으로 오전 9:00 에 칭찬 알림을 보내드릴게요!", bottom: 115)
+        }
+    }
 }
 
 extension SettingsVC {
