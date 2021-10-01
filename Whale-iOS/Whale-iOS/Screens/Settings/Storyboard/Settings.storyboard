@@ -155,6 +155,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-46-VjV">
                                                 <rect key="frame" x="0.0" y="5.0000000000000036" width="306" height="62.333333333333343"/>
+                                                <connections>
+                                                    <action selector="mailDidTap:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Sdi-qW-8Wo"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-RL-MYN">
                                                 <rect key="frame" x="0.0" y="26.333333333333371" width="59" height="20.333333333333329"/>
@@ -448,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nZ3-Nc-TR1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="-766"/>
+            <point key="canvasLocation" x="1612" y="-723"/>
         </scene>
         <!--Developer InfoVC-->
         <scene sceneID="spf-gy-p3d">
@@ -497,7 +500,7 @@
                     <navigationItem key="navigationItem" id="87B-gx-TAR"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1462" y="-59"/>
+            <point key="canvasLocation" x="1612" y="-37"/>
         </scene>
         <!--Open Source LicenseVC-->
         <scene sceneID="2q4-tM-fUH">
@@ -527,7 +530,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9w-R2-5Rn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="628"/>
+            <point key="canvasLocation" x="1612" y="650"/>
         </scene>
         <!--Change Nickname PopupVC-->
         <scene sceneID="4Vo-Tg-63j">
@@ -640,7 +643,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bzY-2k-N1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="-1442"/>
+            <point key="canvasLocation" x="1612" y="-2147"/>
         </scene>
     </scenes>
     <resources>
