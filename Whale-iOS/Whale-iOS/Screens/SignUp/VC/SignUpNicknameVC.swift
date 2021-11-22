@@ -38,9 +38,9 @@ class SignUpNicknameVC: UIViewController {
     
     func setLabelAttributesText() {
         let firstPraiseAttributedString = NSMutableAttributedString(string: praiseWhaleText, attributes: [
-                                                                        .font: UIFont.AppleSDGothicR(size: 22),
-                                                                        .foregroundColor: UIColor.brown_2,
-                                                                        .kern: -1.1 ])
+            .font: UIFont.AppleSDGothicR(size: 22),
+            .foregroundColor: UIColor.brown_2,
+            .kern: -1.1 ])
         firstPraiseAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseWhaleText as NSString).range(of: praiseWhaleTextRange))
         firstTitleLabel.attributedText = firstPraiseAttributedString
     }
@@ -146,7 +146,6 @@ extension SignUpNicknameVC: UITextFieldDelegate {
         nicknameTextField.addTarget(self, action: #selector(nicknameTextIsEndEditing(_:)), for: .editingDidEnd)
     }
     
-    
     //MARK: - nicknameTextField가 입력중일 때
     @objc func nicknameTextIsEditing(_ TextLabel: UITextField) {
         if let text = nicknameTextField.text {
@@ -179,6 +178,7 @@ extension SignUpNicknameVC: UITextFieldDelegate {
                 
                 if text.count > 7 {
                     editingCountLabel.text = "7"
+                    nicknameTextField.deleteBackward()
                 }
                 else {
                     editingCountLabel.text = "\(nicknameTextField.text!.count)"
@@ -226,13 +226,8 @@ extension SignUpNicknameVC: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        guard let text = nicknameTextField.text else {return false}
-        
-        // 최대 글자수 이상을 입력한 이후에는 중간에 다른 글자를 추가할 수 없게끔 작동
-        if text.count >= maxLength && range.length == 0 && range.location < maxLength {
-            return false
-        }
-        return true
+        let newLength = (nicknameTextField.text?.count)! + string.count - range.length
+        return !(newLength > 8)
     }
     
     
