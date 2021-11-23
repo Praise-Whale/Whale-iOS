@@ -45,6 +45,11 @@ class LevelVC: UIViewController {
         getWhaleLevelService()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        popUpWhenLevelUp()
+        getWhaleLevelService()
+    }
+    
     //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundNicknameView)
     func makeTopView(level: CGFloat, praiseCnt: CGFloat) {
         
