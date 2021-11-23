@@ -89,7 +89,7 @@ extension praiseDatePickerView {
     
     // yearArray 만드는 함수
     func makeYearArray() {
-        DispatchQueue.main.async { [self] in
+        DispatchQueue.global().async { [self] in
             for i in 2010...2050 {
                 yearArray.append("\(i)년")
             }

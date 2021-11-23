@@ -67,6 +67,10 @@ class PraiseCardVC: UIViewController {
         registerCell()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        praiseCardService(currentYear, currentMonth)
+    }
+    
     // 대리자 위임
     private func setupDelegate() {
         praiseCV.delegate = self
@@ -164,9 +168,9 @@ class PraiseCardVC: UIViewController {
         let range1 = "\(praiseData.praiseCount)번"
         
         let praiseCountLabelAttributedString = NSMutableAttributedString(string: praiseCountText, attributes: [
-                                                                            .font: UIFont.AppleSDGothicR(size: 22),
-                                                                            .foregroundColor: UIColor.brown_1,
-                                                                            .kern: -1.1 ])
+            .font: UIFont.AppleSDGothicR(size: 22),
+            .foregroundColor: UIColor.brown_1,
+            .kern: -1.1 ])
         praiseCountLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseCountText as NSString).range(of: range1))
         praiseCountLabel.attributedText = praiseCountLabelAttributedString
         
@@ -225,9 +229,9 @@ class PraiseCardVC: UIViewController {
         let range1 = "\(praiseRankData.totalPraiserCount)명"
         
         let praiseCountLabelAttributedString = NSMutableAttributedString(string: praiseCountText, attributes: [
-                                                                            .font: UIFont.AppleSDGothicR(size: 22),
-                                                                            .foregroundColor: UIColor.brown_1,
-                                                                            .kern: -1.1 ])
+            .font: UIFont.AppleSDGothicR(size: 22),
+            .foregroundColor: UIColor.brown_1,
+            .kern: -1.1 ])
         praiseCountLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseCountText as NSString).range(of: range1))
         praiseRankCountLabel.attributedText = praiseCountLabelAttributedString
         
@@ -385,7 +389,16 @@ extension PraiseCardVC {
 //MARK: - Network Service
 extension PraiseCardVC {
     func praiseCardService(_ year: String, _ month: String) {
-        PraiseService.shared.praiseDateService(year: year, month: "0" + month) { [self](networkResult) -> (Void) in
+        
+        var convertMonthString: String = "0"
+        if month < 10.toString() {
+            convertMonthString = "0" + month
+        }
+        else {
+            convertMonthString = month
+        }
+        
+        PraiseService.shared.praiseDateService(year: year, month: convertMonthString) { [self](networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let praiseData = data as? PraiseData {
