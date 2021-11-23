@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aN3-HF-d6Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aN3-HF-d6Y">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="AppleSDGothicNeoR.ttf">
+            <string>AppleSDGothicNeoR00</string>
+        </array>
         <array key="NotoSansCJKkr-Bold.otf">
             <string>NotoSansCJKkr-Bold</string>
         </array>
@@ -100,7 +104,7 @@
                                     <constraint firstAttribute="height" constant="19" id="4al-cr-Ndz"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_img_dolphin" translatesAutoresizingMaskIntoConstraints="NO" id="El5-Dt-I7Q">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agreeImgWhale" translatesAutoresizingMaskIntoConstraints="NO" id="El5-Dt-I7Q">
                                 <rect key="frame" x="140.5" y="262" width="133" height="166"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="El5-Dt-I7Q" secondAttribute="height" multiplier="132.8:166" id="eS8-dH-tK9"/>
@@ -617,7 +621,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whalename_img_whale" translatesAutoresizingMaskIntoConstraints="NO" id="xhc-5I-9eQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whalenameImgWhale" translatesAutoresizingMaskIntoConstraints="NO" id="xhc-5I-9eQ">
                                 <rect key="frame" x="169" y="277" width="76" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="76" id="8uI-sV-6K7"/>
@@ -646,9 +650,10 @@
                                 </constraints>
                                 <state key="normal" image="btnBack"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="칭찬할고래에서" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAp-dl-k4I">
-                                <rect key="frame" x="42" y="98" width="133.5" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="칭찬할고" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAp-dl-k4I">
+                                <rect key="frame" x="42" y="98" width="76.5" height="31"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="93" id="D9V-kX-Qvd"/>
                                     <constraint firstAttribute="height" constant="31" id="qMO-7U-93r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="22"/>
@@ -790,6 +795,17 @@
                                     <action selector="touchUpToNicknameTextFieldClear:" destination="i3P-YA-uxH" eventType="touchUpInside" id="4qv-Q5-Cne"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님과 함께 할" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-1Q-NLX">
+                                <rect key="frame" x="118.5" y="98" width="107" height="31"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeoR00" family="AppleSDGothicNeoR00" pointSize="22"/>
+                                <color key="textColor" name="brown_2"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                        <real key="value" value="-1.1000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hiN-46-Zff"/>
                         <color key="backgroundColor" name="yellow_2"/>
@@ -799,9 +815,11 @@
                             <constraint firstItem="YxV-u3-FzN" firstAttribute="leading" secondItem="hiN-46-Zff" secondAttribute="leading" constant="24" id="5G4-Hh-o7z"/>
                             <constraint firstItem="NxS-QW-F1b" firstAttribute="centerY" secondItem="KQz-bI-9my" secondAttribute="centerY" id="5j5-Gz-Ddh"/>
                             <constraint firstItem="FEB-3d-nAh" firstAttribute="leading" secondItem="iAp-dl-k4I" secondAttribute="leading" id="5zg-3f-TFA"/>
+                            <constraint firstItem="1mh-1Q-NLX" firstAttribute="leading" secondItem="iAp-dl-k4I" secondAttribute="trailing" id="6gP-9H-ijj"/>
                             <constraint firstItem="79Y-NW-THV" firstAttribute="leading" secondItem="FEB-3d-nAh" secondAttribute="trailing" id="7Ry-dU-YLq"/>
                             <constraint firstItem="B3m-Bx-vUm" firstAttribute="centerY" secondItem="A9f-GL-074" secondAttribute="centerY" id="7iW-ji-xLg"/>
                             <constraint firstItem="8c6-Pj-x0N" firstAttribute="leading" secondItem="fc9-1a-PVb" secondAttribute="trailing" id="9QP-L5-vFf"/>
+                            <constraint firstItem="KQz-bI-9my" firstAttribute="top" secondItem="geZ-hJ-GZd" secondAttribute="bottom" constant="15" id="9vp-cN-g2t"/>
                             <constraint firstItem="9L6-7j-aOZ" firstAttribute="leading" secondItem="FEB-3d-nAh" secondAttribute="leading" id="BXP-eu-d1m"/>
                             <constraint firstItem="NxS-QW-F1b" firstAttribute="leading" secondItem="KQz-bI-9my" secondAttribute="trailing" constant="9" id="CYV-Ut-iCu"/>
                             <constraint firstItem="YxV-u3-FzN" firstAttribute="top" secondItem="Hzb-KC-MFO" secondAttribute="top" constant="56" id="Ch6-l0-H7v"/>
@@ -812,6 +830,7 @@
                             <constraint firstItem="UTy-Z3-c6w" firstAttribute="top" secondItem="joa-Nw-o73" secondAttribute="bottom" constant="40" id="MlT-we-3ml"/>
                             <constraint firstItem="UTy-Z3-c6w" firstAttribute="centerX" secondItem="hiN-46-Zff" secondAttribute="centerX" id="N2m-og-fHy"/>
                             <constraint firstItem="hiN-46-Zff" firstAttribute="trailing" secondItem="tf0-4a-uoR" secondAttribute="trailing" constant="42" id="OAC-WE-t8a"/>
+                            <constraint firstItem="1mh-1Q-NLX" firstAttribute="centerY" secondItem="iAp-dl-k4I" secondAttribute="centerY" id="Og6-Fn-KLC"/>
                             <constraint firstItem="geZ-hJ-GZd" firstAttribute="top" secondItem="Hzb-KC-MFO" secondAttribute="top" constant="41" id="RQL-pQ-tq3"/>
                             <constraint firstItem="joa-Nw-o73" firstAttribute="leading" secondItem="iAp-dl-k4I" secondAttribute="leading" id="W46-KJ-jSb"/>
                             <constraint firstItem="NxS-QW-F1b" firstAttribute="width" secondItem="NxS-QW-F1b" secondAttribute="height" multiplier="1:1" id="YWP-uy-mhu"/>
@@ -819,6 +838,7 @@
                             <constraint firstItem="FEB-3d-nAh" firstAttribute="top" secondItem="iAp-dl-k4I" secondAttribute="bottom" constant="3" id="Z9n-rA-Gxf"/>
                             <constraint firstItem="J8q-62-V79" firstAttribute="top" secondItem="A9f-GL-074" secondAttribute="bottom" constant="42" id="a5D-up-As1"/>
                             <constraint firstItem="J8q-62-V79" firstAttribute="centerX" secondItem="A9f-GL-074" secondAttribute="centerX" id="cv9-FF-qDv"/>
+                            <constraint firstItem="1mh-1Q-NLX" firstAttribute="height" secondItem="iAp-dl-k4I" secondAttribute="height" id="dVz-v7-zDc"/>
                             <constraint firstItem="iAp-dl-k4I" firstAttribute="leading" secondItem="hiN-46-Zff" secondAttribute="leading" constant="42" id="f8Q-cl-sMQ"/>
                             <constraint firstItem="79Y-NW-THV" firstAttribute="centerY" secondItem="FEB-3d-nAh" secondAttribute="centerY" id="gjb-zj-r2r"/>
                             <constraint firstItem="8c6-Pj-x0N" firstAttribute="trailing" secondItem="A9f-GL-074" secondAttribute="trailing" id="ieA-xP-O3d"/>
@@ -831,7 +851,6 @@
                             <constraint firstItem="tf0-4a-uoR" firstAttribute="width" secondItem="tf0-4a-uoR" secondAttribute="height" multiplier="1:1" id="pLP-60-hyO"/>
                             <constraint firstItem="fc9-1a-PVb" firstAttribute="centerY" secondItem="8c6-Pj-x0N" secondAttribute="centerY" id="prT-88-cuI"/>
                             <constraint firstItem="xhc-5I-9eQ" firstAttribute="centerX" secondItem="hiN-46-Zff" secondAttribute="centerX" id="prW-F0-aZK"/>
-                            <constraint firstItem="KQz-bI-9my" firstAttribute="centerY" secondItem="iAp-dl-k4I" secondAttribute="centerY" id="r5q-HO-KaR"/>
                             <constraint firstItem="J8q-62-V79" firstAttribute="leading" secondItem="A9f-GL-074" secondAttribute="leading" id="tFn-ns-4cr"/>
                             <constraint firstItem="tf0-4a-uoR" firstAttribute="centerY" secondItem="NxS-QW-F1b" secondAttribute="centerY" id="udx-gQ-yht"/>
                             <constraint firstItem="8c6-Pj-x0N" firstAttribute="leading" secondItem="fc9-1a-PVb" secondAttribute="trailing" id="x55-RJ-pjw"/>
@@ -853,6 +872,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="agreeImgWhale" width="133" height="166"/>
         <image name="agree_box_agree" width="828" height="507"/>
         <image name="agree_ic_arrow" width="18" height="30"/>
         <image name="agree_ic_check" width="45" height="45"/>
@@ -863,12 +883,11 @@
         <image name="agree_ic_progress1" width="159" height="159"/>
         <image name="btnBack" width="11" height="20"/>
         <image name="btn_delete" width="48" height="48"/>
-        <image name="main_img_dolphin" width="365" height="555"/>
         <image name="nickname_box_nickname" width="774" height="132"/>
         <image name="nickname_ic_progress2" width="159" height="159"/>
         <image name="nickname_ic_progress_fin" width="57" height="57"/>
+        <image name="whalenameImgWhale" width="76" height="100"/>
         <image name="whalename_ic_progress3" width="159" height="159"/>
-        <image name="whalename_img_whale" width="228" height="300"/>
         <namedColor name="brown_2">
             <color red="0.23899999260902405" green="0.20800000429153442" blue="0.17299999296665192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
