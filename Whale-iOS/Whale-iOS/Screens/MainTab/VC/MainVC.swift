@@ -71,7 +71,7 @@ class MainVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(praiseSuccess(_:)), name: NSNotification.Name("PraiseSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(praiseFail(_:)), name: NSNotification.Name("PraiseFail"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(reactionDone(_:)), name: NSNotification.Name("ReactionDone"), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(nicknameChanged(_:)), name: NSNotification.Name("nicknameChanged"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,6 +111,12 @@ class MainVC: UIViewController {
         if self.isLevelUp {
             self.showToast(message: "레벨업 되었어요! 고래를 확인해보세요!")
         }
+    }
+    
+    @objc func nicknameChanged(_ noti: Notification) {
+        
+        self.showToast(message: "닉네임이 변경되었어요!", bottom: 115)
+        setNicknameLabel()
     }
     
     @IBAction func didBtnDidTap(_ sender: Any) {
