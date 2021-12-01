@@ -20,6 +20,7 @@ class SignUpNicknameVC: UIViewController {
     let maxLength = 7
     var praiseWhaleText  = "칭찬할고래에서"
     var praiseWhaleTextRange  = "칭찬할고래"
+    var feedbackGenerator: UINotificationFeedbackGenerator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class SignUpNicknameVC: UIViewController {
         makeTextFieldLeftPadding()
         setNextBtnLayout(25)
         textFieldEditingCheck()
+        setUpfeedbackGenerator()
     }
     
     func setDelegate() {
@@ -79,34 +81,17 @@ class SignUpNicknameVC: UIViewController {
             existingNicknameAlertLabel.isHidden = false
             editingCountLabel.isHidden = true
             editLimitAlertLabel.isHidden = true
+            self.feedbackGenerator?.notificationOccurred(.warning)
         }
+    }
+    
+    func setUpfeedbackGenerator() {
+        feedbackGenerator = UINotificationFeedbackGenerator()
+        feedbackGenerator?.prepare()
     }
     
     // 뷰의 다른 곳 탭하면 키보드 내려가게
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) { self.view.endEditing(true)
-    }
-    
-    //MARK: - 닉네임 중복체크 Service
-    func nicknameCheckService() {
-        NicknameCheckService.shared.checkNickname(nickname: nicknameTextField.text!){ [self]
-            (networkResult) -> (Void) in
-            switch networkResult {
-            case .success:
-                setStateOfBtnNicknameTF(true)
-            case .requestErr(let msg):
-                if let message = msg as? String {
-                    print(message)
-                    setStateOfBtnNicknameTF(false)
-                }
-            case .pathErr:
-                print("pathErr")
-            case .serverErr:
-                print("serverErr")
-            case .networkFail:
-                print("networkFail")
-                setStateOfBtnNicknameTF(false)
-            }
-        }
     }
     
     //MARK: - nicknameTextField의 취소버튼을 눌렀을 때
@@ -198,7 +183,6 @@ extension SignUpNicknameVC: UITextFieldDelegate {
         }
     }
     
-    
     //MARK: - nicknameTextField 입력 끝났을 때
     @objc func nicknameTextIsEndEditing(_ TextLabel: UITextField) {
         
@@ -245,5 +229,30 @@ extension SignUpNicknameVC: UITextFieldDelegate {
             self.view.frame.origin.y = 0
         }
     }
+}
+//MARK: - Network
+extension SignUpNicknameVC {
     
+    //MARK: 닉네임 중복체크 Service
+    func nicknameCheckService() {
+        NicknameCheckService.shared.checkNickname(nickname: nicknameTextField.text!){ [self]
+            (networkResult) -> (Void) in
+            switch networkResult {
+            case .success:
+                setStateOfBtnNicknameTF(true)
+            case .requestErr(let msg):
+                if let message = msg as? String {
+                    print(message)
+                    setStateOfBtnNicknameTF(false)
+                }
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+                setStateOfBtnNicknameTF(false)
+            }
+        }
+    }
 }
