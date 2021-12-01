@@ -10,9 +10,10 @@ import SnapKit
 
 class LevelVC: UIViewController {
     
+    //MARK: Properties
     var levelInfoBtn = UIButton()
     var nicknameLabel = UILabel()
-    var nickName: String = UserDefaults.standard.string(forKey: "nickName") ?? ""
+    var nickName: String = ""
     var whaleNameLabel = UILabel()
     var yellowLineView = UIView()
     var cardBoxImageView = UIImageView()
@@ -24,7 +25,6 @@ class LevelVC: UIViewController {
     var praiseCountLabel = UILabel()
     var yellowLineView2 = UIView()
     var nextLevelGuideLabel = UILabel()
-    
     
     var countFired: CGFloat = 0
     var userLevel: CGFloat = 0
@@ -38,11 +38,13 @@ class LevelVC: UIViewController {
     var nextLavelGuideText: String = ""
     var whaleImageFrame: CGSize?
     
-    
+    //MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNicknameLabel()
         popUpWhenLevelUp()
         getWhaleLevelService()
+        notificationAddObserver()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +52,14 @@ class LevelVC: UIViewController {
         getWhaleLevelService()
     }
     
-    //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundNicknameView)
+    //MARK: Custom Func
+    /// 닉네임 Label 업데이트 함수
+    func setNicknameLabel() {
+        nickName = UserDefaults.standard.string(forKey: "nickName") ?? ""
+        nicknameLabel.text = nickName + "님의"
+    }
+    
+    /// 칭찬카드 상단부 View 생성(UILabel, RoundNicknameView)
     func makeTopView(level: CGFloat, praiseCnt: CGFloat) {
         
         self.view.backgroundColor = .yellow_2
@@ -67,7 +76,6 @@ class LevelVC: UIViewController {
         
         //create: nicknameLabel 생성 -> '~님의'
         self.view.addSubview(nicknameLabel)
-        nicknameLabel.text = nickName + "님의"
         nicknameLabel.textColor = .brown_2
         nicknameLabel.font = .AppleSDGothicR(size: 16)
         nicknameLabel.letterSpacing = -0.8
@@ -164,9 +172,9 @@ class LevelVC: UIViewController {
         let praiseCntRange = "\(Int(praiseCnt))번"
         
         let praiseCountLabelAttributedString = NSMutableAttributedString(string: praiseCntText, attributes: [
-                                                                            .font: UIFont.AppleSDGothicR(size: 16),
-                                                                            .foregroundColor: UIColor.brown_1,
-                                                                            .kern: -0.8 ])
+            .font: UIFont.AppleSDGothicR(size: 16),
+            .foregroundColor: UIColor.brown_1,
+            .kern: -0.8 ])
         praiseCountLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 22), range: (praiseCntText as NSString).range(of: praiseCntRange))
         
         praiseCountLabel.attributedText = praiseCountLabelAttributedString
@@ -192,9 +200,9 @@ class LevelVC: UIViewController {
             let nextLevelGuideRange = "\(goal)번"
             
             let nextLevelGuideLabelAttributedString = NSMutableAttributedString(string: nextLevelGuideText, attributes: [
-                                                                                .font: UIFont.AppleSDGothicR(size: 16),
-                                                                                    .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
-                                                                                .kern: -0.8 ])
+                .font: UIFont.AppleSDGothicR(size: 16),
+                .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
+                .kern: -0.8 ])
             nextLevelGuideLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 16), range: (nextLevelGuideText as NSString).range(of: nextLevelGuideRange))
             
             nextLevelGuideLabel.attributedText = nextLevelGuideLabelAttributedString
@@ -205,9 +213,9 @@ class LevelVC: UIViewController {
             let nextLevelGuideRange = "칭찬의 신!"
             
             let nextLevelGuideLabelAttributedString = NSMutableAttributedString(string: nextLevelGuideText, attributes: [
-                                                                                .font: UIFont.AppleSDGothicR(size: 16),
-                                                                                    .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
-                                                                                .kern: -0.8 ])
+                .font: UIFont.AppleSDGothicR(size: 16),
+                .foregroundColor: UIColor(red: 80/255, green: 48/255, blue: 0, alpha: 0.66),
+                .kern: -0.8 ])
             nextLevelGuideLabelAttributedString.addAttribute(.font, value: UIFont.AppleSDGothicB(size: 16), range: (nextLevelGuideText as NSString).range(of: nextLevelGuideRange))
             
             nextLevelGuideLabel.attributedText = nextLevelGuideLabelAttributedString
@@ -221,7 +229,7 @@ class LevelVC: UIViewController {
         }
     }
     
-    //MARK: - 레벨업 팝업 띄우는 함수
+    ///  레벨업 팝업 띄우는 함수
     func popUpWhenLevelUp() {
         if UserDefaults.standard.bool(forKey: "levelUp") == true {
             //팝업 띄우기
@@ -258,7 +266,7 @@ class LevelVC: UIViewController {
         }
     }
 }
-// Button Action
+//MARK: - Button Action
 extension LevelVC {
     @objc func touchUpToLevelInfoBtn() {
         if let levelInfoVC = self.storyboard?.instantiateViewController(identifier: "LevelInfoVC") as? LevelInfoVC {
@@ -267,8 +275,7 @@ extension LevelVC {
         }
     }
 }
-
-// progressView
+//MARK: - progressView
 extension LevelVC {
     private func showCase(level: CGFloat, praiseCnt: CGFloat) {
         var standard:CGFloat = 0
@@ -364,7 +371,7 @@ extension LevelVC {
         }
     }
 }
-
+//MARK: - Network
 extension LevelVC {
     func getWhaleLevelService() {
         LevelService.shared.levelService {
@@ -389,5 +396,16 @@ extension LevelVC {
                 print("networkFail")
             }
         }
+    }
+}
+//MARK: - Notification
+extension LevelVC {
+    func notificationAddObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(nicknameChanged(_:)), name: NSNotification.Name("nicknameChanged"), object: nil)
+    }
+    
+    @objc func nicknameChanged(_ noti: Notification) {
+        print("nicknameChanged")
+        setNicknameLabel()
     }
 }
