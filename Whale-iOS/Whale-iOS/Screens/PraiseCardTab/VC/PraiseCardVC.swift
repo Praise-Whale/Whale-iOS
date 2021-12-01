@@ -13,7 +13,7 @@ class PraiseCardVC: UIViewController {
     
     //MARK: - 정의 변수
     var nicknameLabel = UILabel()
-    var nickName: String = UserDefaults.standard.string(forKey: "nickName") ?? ""
+    var nickName: String = ""
     var praiseCardLabel = UILabel()
     var yellowLineView = UIView()
     var cardBoxImageView = UIImageView()
@@ -58,6 +58,7 @@ class PraiseCardVC: UIViewController {
     //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNicknameLabel()
         getCurrentYearMonth()
         notificationAddObserver()
         setAutoLayout()
@@ -95,11 +96,17 @@ class PraiseCardVC: UIViewController {
         selectedMonth = "0"
     }
     
-    //MARK: - 오토레이아웃 적용 함수
+    //MARK:  오토레이아웃 적용 함수
     func setAutoLayout() {
         //screenSize에 따라 달라질 동적 width, height
         roundSegmentView.frameWidth = 225
         roundSegmentView.frameHeight = 51
+    }
+    
+    //MARK:  닉네임 Label 업데이트 함수
+    func setNicknameLabel() {
+        nickName = UserDefaults.standard.string(forKey: "nickName") ?? ""
+        nicknameLabel.text = nickName + "님의"
     }
     
     //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundSegmentControl)
@@ -107,7 +114,6 @@ class PraiseCardVC: UIViewController {
         
         //create: nicknameLabel 생성 -> '~님의'
         self.view.addSubview(nicknameLabel)
-        nicknameLabel.text = nickName + "님의"
         nicknameLabel.textColor = .brown_2
         nicknameLabel.font = .AppleSDGothicR(size: 16)
         nicknameLabel.letterSpacing = -0.8
@@ -371,6 +377,7 @@ extension PraiseCardVC {
     func notificationAddObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(whenPushedCardDrawer), name: .pushedCardDrawer, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(whenPushedPraiseLank), name: .pushedPraiseLank, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(nicknameChanged(_:)), name: NSNotification.Name("nicknameChanged"), object: nil)
     }
     
     @objc func whenPushedCardDrawer() {
@@ -383,6 +390,11 @@ extension PraiseCardVC {
         
         print("PraiseLank")
         praiseRankService()
+    }
+    
+    @objc func nicknameChanged(_ noti: Notification) {
+        print("nicknameChanged")
+        setNicknameLabel()
     }
 }
 
