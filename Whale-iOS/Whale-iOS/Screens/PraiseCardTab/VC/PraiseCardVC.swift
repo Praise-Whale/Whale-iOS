@@ -27,6 +27,7 @@ class PraiseCardVC: UIViewController {
     var selectedYear: String = ""
     var selectedMonth: String = ""
     var whiteCardButtonTitle = ""
+    var segmentViewSelectState: Int = 0
     
     lazy var praiseCV: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
@@ -34,6 +35,7 @@ class PraiseCardVC: UIViewController {
         flowLayout.minimumLineSpacing = 20 // cell사이의 간격 설정
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         view.scrollIndicatorInsets = .zero
+        view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
         
         return view
@@ -55,7 +57,7 @@ class PraiseCardVC: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet var roundSegmentView: RoundSegmentView!
     
-    //MARK: - viewDidLoad
+    //MARK: - Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setNicknameLabel()
@@ -69,10 +71,11 @@ class PraiseCardVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        praiseCardService(currentYear, currentMonth)
+        setUpBottomViewBySegmentState()
     }
     
-    // 대리자 위임
+    //MARK: - Custom Properties
+    /// func - 대리자 위임
     private func setupDelegate() {
         praiseCV.delegate = self
         praiseCV.dataSource = self
@@ -80,12 +83,13 @@ class PraiseCardVC: UIViewController {
         praiseRankTV.dataSource = self
     }
     
-    // 셀 등록
+    /// func - 셀 등록
     private func registerCell() {
         praiseCV.register(PraiseCardCVCell.self, forCellWithReuseIdentifier: PraiseCardCVCell.id)
         praiseRankTV.register(PraiseRankTVCell.self, forCellReuseIdentifier: PraiseRankTVCell.id)
     }
     
+    /// func - 현재 년월 구하는 함수
     func getCurrentYearMonth() {
         let components = calendar.dateComponents([.year, .month], from: date)
         currentYear = (components.year ?? 0).toString()
@@ -96,20 +100,20 @@ class PraiseCardVC: UIViewController {
         selectedMonth = "0"
     }
     
-    //MARK:  오토레이아웃 적용 함수
+    /// func - 오토레이아웃 적용 함수
     func setAutoLayout() {
         //screenSize에 따라 달라질 동적 width, height
         roundSegmentView.frameWidth = 225
         roundSegmentView.frameHeight = 51
     }
     
-    //MARK:  닉네임 Label 업데이트 함수
+    /// func - 닉네임 Label 업데이트 함수
     func setNicknameLabel() {
         nickName = UserDefaults.standard.string(forKey: "nickName") ?? ""
         nicknameLabel.text = nickName + "님의"
     }
     
-    //MARK: - 칭찬카드 상단부 View 생성(UILabel, RoundSegmentControl)
+    /// func - 칭찬카드 상단부 View 생성(UILabel, RoundSegmentControl)
     func makeTopView() {
         
         //create: nicknameLabel 생성 -> '~님의'
@@ -154,6 +158,30 @@ class PraiseCardVC: UIViewController {
         }
     }
     
+    /// func - segmentView state에 따른 하단 뷰(카드서랍 or 칭찬랭킹) 셋업
+    private func setUpBottomViewBySegmentState() {
+
+        if segmentViewSelectState == 0 {
+            // 카드서랍
+            praiseCardService(currentYear, currentMonth)
+        }
+        else {
+            // 칭찬랭킹
+            praiseRankService()
+        }
+    }
+}
+
+//MARK: - defualt superView layout
+extension PraiseCardVC {
+    
+    func setSuperViewLayout() {
+        self.view.backgroundColor = .yellow_2
+        self.roundSegmentView.backgroundColor = .clear
+    }
+}
+//MARK: - 카드서랍
+extension PraiseCardVC {
     //func - 카드서랍에 데이터가 없을 때 실행되는 함수 + 칭찬카드 하단부 View 생성
     func noDataInCardDrawerMakeBottomView() {
         makeYellowCardBox()
@@ -194,7 +222,6 @@ class PraiseCardVC: UIViewController {
             make.trailing.equalTo(cardBoxImageView.snp.trailing).offset(0)
             make.height.equalTo(350)
         }
-        
         praiseCV.reloadData()
     }
     
@@ -219,13 +246,32 @@ class PraiseCardVC: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
     }
+}
+//MARK: - 칭찬랭킹
+extension PraiseCardVC {
+    /// func - 칭찬랭킹 바텀뷰 레이아웃
+    func makeLankingBottomView() {
+        makeYellowCardBox()
+        let praiseCountLabel = UILabel()
+        self.view.addSubview(praiseCountLabel)
+        praiseCountLabel.font = .AppleSDGothicB(size: 22)
+        praiseCountLabel.text = "7명에게 칭찬"
+        praiseCountLabel.letterSpacing = -1.1
+        praiseCountLabel.textColor = .brown_1
+        praiseCountLabel.snp.makeConstraints { make in
+            make.top.equalTo(cardBoxImageView.snp.top).offset(28)
+            make.leading.equalTo(cardBoxImageView.snp.leading).offset(42)
+            make.height.equalTo(31)
+        }
+    }
     
-    //func - 카드랭킹에 데이터가 없을 때 실행되는 함수 + 칭찬랭킹 하단부 View 생성
+    /// func - 칭찬랭킹에 데이터가 없을 때 실행되는 함수 + 칭찬랭킹 하단부 View 생성
     func noDataInCardRankMakeBottomView() {
         makeYellowCardBox()
         noDataTemplateLayout("아직 칭찬을 하지 않았어요!", sub1LabelText: "칭찬 미션을 완료하면", sub2LabelText: "칭찬한 대상에 대한 랭킹이 완성돼요!")
     }
     
+    /// func - 칭찬랭킹에 데이터가 있을 때 실행되는 함수 + 칭찬랭킹 하단부 View 생성
     func yesDataInCardRankMakeBottomView(_ praiseRankData: PraiseRankData) {
         //create - Yellow box View 생성
         makeYellowCardBox()
@@ -259,33 +305,7 @@ class PraiseCardVC: UIViewController {
         
         praiseRankTV.reloadData()
     }
-    
-    //func - 칭찬랭킹뷰
-    func makeLankingBottomView() {
-        makeYellowCardBox()
-        let praiseCountLabel = UILabel()
-        self.view.addSubview(praiseCountLabel)
-        praiseCountLabel.font = .AppleSDGothicB(size: 22)
-        praiseCountLabel.text = "7명에게 칭찬"
-        praiseCountLabel.letterSpacing = -1.1
-        praiseCountLabel.textColor = .brown_1
-        praiseCountLabel.snp.makeConstraints { make in
-            make.top.equalTo(cardBoxImageView.snp.top).offset(28)
-            make.leading.equalTo(cardBoxImageView.snp.leading).offset(42)
-            make.height.equalTo(31)
-        }
-    }
 }
-
-//MARK: - defualt superView layout
-extension PraiseCardVC {
-    
-    func setSuperViewLayout() {
-        self.view.backgroundColor = .yellow_2
-        self.roundSegmentView.backgroundColor = .clear
-    }
-}
-
 //MARK: - picker에서 선택된 year, month 데이터를 넘겨주는 Protocol 채택
 extension PraiseCardVC: selectYearMonthFromPicker {
     
@@ -326,7 +346,7 @@ extension PraiseCardVC: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 42)
     }
 }
-
+//MARK: - UITableViewDelegate
 extension PraiseCardVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -346,7 +366,7 @@ extension PraiseCardVC: UITableViewDelegate {
         return 12
     }
 }
-
+//MARK: - UITableViewDataSource
 extension PraiseCardVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -384,12 +404,14 @@ extension PraiseCardVC {
         
         print("CardDrawer")
         praiseCardService(selectedYear, selectedMonth)
+        segmentViewSelectState = 0
     }
     
     @objc func whenPushedPraiseLank() {
         
         print("PraiseLank")
         praiseRankService()
+        segmentViewSelectState = 1
     }
     
     @objc func nicknameChanged(_ noti: Notification) {
