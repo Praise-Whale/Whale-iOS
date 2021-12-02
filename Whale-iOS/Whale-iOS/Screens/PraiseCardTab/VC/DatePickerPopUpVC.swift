@@ -46,12 +46,9 @@ extension DatePickerPopUpVC {
     }
     
     @objc func selectDatePickerPopUp(notification: Notification) {
-        print("come")
         let dict = notification.object as! NSDictionary
         let year = dict["year"] as! Int
         let month = dict["month"] as! Int
-        print("comeyear", year)
-        print("comemonth", month)
         
         self.delegate?.setYearMonth(year, month)
         self.dismiss(animated: true, completion: nil)
