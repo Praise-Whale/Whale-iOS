@@ -163,7 +163,7 @@ class PraiseCardVC: UIViewController {
 
         if segmentViewSelectState == 0 {
             // 카드서랍
-            praiseCardService(currentYear, currentMonth)
+            praiseCardService(selectedYear, selectedMonth)
         }
         else {
             // 칭찬랭킹
