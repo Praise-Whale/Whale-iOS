@@ -10,5 +10,6 @@ import Foundation
 // MARK: - LevelData
 struct LevelData: Codable {
     let nickName, whaleName: String
-    let userLevel, praiseCount, levelUpNeedCount: Int
+    let userLevel, praiseCount: Int
+    let levelUpNeedCount: Int?
 }
