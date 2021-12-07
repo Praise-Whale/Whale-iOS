@@ -382,7 +382,7 @@ extension LevelVC {
                     whaleName = whaleLevelData.whaleName
                     praiseCnt = CGFloat(whaleLevelData.praiseCount)
                     userLevel = CGFloat(whaleLevelData.userLevel)
-                    levelUpNeedCount = whaleLevelData.levelUpNeedCount
+                    levelUpNeedCount = whaleLevelData.levelUpNeedCount ?? 0
                     makeTopView(level: userLevel, praiseCnt: praiseCnt)
                     UserDefaults.standard.set(userLevel, forKey: "beforelevel")
                 }
