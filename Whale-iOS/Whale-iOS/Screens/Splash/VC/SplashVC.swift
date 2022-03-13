@@ -91,8 +91,7 @@ class SplashVC: UIViewController {
             }
             else if (UserDefaults.standard.bool(forKey: "isFirstlaunch") == true && UserDefaults.standard.bool(forKey: "isSignedUp") == false) {
                 print("첫 로드 : 회원가입")
-                goToOnboarding()
-//                goToSignUp()
+                goToSignUp()
             }
             else {
                 print("첫 로드 : 메인뷰")
