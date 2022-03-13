@@ -38,6 +38,8 @@ class LevelVC: UIViewController {
     var nextLavelGuideText: String = ""
     var whaleImageFrame: CGSize?
     
+    var timer = Timer()
+    
     //MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -357,13 +359,14 @@ extension LevelVC {
             nextLavelGuideText = "\(nickName)님은 이제 칭찬의 신!"
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-            self.countFired += 1
-            
-            DispatchQueue.main.async {
-                self.progressView.progress = min(CGFloat(0.04 * self.countFired), gagePercent)
+        DispatchQueue.main.async { [weak self] in
+            self?.timer.invalidate()
+            self?.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
+                self?.countFired += 1
+                guard let countFired = self?.countFired else { return }
+                self?.progressView.progress = min(CGFloat(0.04 * countFired), gagePercent)
                 
-                if self.progressView.progress == 1 {
+                if self?.progressView.progress == 1 {
                     timer.invalidate()
                 }
             }
