@@ -81,7 +81,7 @@ class LevelVC: UIViewController {
         nicknameLabel.letterSpacing = -0.8
         
         nicknameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view).offset(85)
+            (UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus) ? make.top.equalTo(view.safeAreaLayoutGuide).offset(15) : make.top.equalTo(self.view).offset(85)
             make.height.equalTo(21)
             make.centerX.equalTo(self.view)
         }
@@ -119,8 +119,7 @@ class LevelVC: UIViewController {
         
         progressView.snp.makeConstraints { make in
             make.top.equalTo(yellowLineView.snp.bottom).offset(47)
-            make.height.equalTo(301)
-            make.width.equalTo(301)
+            (UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus) ? make.height.width.equalTo(250) : make.height.width.equalTo(301)
             make.centerX.equalTo(yellowLineView)
         }
         showCase(level: level, praiseCnt: praiseCnt)
