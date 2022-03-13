@@ -14,7 +14,8 @@ class PraiseCardCVCell: UICollectionViewCell {
     var yellowlineView = UIView()
     var praisedDateYellowView = UIView()
     var praisedDateLabel = UILabel()
-    var innerYellowBoxImageView = UIImageView()
+    var innerYellowBoxView = UIView()
+    var yellowPinView = [UIView(), UIView(), UIView(), UIView()]
     var praiseContentLabel = UILabel()
     
     static var id: String { NSStringFromClass(Self.self).components(separatedBy: ".").last ?? "" }
@@ -64,8 +65,11 @@ class PraiseCardCVCell: UICollectionViewCell {
         self.contentView.addSubview(yellowlineView)
         self.contentView.addSubview(praisedDateYellowView)
         self.contentView.addSubview(praisedDateLabel)
-        self.contentView.addSubview(innerYellowBoxImageView)
-        self.contentView.addSubview(praiseContentLabel)
+        self.contentView.addSubview(innerYellowBoxView)
+        for i in 0..<4 {
+            innerYellowBoxView.addSubview(yellowPinView[i])
+        }
+        innerYellowBoxView.addSubview(praiseContentLabel)
     }
     
     private func configure() {
@@ -95,17 +99,37 @@ class PraiseCardCVCell: UICollectionViewCell {
             make.height.equalTo(17)
         }
         
-        innerYellowBoxImageView.snp.makeConstraints { make in
+        innerYellowBoxView.snp.makeConstraints { make in
+            make.top.equalTo(yellowlineView.snp.bottom).offset(20)
             make.leading.equalTo(contentView.snp.leading).offset(20)
             make.trailing.equalTo(contentView.snp.trailing).offset(-20)
             make.bottom.equalTo(contentView.snp.bottom).offset(-20)
         }
         
+        for i in 0..<4 {
+            yellowPinView[i].snp.makeConstraints { make in
+                make.width.height.equalTo(7)
+                
+                switch i {
+                case 0:
+                    make.top.leading.equalToSuperview().inset(15)
+                case 1:
+                    make.top.trailing.equalToSuperview().inset(15)
+                case 2:
+                    make.leading.bottom.equalToSuperview().inset(15)
+                case 3:
+                    make.trailing.bottom.equalToSuperview().inset(15)
+                default:
+                    break
+                }
+            }
+        }
+        
         praiseContentLabel.snp.makeConstraints { make in
             make.height.equalTo(163)
             make.width.equalTo(174)
-            make.centerX.equalTo(innerYellowBoxImageView)
-            make.centerY.equalTo(innerYellowBoxImageView)
+            make.centerX.equalTo(innerYellowBoxView)
+            make.centerY.equalTo(innerYellowBoxView)
         }
     }
     
@@ -141,7 +165,16 @@ extension PraiseCardCVCell {
         praisedDateLabel.textColor = .brown_1
         
         //innerYellowBoxImageView
-        innerYellowBoxImageView.image = UIImage(named: "cardImgCard")
+        innerYellowBoxView.backgroundColor = .white
+        innerYellowBoxView.makeRounded(cornerRadius: 12)
+        innerYellowBoxView.layer.borderColor = UIColor(red: 255/255, green: 244/255, blue: 215/255, alpha: 1).cgColor
+        innerYellowBoxView.layer.borderWidth = 3
+        
+        //yellowPinView
+        for i in 0..<4 {
+            yellowPinView[i].backgroundColor = UIColor(red: 255/255, green: 227/255, blue: 155/255, alpha: 1)
+            yellowPinView[i].makeRounded(cornerRadius: 3.5)
+        }
         
         //praiseContentLabel
         praiseContentLabel.font = .GmarketSansMedium(size: 20)

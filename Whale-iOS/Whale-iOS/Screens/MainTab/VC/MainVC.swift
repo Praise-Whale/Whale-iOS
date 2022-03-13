@@ -350,14 +350,15 @@ extension MainVC {
     }
     
     func adjustState() {
-        switch todayPraiseState {
-        case .before:
-            setBeforePraise()
-        case .success:
-           setSuccessPraise()
-        case .fail:
-           setFailPraise()
-        }
+        setBeforePraise()
+//        switch todayPraiseState {
+//        case .before:
+//            setBeforePraise()
+//        case .success:
+//           setSuccessPraise()
+//        case .fail:
+//           setFailPraise()
+//        }
     }
     
     func setBeforePraise() {
