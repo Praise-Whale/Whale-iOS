@@ -255,7 +255,7 @@ class LevelVC: UIViewController {
             else if levelUpStatus == 3 {
                 dvc.whale = .levelFour
             }
-            else {
+            else if levelUpStatus == 4 {
                 dvc.whale = .levelFive
             }
             
@@ -348,7 +348,7 @@ extension LevelVC {
             levelDescText = "신나게 춤 추는 고래"
             nextLavelGuideText = "100번 달성시 다음 레벨!"
         }
-        else {
+        else if level == 5 {
             print("level 5")
             gagePercent = 1
             
