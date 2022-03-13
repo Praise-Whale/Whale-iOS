@@ -42,6 +42,7 @@ class MainVC: UIViewController {
     
     /// 오늘의 칭찬 박스
     @IBOutlet var contentBoxView: UIView!
+    @IBOutlet var contentBoxViewAspectRatio: NSLayoutConstraint!
     @IBOutlet var contentInnerBoxView: UIView!
     @IBOutlet var boxClipViewCollection: [UIView]!
     @IBOutlet var contentLabel: UILabel!
@@ -205,6 +206,14 @@ extension MainVC {
         contentBoxView.layer.borderWidth = 2
         contentBoxView.layer.borderColor = UIColor.yellow_3.cgColor
         contentBoxView.dropShadow(color: UIColor(red: 130/255, green: 86/255, blue: 0, alpha: 0.1), offSet: CGSize(width: 0, height: 6), opacity: 1, radius: 15)
+        
+        if UIDevice.current.isiPhone8Plus || UIDevice.current.isiPhoneSE2 {
+            let newConstraint = contentBoxViewAspectRatio.constraintWithMultiplier(1)
+            view.removeConstraint(contentBoxViewAspectRatio)
+            view.addConstraint(newConstraint)
+            view.layoutIfNeeded()
+            contentBoxViewAspectRatio = newConstraint
+        }
         
         contentInnerBoxView.backgroundColor = .white
         contentInnerBoxView.makeRounded(cornerRadius: 12)
