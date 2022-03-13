@@ -30,9 +30,8 @@ class WhaleTBC: UITabBarController {
         let WhaleMain = UIStoryboard.init(name: "Main", bundle: nil)
         guard let firstTab = WhaleMain.instantiateViewController(identifier: "MainVC") as? MainVC else {return}
         
-        firstTab.tabBarItem.image = UIImage(named: "naviIcCompliment")
-        firstTab.tabBarItem.selectedImage = UIImage(named: "naviIcComplimentSelected")
-        firstTab.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0)
+        firstTab.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "naviIcCompliment"), selectedImage: UIImage(named: "naviIcComplimentSelected"))
+        firstTab.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 20, bottom: -8.5, right: -20)
         
         
         // 칭찬카드탭
@@ -41,8 +40,7 @@ class WhaleTBC: UITabBarController {
                 as? PraiseCardNC  else {
             return
         }
-        secondTab.tabBarItem.image = UIImage(named: "naviIcCard")
-        secondTab.tabBarItem.selectedImage = UIImage(named: "naviIcCardSelected")
+        secondTab.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "naviIcCard"), selectedImage: UIImage(named: "naviIcCardSelected"))
         secondTab.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0)
         
         
@@ -52,9 +50,8 @@ class WhaleTBC: UITabBarController {
                 as? LevelVC  else {
             return
         }
-        thirdTab.tabBarItem.image = UIImage(named: "naviIcWhale")
-        thirdTab.tabBarItem.selectedImage = UIImage(named: "naviIcWhaleSelected")
-        thirdTab.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: 0, bottom: -8.5, right: 0)
+        thirdTab.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "naviIcWhale"), selectedImage: UIImage(named: "naviIcWhaleSelected"))
+        thirdTab.tabBarItem.imageInsets = UIEdgeInsets(top: 9, left: -20, bottom: -8.5, right: 20)
         
         
         // 탭 구성
