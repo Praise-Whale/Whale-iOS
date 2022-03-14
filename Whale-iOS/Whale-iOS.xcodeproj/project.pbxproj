@@ -99,6 +99,8 @@
 		37B77CD42671CD1600039277 /* WhaleReactionPopup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37B77CD32671CD1600039277 /* WhaleReactionPopup.storyboard */; };
 		37B77CD62671CD2C00039277 /* WhaleReactionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */; };
 		37B77CD82671CD4E00039277 /* MainYesSecondPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */; };
+		8623D6C227DDB95C00170D36 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623D6C127DDB95C00170D36 /* NSLayoutConstraint+Extension.swift */; };
+		8623D6C427DDCDE200170D36 /* CarouselCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623D6C327DDCDE200170D36 /* CarouselCollectionViewLayout.swift */; };
 		867AAED62705AB7800DA25E9 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */; };
 		867AAED82707006A00DA25E9 /* ChangeNicknamePopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */; };
 		867AAEDA2707086200DA25E9 /* PrivacyPolicyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */; };
@@ -208,6 +210,8 @@
 		37B77CD52671CD2C00039277 /* WhaleReactionPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhaleReactionPopupVC.swift; sourceTree = "<group>"; };
 		37B77CD72671CD4E00039277 /* MainYesSecondPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainYesSecondPopupVC.swift; sourceTree = "<group>"; };
 		85EE03EAB6429311BA869348 /* Pods_Whale_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Whale_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8623D6C127DDB95C00170D36 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		8623D6C327DDCDE200170D36 /* CarouselCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCollectionViewLayout.swift; sourceTree = "<group>"; };
 		867AAED52705AB7800DA25E9 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		867AAED72707006A00DA25E9 /* ChangeNicknamePopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChangeNicknamePopupVC.swift; path = "Whale-iOS/Screens/Settings/VC/ChangeNicknamePopupVC.swift"; sourceTree = SOURCE_ROOT; };
 		867AAED92707086200DA25E9 /* PrivacyPolicyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyVC.swift; sourceTree = "<group>"; };
@@ -397,6 +401,7 @@
 				33AAD305266F7A9A00907BCF /* Notification.Name.swift */,
 				37B77CC72670CCA900039277 /* UIFont+Extension.swift */,
 				3311510426C7AF9D00556631 /* Int+Extension.swift */,
+				8623D6C127DDB95C00170D36 /* NSLayoutConstraint+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				33AAD313266F7BC700907BCF /* CustomLabel.swift */,
+				8623D6C327DDCDE200170D36 /* CarouselCollectionViewLayout.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -1014,9 +1020,11 @@
 				867AAEE127070F9600DA25E9 /* OpenSourceLicenseVC.swift in Sources */,
 				33F2C33926C95B5E0096006D /* PraiseCardCVCell.swift in Sources */,
 				33AAD301266F782700907BCF /* UIDevice+ScreenSize.swift in Sources */,
+				8623D6C227DDB95C00170D36 /* NSLayoutConstraint+Extension.swift in Sources */,
 				33AAD352266F87F800907BCF /* h.swift in Sources */,
 				33AAD35C266F882400907BCF /* PraiseCardVC.swift in Sources */,
 				86DF8C1E26C66FC900EC9A6B /* RecentPraiseData.swift in Sources */,
+				8623D6C427DDCDE200170D36 /* CarouselCollectionViewLayout.swift in Sources */,
 				330CFE1926C3A15C005380E4 /* CustomPickerView.swift in Sources */,
 				867AAEDC27070B7700DA25E9 /* DeveloperInfoVC.swift in Sources */,
 				37B77CCC2670EBF200039277 /* MainService.swift in Sources */,

@@ -31,12 +31,22 @@ class PraiseCardVC: UIViewController {
     
     lazy var praiseCV: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = 20 // cell사이의 간격 설정
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        view.decelerationRate = .fast
+        view.isPagingEnabled = false
         view.scrollIndicatorInsets = .zero
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = .clear
+        
+        let collectionViewLayout: UICollectionViewFlowLayout = {
+            let layout = HorizontalCarouselCollectionViewFlowLayout()
+            layout.itemSize = CGSize(width: self.view.frame.width-80, height: 100)
+            layout.minimumLineSpacing = 20
+            layout.sectionInset = UIEdgeInsets(top: 10, left: 40, bottom: 10, right: 40)
+            layout.scrollDirection = .horizontal
+            return layout
+        }()
+        view.collectionViewLayout = collectionViewLayout
         
         return view
     }()
@@ -66,6 +76,7 @@ class PraiseCardVC: UIViewController {
         setAutoLayout()
         setSuperViewLayout()
         makeTopView()
+        setLayout()
         setupDelegate()
         registerCell()
     }
@@ -121,11 +132,6 @@ class PraiseCardVC: UIViewController {
         nicknameLabel.textColor = .brown_2
         nicknameLabel.font = .AppleSDGothicR(size: 16)
         nicknameLabel.letterSpacing = -0.8
-        nicknameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view).offset(85)
-            make.height.equalTo(21)
-            make.centerX.equalTo(self.view)
-        }
         
         //create: praiseLabel 생성 -> '칭찬카드'
         self.view.addSubview(praiseCardLabel)
@@ -133,28 +139,67 @@ class PraiseCardVC: UIViewController {
         praiseCardLabel.textColor = .brown_2
         praiseCardLabel.font = .AppleSDGothicB(size: 23)
         praiseCardLabel.letterSpacing = -1.15
-        praiseCardLabel.snp.makeConstraints { make in
-            make.top.equalTo(nicknameLabel.snp.bottom).offset(2)
-            make.height.equalTo(32)
-            make.centerX.equalTo(nicknameLabel)
-        }
         
         //create - Yellow line View 생성
         self.view.addSubview(yellowLineView)
         yellowLineView.backgroundColor = .yellow_1
-        yellowLineView.snp.makeConstraints { make in
-            make.top.equalTo(praiseCardLabel.snp.bottom).offset(6)
-            make.height.equalTo(2)
-            make.width.equalTo(81)
-            make.centerX.equalTo(praiseCardLabel)
-        }
         
-        //set snp - segmentView 레이아웃 세팅
-        roundSegmentView.snp.makeConstraints { make in
-            make.top.equalTo(yellowLineView.snp.bottom).offset(34)
-            make.height.equalTo(51)
-            make.width.equalTo(225)
-            make.centerX.equalTo(yellowLineView)
+    }
+    
+    private func setLayout() {
+        /// 노치 있는 모델
+        if UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus {
+            nicknameLabel.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(10)
+                make.height.equalTo(21)
+                make.centerX.equalTo(self.view)
+            }
+            
+            praiseCardLabel.snp.makeConstraints { make in
+                make.top.equalTo(nicknameLabel.snp.bottom).offset(2)
+                make.height.equalTo(32)
+                make.centerX.equalTo(nicknameLabel)
+            }
+            
+            yellowLineView.snp.makeConstraints { make in
+                make.top.equalTo(praiseCardLabel.snp.bottom).offset(6)
+                make.height.equalTo(2)
+                make.width.equalTo(81)
+                make.centerX.equalTo(praiseCardLabel)
+            }
+            
+            roundSegmentView.snp.makeConstraints { make in
+                make.top.equalTo(yellowLineView.snp.bottom).offset(10)
+                make.height.equalTo(51)
+                make.width.equalTo(225)
+                make.centerX.equalTo(yellowLineView)
+            }
+        } else { /// 노치 없는 모델
+            nicknameLabel.snp.makeConstraints { make in
+                make.top.equalTo(self.view).offset(85)
+                make.height.equalTo(21)
+                make.centerX.equalTo(self.view)
+            }
+            
+            praiseCardLabel.snp.makeConstraints { make in
+                make.top.equalTo(nicknameLabel.snp.bottom).offset(2)
+                make.height.equalTo(32)
+                make.centerX.equalTo(nicknameLabel)
+            }
+            
+            yellowLineView.snp.makeConstraints { make in
+                make.top.equalTo(praiseCardLabel.snp.bottom).offset(6)
+                make.height.equalTo(2)
+                make.width.equalTo(81)
+                make.centerX.equalTo(praiseCardLabel)
+            }
+            
+            roundSegmentView.snp.makeConstraints { make in
+                make.top.equalTo(yellowLineView.snp.bottom).offset(34)
+                make.height.equalTo(51)
+                make.width.equalTo(225)
+                make.centerX.equalTo(yellowLineView)
+            }
         }
     }
     
@@ -217,11 +262,16 @@ extension PraiseCardVC {
         
         self.view.addSubview(praiseCV)
         praiseCV.snp.makeConstraints { make in
-            make.top.equalTo(praiseCountLabel.snp.bottom).offset(20)
-            make.leading.equalTo(cardBoxImageView.snp.leading).offset(0)
-            make.trailing.equalTo(cardBoxImageView.snp.trailing).offset(0)
-            make.height.equalTo(350)
+            if UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus {
+                make.top.equalTo(praiseCountLabel.snp.bottom).offset(10)
+            } else {
+                make.top.equalTo(praiseCountLabel.snp.bottom).offset(20)
+            }
+            make.leading.trailing.equalTo(cardBoxImageView)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
+        
+        
         praiseCV.reloadData()
     }
     
@@ -258,10 +308,11 @@ extension PraiseCardVC {
         praiseCountLabel.text = "7명에게 칭찬"
         praiseCountLabel.letterSpacing = -1.1
         praiseCountLabel.textColor = .brown_1
+        
         praiseCountLabel.snp.makeConstraints { make in
             make.top.equalTo(cardBoxImageView.snp.top).offset(28)
             make.leading.equalTo(cardBoxImageView.snp.leading).offset(42)
-            make.height.equalTo(31)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -300,7 +351,7 @@ extension PraiseCardVC {
             make.leading.equalTo(cardBoxImageView.snp.leading).offset(0)
             make.trailing.equalTo(cardBoxImageView.snp.trailing).offset(0)
             //shadow를 위해 tableView 크게 생성
-            make.height.equalTo(405)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(15)
         }
         
         praiseRankTV.reloadData()
@@ -318,7 +369,7 @@ extension PraiseCardVC: selectYearMonthFromPicker {
 }
 
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
-extension PraiseCardVC: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PraiseCardVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return praiseCardData.count
@@ -339,11 +390,11 @@ extension PraiseCardVC: UICollectionViewDelegate, UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegateFlowLayout
 extension PraiseCardVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 291, height: 340)
+        return CGSize(width: view.frame.width - 80, height: collectionView.frame.height - 20)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 42, bottom: 0, right: 42)
+        return UIEdgeInsets(top: 10, left: 40, bottom: 10, right: 40)
     }
 }
 //MARK: - UITableViewDelegate

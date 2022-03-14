@@ -14,6 +14,8 @@ class OnboardingCVCell: UICollectionViewCell {//
     @IBOutlet var subExplanationLabel: UILabel!
     @IBOutlet var descLabel: CustomLabel!
     @IBOutlet var whaleImageView: UIImageView!
+    
+    @IBOutlet var titleTopConstraint: NSLayoutConstraint!
     @IBOutlet var whaleImageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var whaleImageViewWidthConstraint: NSLayoutConstraint!
     
@@ -67,10 +69,12 @@ class OnboardingCVCell: UICollectionViewCell {//
 extension OnboardingCVCell {
     func setDeviceSizeLayout() {
         if UIDevice.current.isiPhone12mini {
+            titleTopConstraint.constant = 50
             whaleImageViewHeightConstraint.constant = 269
             whaleImageViewWidthConstraint.constant = screenWidth
         }
         else if UIDevice.current.isiPhone12 {
+            titleTopConstraint.constant = 70
             whaleImageViewHeightConstraint.constant = 284
             whaleImageViewWidthConstraint.constant = screenWidth
         }
@@ -83,6 +87,7 @@ extension OnboardingCVCell {
             whaleImageViewWidthConstraint.constant = screenWidth
         }
         else if UIDevice.current.isiPhoneSE2 {
+            titleTopConstraint.constant = 10
             whaleImageViewHeightConstraint.constant = 124
             whaleImageViewWidthConstraint.constant = screenWidth
         }

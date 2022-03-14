@@ -49,7 +49,7 @@ class ChangeNicknamePopupVC: UIViewController {
     
     @IBAction func nameTextFieldEditChanged(_ sender: Any) {
         
-        checkMaxLength(textField: nicknameTextfield, maxLength: 6)
+        checkMaxLength(textField: nicknameTextfield, maxLength: 7)
         nameTyped = nicknameTextfield.text ?? ""
         
         if nicknameTextfield.text?.count == 0 {
@@ -105,7 +105,7 @@ extension ChangeNicknamePopupVC {
     
     func setNameTextExists() {
         alreadyInUseLabel.isHidden = true
-        wordCountLabel.text = "\(wordCount)/6"
+        wordCountLabel.text = "\(wordCount)/7"
         
         if let text = wordCountLabel.text {
             let attributedStr = NSMutableAttributedString(string: wordCountLabel.text ?? "")
@@ -122,7 +122,7 @@ extension ChangeNicknamePopupVC {
     func setNameTextNotExists() {
         alreadyInUseLabel.isHidden = false
         
-        wordCountLabel.text = "\(wordCount)/6"
+        wordCountLabel.text = "\(wordCount)/7"
         wordCountLabel.textColor = .grey_2
         
         modifyBtn.isUserInteractionEnabled = false

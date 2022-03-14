@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZaM-Wp-yTM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZaM-Wp-yTM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -140,6 +141,7 @@
                                             <outlet property="firstPraiseLabel" destination="Dq2-Gt-wMJ" id="Frv-NO-MzI"/>
                                             <outlet property="secondPraiseLabel" destination="WsD-I9-VHa" id="iwj-Gd-hnp"/>
                                             <outlet property="subExplanationLabel" destination="CvB-u3-0kv" id="LZt-bk-xRf"/>
+                                            <outlet property="titleTopConstraint" destination="MQU-7c-u2h" id="sGx-4N-iEw"/>
                                             <outlet property="whaleImageView" destination="fId-pP-FPh" id="DgK-cf-QJd"/>
                                             <outlet property="whaleImageViewHeightConstraint" destination="IRc-WC-QDp" id="XUg-Pf-g9f"/>
                                             <outlet property="whaleImageViewWidthConstraint" destination="B5a-ef-aiB" id="xb0-qL-fFl"/>
@@ -214,7 +216,7 @@
                                 </cells>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="q1r-v3-KFR">
-                                <rect key="frame" x="146" y="701" width="122" height="7"/>
+                                <rect key="frame" x="149.5" y="701" width="115.5" height="7"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="7" id="naV-8a-NIP"/>
                                 </constraints>

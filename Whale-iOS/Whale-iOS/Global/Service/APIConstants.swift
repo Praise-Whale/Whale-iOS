@@ -7,7 +7,12 @@
 
 import Foundation
 struct APIConstants {
-    static let baseURL = "http://52.78.101.245:3005/"
+    #if DEBUG
+    static let baseURL = "http://54.180.177.198:3005/"
+    #else
+    static let baseURL = "http://54.180.177.198:3000/"
+    #endif
+    
     
     /// 메인 칭찬 문구 받아오는 API
     static let mainURL = baseURL + "home/"

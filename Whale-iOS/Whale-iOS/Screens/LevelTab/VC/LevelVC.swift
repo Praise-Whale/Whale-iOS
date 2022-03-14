@@ -38,6 +38,8 @@ class LevelVC: UIViewController {
     var nextLavelGuideText: String = ""
     var whaleImageFrame: CGSize?
     
+    var timer = Timer()
+    
     //MARK: Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +83,7 @@ class LevelVC: UIViewController {
         nicknameLabel.letterSpacing = -0.8
         
         nicknameLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.view).offset(85)
+            (UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus) ? make.top.equalTo(view.safeAreaLayoutGuide).offset(15) : make.top.equalTo(self.view).offset(85)
             make.height.equalTo(21)
             make.centerX.equalTo(self.view)
         }
@@ -119,8 +121,7 @@ class LevelVC: UIViewController {
         
         progressView.snp.makeConstraints { make in
             make.top.equalTo(yellowLineView.snp.bottom).offset(47)
-            make.height.equalTo(301)
-            make.width.equalTo(301)
+            (UIDevice.current.isiPhoneSE2 || UIDevice.current.isiPhone8Plus) ? make.height.width.equalTo(250) : make.height.width.equalTo(301)
             make.centerX.equalTo(yellowLineView)
         }
         showCase(level: level, praiseCnt: praiseCnt)
@@ -254,7 +255,7 @@ class LevelVC: UIViewController {
             else if levelUpStatus == 3 {
                 dvc.whale = .levelFour
             }
-            else {
+            else if levelUpStatus == 4 {
                 dvc.whale = .levelFive
             }
             
@@ -347,7 +348,7 @@ extension LevelVC {
             levelDescText = "신나게 춤 추는 고래"
             nextLavelGuideText = "100번 달성시 다음 레벨!"
         }
-        else {
+        else if level == 5 {
             print("level 5")
             gagePercent = 1
             
@@ -358,13 +359,14 @@ extension LevelVC {
             nextLavelGuideText = "\(nickName)님은 이제 칭찬의 신!"
         }
         
-        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-            self.countFired += 1
-            
-            DispatchQueue.main.async {
-                self.progressView.progress = min(CGFloat(0.04 * self.countFired), gagePercent)
+        DispatchQueue.main.async { [weak self] in
+            self?.timer.invalidate()
+            self?.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
+                self?.countFired += 1
+                guard let countFired = self?.countFired else { return }
+                self?.progressView.progress = min(CGFloat(0.04 * countFired), gagePercent)
                 
-                if self.progressView.progress == 1 {
+                if self?.progressView.progress == 1 {
                     timer.invalidate()
                 }
             }
