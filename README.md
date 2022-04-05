@@ -71,6 +71,6 @@
 | 황지은 | 이다은 |
 |:---:|:---------:|
 | <img src="https://user-images.githubusercontent.com/63224278/103209152-b436e680-4945-11eb-91e4-bd8622e442e2.png" width="200px" />  | <img src="https://user-images.githubusercontent.com/71601985/121503159-c4d2a900-ca1b-11eb-8eb3-ffad1726ed9d.png" width="200px" height = "200px" />  | 
-| [hwangji-dev](https://github.com/hwangJi-dev) | [Daeun-Danna-Lee](https://https://github.com/dannaward) |
+| [hwangji-dev](https://github.com/hwangJi-dev) | [dannaward](https://github.com/dannaward) |
 <br>
 <br>
