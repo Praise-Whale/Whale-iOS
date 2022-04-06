@@ -50,7 +50,6 @@ class SettingsVC: UIViewController {
     @IBAction func changeAlertStateSwitch(_ sender: Any) {
         if changeAlertStateSwitch.isOn {
             UserDefaults.standard.setValue(true, forKey: "isAlertOn")
-            self.showToast(message: "앞으로 오전 9:00 에 칭찬 알림을 보내드릴게요!", bottom: 115)
             self.requestAuthorization()
         } else {
             UserDefaults.standard.setValue(false, forKey: "isAlertOn")
@@ -130,11 +129,26 @@ extension SettingsVC {
     
     func requestAuthorization() {
         let options = UNAuthorizationOptions(arrayLiteral: .alert, .badge, .sound)
-        userNotificationCenter.requestAuthorization(options: options) { success, error in
+        userNotificationCenter.requestAuthorization(options: options) { didAllow, error in
             if let error = error {
                 print(error)
             } else {
-                self.sendNotification()
+                if didAllow {
+                    self.sendNotification()
+                    print("request granted")
+                    UserDefaults.standard.setValue(true, forKey: "isAlertOn")
+                    DispatchQueue.main.async {
+                        self.showToast(message: "앞으로 오전 9:00 에 칭찬 알림을 보내드릴게요!", bottom: 115)
+                    }
+                } else {
+                    print("request denied")
+                    UserDefaults.standard.setValue(false, forKey: "isAlertOn")
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["whaleTimeNoti"])
+                    DispatchQueue.main.async {
+                        self.changeAlertStateSwitch.setOn(false, animated: false)
+                        self.showToast(message: "설정에서 알림 권한을 확인하세요!", bottom: 115)
+                    }
+                }
             }
         }
     }
