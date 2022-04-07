@@ -55,7 +55,7 @@ class SettingsVC: UIViewController {
             UserDefaults.standard.setValue(false, forKey: "isAlertOn")
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["whaleTimeNoti"])
         }
-    }
+    } 
     
     @IBAction func mailDidTap(_ sender: Any) {
         if MFMailComposeViewController.canSendMail() {
