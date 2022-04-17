@@ -476,14 +476,9 @@ extension PraiseCardVC {
     func praiseCardService(_ year: String, _ month: String) {
         
         var convertMonthString: String = "0"
-        if month < 10.toString() {
-            convertMonthString = "0" + month
-        }
-        else {
-            convertMonthString = month
-        }
+        convertMonthString = Int(month) ?? 0 < 10 ? "0" + month : month
         
-        PraiseService.shared.praiseDateService(year: year, month: convertMonthString) { [self](networkResult) -> (Void) in
+        PraiseService.shared.praiseDateService(year: year, month: convertMonthString) { [self] (networkResult) -> (Void) in
             switch networkResult {
             case .success(let data):
                 if let praiseData = data as? PraiseData {
@@ -519,7 +514,6 @@ extension PraiseCardVC {
             switch networkResult {
             case .success(let data):
                 if let praiseRank = data as? PraiseRankData {
-                    print(praiseRank.rankingCountResult)
                     praiseRankData = praiseRank.rankingCountResult
                     
                     if praiseRank.totalPraiserCount == 0 {
