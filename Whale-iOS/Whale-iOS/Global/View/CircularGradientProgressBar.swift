@@ -14,13 +14,11 @@ class CircularGradientProgressBar: UIView {
   @IBInspectable public lazy var foregroundCircleColor: UIColor = UIColor.red
   @IBInspectable public lazy var startGradientColor: UIColor = UIColor.red
   @IBInspectable public lazy var endGradientColor: UIColor = UIColor.orange
- // @IBInspectable public lazy var textColor: UIColor = UIColor.white
   
   private lazy var fillColor: UIColor = UIColor.clear
   
   private var backgroundLayer: CAShapeLayer!
   private var progressLayer: CAShapeLayer!
- // private var textLayer: CATextLayer!
   
   public var progress: CGFloat = 0 {
     didSet {
@@ -59,12 +57,9 @@ class CircularGradientProgressBar: UIView {
     gradientLayer.colors = [startGradientColor.cgColor, endGradientColor.cgColor]
     gradientLayer.frame = self.bounds
     gradientLayer.mask = progressLayer
- 
-  //  textLayer = createTextLayer(textColor: textColor)
     
     layer.addSublayer(backgroundLayer)
     layer.addSublayer(gradientLayer)
-   // layer.addSublayer(textLayer)
   }
   
   private func createCircularLayer(strokeColor: CGColor, fillColor: CGColor, lineWidth: CGFloat) -> CAShapeLayer {
@@ -91,29 +86,8 @@ class CircularGradientProgressBar: UIView {
     
     return shapeLayer
   }
-  
-//  private func createTextLayer(textColor: UIColor) -> CATextLayer {
-//
-//    let width = frame.size.width
-//    let height = frame.size.height
-//
-//    let fontSize = min(width, height) / 4 - 5
-//    let offset = min(width, height) * 0.1
-//
-//    let layer = CATextLayer()
-//    layer.string = "\(Int(progress * 100))"
-//    layer.backgroundColor = UIColor.clear.cgColor
-//    layer.foregroundColor = textColor.cgColor
-//    layer.fontSize = fontSize
-//    layer.frame = CGRect(x: 0, y: (height - fontSize - offset) / 2, width: width, height: height)
-//    layer.alignmentMode = .center
-//
-//    return layer
-//  }
-  
-  private func didProgressUpdated() {
     
-   // textLayer?.string = "\(Int(progress * 100))"
+  private func didProgressUpdated() {
     progressLayer?.strokeEnd = progress
   }
 }
@@ -135,15 +109,6 @@ extension CircularGradientProgressBar {
     basicAnimation.delegate = self
     
     timer = AppTimer(duration: maxDuration, tickInterval: tickInterval)
-    
-//    timer?.timerFired = { [weak self] value in
-//      self?.textLayer.string = "\(value)"
-//    }
-//
-//    timer?.timerStopped = { [weak self] in
-//      self?.textLayer.string = ""
-//    }
-    
     timer?.timerCompleted = {}
     
     progressLayer.add(basicAnimation, forKey: "recording")
